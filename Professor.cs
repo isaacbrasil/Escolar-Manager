@@ -27,19 +27,11 @@
         this.salarioProfessor = 0;
     }
 
-    public override void MenuOperação()
+    public double CalculaTaxaAprovacao(int numAlunos, int alunosAprovados)
     {
-        System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Bem-Vindo Professor, qual operação você deseja realizar ?");
-        Console.WriteLine("");
-        Console.WriteLine("1 - Cadastrar notas alunos");
-        Console.WriteLine("2 - Calcular taxa aprovação");
-        System.Console.WriteLine("0 - Voltar");
-        System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("");
-
-
-
+        return Math.Round(((double)alunosAprovados / (double)numAlunos) * 100, 2); //limita o resultado double para duas casas decimais e utiliza conversão explícita
+        //ao deixar esses valores originalmente como int o resultado não sai correto
     }
+ 
 
 }

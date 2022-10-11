@@ -1,10 +1,10 @@
 ﻿class Aluno : Pessoa
 {
-    private int[] notas;
+    private double[] notas;
     private char turma;
     private string escolaNome;
 
-    public int[] Notas
+    public double[] Notas
     {
 
         get { return notas; }
@@ -28,7 +28,7 @@
 
     }
 
-    public Aluno(string nome, int[] notas, char turma, string escolaNome)
+    public Aluno(string nome, double[] notas, char turma, string escolaNome)
     {
         Nome = nome;
         this.notas = notas;
@@ -38,36 +38,24 @@
     }
     public Aluno()
     {
-        this.notas = new int[] { 0, 3, 4, 5 };
+        this.notas = new double[] { 0, 2, 3, 4, 5 };
         this.turma = '0';
 
     }
 
-
-    public override void MostraDados()
+    public void MostraDadosAluno(Aluno aluno)
     {
+        Console.WriteLine("Nome: " + aluno.Nome);
+        Console.WriteLine("Matrícula: " + aluno.Id);
         Console.Write("Notas: ");
+
         foreach (var nota in notas)
         {
-
-            Console.Write("|" + nota.ToString());
+            Console.Write(nota.ToString() + " | ");//utiliza o toString para transformar o conteudo notas em uma string
         }
         Console.WriteLine("");
-        Console.WriteLine("Turma: " + turma);
-
-    }
-
-    public override void MenuOperação()
-    {
-        System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Bem-Vindo Aluno, qual operação você deseja realizar ?");
-        Console.WriteLine("");
-        Console.WriteLine("1 - Calcular média");
-        Console.WriteLine("2 - Solicitar comprovante de matrícula");
-        System.Console.WriteLine("0 - Voltar");
-        System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("");
-
+        Console.WriteLine("Escola: " + aluno.EscolaNome);
+        Console.WriteLine("Turma: " + aluno.Turma);
 
     }
 
@@ -76,11 +64,44 @@
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");
         DateTime dataHoje = DateTime.Now;
-        Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ", de matrícula N° "+ aluno.Id + ", está no presente momento de " + dataHoje.ToString("d") + " matriculado na Instituição de Ensino " + aluno.EscolaNome );
+        Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ", de matrícula N° " + aluno.Id + ", está no\r\npresente momento de " + dataHoje.ToString("d") + " matriculado na Instituição\r\nde Ensino " + aluno.EscolaNome + ".");
+        Console.WriteLine("");
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");
 
 
+    }
+
+    public void MostraAlunos(List<Aluno> alunos)
+    {
+
+
+        int i = 0;
+        foreach (var aluno in alunos)
+        {
+            Console.WriteLine((i + 1) + "- " + aluno.Nome);
+            i++;
+        }
+        Console.WriteLine("");
+
+    }
+
+    public virtual double CalculaMedia(Aluno aluno)
+    {
+        double soma = 0;
+        double media = 0;
+        Console.WriteLine("Notas: ");
+
+        for (int i = 0; i < aluno.notas.Length; i++)
+        {
+            soma += (double)aluno.notas[i]; //conversão explícita de tipo
+            Console.Write(aluno.notas[i] + " | ");
+        }
+        Console.WriteLine("");
+
+        media = soma / aluno.notas.Length;
+
+        return media;
     }
 
 

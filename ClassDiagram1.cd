@@ -3,26 +3,26 @@
   <Class Name="Administrador">
     <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAgAAAAKQAAAAAAAAQAAAAAAIAAAQAAAAAA=</HashCode>
       <FileName>Administrador.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Aluno">
-    <Position X="8" Y="6" Width="1.5" />
+    <Position X="8" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAgAIAAAAAAIAAAICAAAAIAAAIAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>ACAAAgAAAAAAAAIAAAICAAACIAAAIAAAAAAAAAAAAAI=</HashCode>
       <FileName>Aluno.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Funcionario">
-    <Position X="5.5" Y="7.25" Width="1.5" />
+    <Position X="5.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAQABAAQAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Funcionario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GerenciamentoEscolar">
-    <Position X="12.25" Y="2.5" Width="1.5" />
+    <Position X="11" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Main.cs</FileName>
@@ -31,15 +31,22 @@
   <Class Name="Pessoa">
     <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQACEAAIABAAAAAAAAIgIAAAICEAAAAAAgEAAAEAAgA=</HashCode>
+      <HashCode>AQACEAAIABAAAAAAAAIgIAAAICAAAAAAAAEAAAEAAgA=</HashCode>
       <FileName>Pessoa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Professor">
-    <Position X="11" Y="4.75" Width="1.5" />
+    <Position X="10.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAIAAAACAAgAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Professor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sistema">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAKAAAAQAAAAIAAAAAAAAAkAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Sistema.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

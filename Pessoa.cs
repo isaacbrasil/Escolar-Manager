@@ -58,35 +58,10 @@
         Console.WriteLine("Idade: " + idade);
         Console.WriteLine("Id: " + id);
         Console.WriteLine("Usuário: " + tipoUsuario);
-        Console.WriteLine("Nome: " + senha);
         System.Console.WriteLine("------------------------------------------------------------");
 
     }
-    public virtual void MenuSistema()
-    {
-        System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Bem-Vindo ao Software Escolar Manager!");
-        Console.WriteLine("");
-        System.Console.WriteLine("Digite a operação que deseja realizar: ");
-        Console.WriteLine("");
-        System.Console.WriteLine("1 - Logar no Sistema ");
-        System.Console.WriteLine("0 - Sair");
-        System.Console.WriteLine("------------------------------------------------------------");
 
-    }
-    public virtual void MenuUsuário()
-    {
-        System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Digite seu tipo de usuário: ");
-        Console.WriteLine("");
-        System.Console.WriteLine("1 - Admin");
-        System.Console.WriteLine("2 - Aluno");
-        System.Console.WriteLine("3 - Professor");
-        System.Console.WriteLine("4 - Funcionario");
-        System.Console.WriteLine("0 - Voltar");
-        System.Console.WriteLine("------------------------------------------------------------");
-
-    }
 
     public virtual void MenuOperação()
     {
