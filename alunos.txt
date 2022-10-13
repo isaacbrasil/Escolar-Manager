@@ -1,33 +1,4 @@
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 2,8
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 6
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 7,4
-Nome: Enzo | Matrícula: 202201510 | Turma: A | Escola: Colégio Visão | Média: 9,2
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 2,8
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 6
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 7,4
-Nome: Valentina | Matrícula: 202201509 | Turma: A | Escola: Delta | Média: 8,2
-Nome: Lucas | Matrícula: 202201509 | Turma: A | Escola: Colégio Visão | Média: 9,4
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 0
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 0
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 0
-Nome: lucas | Matrícula: 202201509 | Turma: A | Escola: visao | Média: 0
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 2,8
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 6
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 7,4
-Nome: wilson | Matrícula: 202201510 | Turma: A | Escola: VISAO | Média: 10
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 1,6
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 6
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 7,4
-Nome: wilson | Matrícula: 202201509 | Turma: a | Escola: protagoras | Média: 10
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 0
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 0
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 0
-Nome: Lucas | Matrícula: 202201509 | Turma: A | Escola: BISÃO | Média: 10
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 0
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 0
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 0
-Nome: Luciel | Matrícula: 202201509 | Turma: A | Escola: Visão | Média: 0
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 0
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 0
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 0
-Nome: enzo | Matrícula: 202201510 | Turma: a | Escola: Visão | Média: 0
+Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 3
+Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 3
+Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 3
+Nome: ezekiel | Matrícula: 202201513 | Turma: a | Escola: delta | Média: 0

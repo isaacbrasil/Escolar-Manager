@@ -14,11 +14,11 @@ class Administrador : Pessoa
             Aluno newAluno = new Aluno();
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
             newAluno.Nome = Console.ReadLine();
-           /* Console.WriteLine("Insira as 5 notas do aluno: ");
+            
             for (int j = 0; j < 5; j++)
             {
-                newAluno.Notas[j] = Convert.ToDouble(Console.ReadLine());
-            }*/
+                newAluno.Notas[j] = 0;
+            }
             Console.WriteLine("Insira a turma do aluno: ");
             newAluno.Turma = Convert.ToChar(Console.ReadLine());
             Console.WriteLine("Insira a Escola do aluno: ");
@@ -31,7 +31,7 @@ class Administrador : Pessoa
         {
 
             double media = aluno.CalculaMedia(alunos, (indexMedia+1));
-            escritor.WriteLine(aluno.ToString()+ media);
+            escritor.WriteLine(aluno.ToString() + media);
             indexMedia++;
 
         }

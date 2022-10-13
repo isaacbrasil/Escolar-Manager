@@ -9,21 +9,21 @@
                             new Aluno()
                             {
                                 Nome = "Isaac",
-                                Notas = new double[] { 0, 0, 0, 0, 0 },
+                                Notas = new double[] { 1, 2, 3, 4, 5 },
                                 Turma = 'A',
                                 EscolaNome = "Colégio Visão"
                             },
                              new Aluno()
                             {
                                 Nome = "Gabriel",
-                                Notas = new double[]  { 0, 0, 0, 0, 0 },
+                                Notas = new double[]  { 1, 2, 3, 4, 5 },
                                 Turma = 'B',
                                 EscolaNome = "Colégio Delta"
                              },
                               new Aluno()
                             {
                                 Nome = "Lucas",
-                                Notas = new double[]  { 0, 0, 0, 0, 0 },
+                                Notas = new double[]  { 1, 2, 3, 4, 5 },
                                 Turma = 'C',
                                 EscolaNome = "Colégio WR"
                             }
