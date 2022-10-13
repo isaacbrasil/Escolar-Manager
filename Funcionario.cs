@@ -9,65 +9,80 @@
         set { nomeFuncao = value; }
     }
 
-      public void CadastraItemCantina()
+    public List<Produto> CadastraItemCantina(List<Produto> produtos)
     {
         Console.WriteLine("Digite a quantidade de itens que quer cadastrar:");
-        int numItens= Convert.ToInt32(Console.ReadLine());
+        int numItens = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
         TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt", true);
 
-        List<string> listaItensCantina = new List<string>();
-        for (int i = 0; i < numItens; i++)
+        for (int i = 0; i < numItens; i++) //cadastra mais produtos na lista produtos
         {
-            Console.WriteLine("Insira o nome do item " + (i + 1) + "e o valor: ");
-            listaItensCantina.Add(Console.ReadLine());
+            Produto newProduto = new Produto();
+            Console.WriteLine("Insira o nome do produto: " + (i + 1));
+            newProduto.NomeAlimento = Console.ReadLine();
+            Console.WriteLine("Insira o valor do produto: ");
+            newProduto.ValorAlimento = Convert.ToDouble(Console.ReadLine());
+
+            produtos.Add(newProduto);
         }
 
-        IEnumerable<string> itensFiltrados = listaItensCantina.OrderBy(n => n); // filtra os alimentos em ordem alfabética com query LINQ
-        string last = itensFiltrados.Last(); // pega o ultimo elemento com LINQ query para poder remover a vírgula no final das concatenações
-
-        foreach (string itens in itensFiltrados)
+        foreach (Produto produto in produtos)
         {
 
-            if (itens == last)
-            {
-                escritor.WriteLine(itens);
-                Console.Write(itens);
-            }
-            else
-            {
-                escritor.WriteLine(itens);
-                Console.Write(itens + ", ");
-            }
-
+            escritor.WriteLine(produto.ToString());
 
         }
+
 
         Console.WriteLine("");
         sistema.MensagemSucesso();
 
         escritor.Close();
-
+        return produtos;
 
     }
 
-    public void DeletaItemCantina()
+    public void DeletaItemCantina(List<Produto> produtos)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt") && new FileInfo("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt").Length != 0)
+        if (produtos.Count > 0)
         {
-            File.WriteAllText("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt", string.Empty);
-            sistema.MensagemSucesso();
+            produtos.Clear();
 
         }
-        else 
+        else
         {
-            Console.WriteLine("Não existe nenhum item cadastrado ainda!");
+            Console.WriteLine("Nenhum produto cadastrado");
         }
 
     }
 
 
+    public void MostraItensCantina(List<Produto> produtos)
+    {
 
+        Console.WriteLine("");
+
+        int i = 0;
+        if (produtos.Count > 0)
+        {
+            Console.WriteLine("========== CANTINA ========== ");
+
+            foreach (var alimento in produtos)
+            {
+                Console.WriteLine((i + 1) + "- " + alimento.NomeAlimento + " | Preço: R$ " + alimento.ValorAlimento);
+                i++;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Nenhum produto cadastrado");
+
+
+        }
+        Console.WriteLine("");
+
+    }
 
 }
 

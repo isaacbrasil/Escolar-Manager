@@ -9,33 +9,7 @@ class Administrador : Pessoa
         Console.Clear();
         TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt", true);
 
-        List<Aluno> listAlunos = new List<Aluno>() {
-                            new Aluno()
-                            {
-                                Nome = "Isaac",
-                                Notas = new double[] { 0, 2, 3, 4, 5 }, //2,8
-                                Turma = 'A',
-                                EscolaNome = "Colégio Visão"
-                            },
-                             new Aluno()
-                            {
-                                Nome = "Gabriel",
-                                Notas = new double[] { 1, 10, 7, 6, 6 },//6
-                                Turma = 'B',
-                                EscolaNome = "Colégio Delta"
-                             },
-                              new Aluno()
-                            {
-                                Nome = "Lucas",
-                                Notas = new double[] { 10, 7, 8, 6, 6 },//7,4
-                                Turma = 'C',
-                                EscolaNome = "Colégio WR"
-                            }
-        };
-
-        
-
-        for (int i = 0; i < numAlunos; i++) //cadastra mais alunos na listAlunos
+        for (int i = 0; i < numAlunos; i++) //cadastra mais alunos na lista alunos
         {
             Aluno newAluno = new Aluno();
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
@@ -50,65 +24,46 @@ class Administrador : Pessoa
             Console.WriteLine("Insira a Escola do aluno: ");
             newAluno.EscolaNome = Console.ReadLine();
 
-            listAlunos.Add(newAluno);
+            alunos.Add(newAluno);
         }
-       
-
-        /*List<string> listaAlunos = new List<string>();
-
-        IEnumerable<string> alunosFiltrados = alunos[].Nome.OrderBy(n => n); // filtra os alunos em ordem alfabética com query LINQ
-        string last = alunosFiltrados.Last(); // pega o ultimo elemento com LINQ query para poder remover a vírgula no final das concatenações
-        foreach (string aluno in alunosFiltrados)
+        int indexMedia = 0;
+        foreach (Aluno aluno in alunos)
         {
-            if (aluno == last)
-            {
-                escritor.WriteLine(aluno);
-                Console.Write(aluno);
-            }
-            else
-            {
-                escritor.WriteLine(aluno);
-                Console.Write(aluno + ", ");
-            }
+
+            double media = aluno.CalculaMedia(alunos, (indexMedia+1));
+            escritor.WriteLine(aluno.ToString()+ media);
+            indexMedia++;
+
         }
-        Console.WriteLine("");
-*/        sistema.MensagemSucesso();
+
+
+
+        sistema.MensagemSucesso();
         escritor.Close();
 
-        return listAlunos;
+        return alunos;
     }
 
-    public void CadastraProfessor()
+    public List<Professor> CadastraProfessor(List<Professor> professores)
     {
+
         Console.WriteLine("Digite a quantidade de professores que quer cadastrar:");
         int numProfs = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
         TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt", true);
 
-        List<string> listaProfessores = new List<string>();
-        for (int i = 0; i < numProfs; i++)
+        for (int i = 0; i < numProfs; i++) //cadastra mais professores na lista professores
         {
+            Professor newProf = new Professor();
             Console.WriteLine("Insira o nome do professor: " + (i + 1));
-            listaProfessores.Add(Console.ReadLine());
+            newProf.Nome = Console.ReadLine();
+            professores.Add(newProf);
         }
 
-        IEnumerable<string> profsFiltrados = listaProfessores.OrderBy(n => n); // filtra os professores em ordem alfabética com query LINQ
-        string last = profsFiltrados.Last(); // pega o ultimo elemento com LINQ query para poder remover a vírgula no final das concatenações
-
-        foreach (string prof in profsFiltrados)
+        foreach (Professor professor in professores)
         {
 
-            if (prof == last)
-            {
-                escritor.WriteLine(prof);
-                Console.Write(prof);
-            }
-            else
-            {
-                escritor.WriteLine(prof);
-                Console.Write(prof + ", ");
-            }
-
+            escritor.WriteLine(professor.ToString() );
 
         }
 
@@ -117,95 +72,86 @@ class Administrador : Pessoa
 
         escritor.Close();
 
+        return professores;
 
     }
 
-    public void DeletaProfessores()
+    public void DeletaProfessores(List<Professor> professores)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt") && new FileInfo("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt").Length != 0)
-        {
-            File.WriteAllText("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt", string.Empty);
 
-            sistema.MensagemSucesso();
+        if (professores.Count > 0)
+        {
+            professores.Clear();
         }
         else
         {
-            Console.WriteLine("Não existe nenhum professor cadastrado ainda!");
+            Console.WriteLine("Nenhum professor cadastrado");
 
         }
+
 
     }
-    public void DeletaAlunos()
+    public void DeletaAlunos(List<Aluno> alunos)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt") && new FileInfo("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt").Length != 0)
+        if (alunos.Count > 0)
         {
-            File.WriteAllText("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt", string.Empty);
+            alunos.Clear();
 
-            sistema.MensagemSucesso();
         }
         else
         {
-            Console.WriteLine("Não existe nenhum aluno cadastrado ainda!");
-
+            Console.WriteLine("Nenhum aluno cadastrado");
         }
-
     }
 
     public void MostraAlunos(List<Aluno> alunos)
     {
-        Console.WriteLine("Alunos: ");
-        foreach(Aluno aluno in alunos)
-        {
-            Console.WriteLine(aluno.Nome);
-        }
+        Console.WriteLine("");
 
-        /*if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt") && new FileInfo("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt").Length != 0)
+        if (alunos.Count > 0)
         {
-            TextReader leitor = new StreamReader("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt");
-            string linha = leitor.ReadLine();
             Console.WriteLine("Alunos: ");
-            Console.WriteLine("");
-            while (linha != null)
+            int i = 0;
+            foreach (Aluno aluno in alunos)
             {
-                Console.WriteLine(linha);
-                linha = leitor.ReadLine();
 
+                Console.WriteLine((i + 1) + "-" + aluno.Nome);
+                i++;
             }
-            Console.WriteLine("");
+
 
         }
         else
         {
-            Console.WriteLine("Não existe nenhum aluno cadastrado ainda!");
+            Console.WriteLine("Nenhum aluno cadastrado");
 
-        }*/
 
+        }
+        Console.WriteLine("");
 
     }
 
-    public void MostraProfessores()
+    public void MostraProfessores(List<Professor> professores)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt") && new FileInfo("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt").Length != 0)
+        Console.WriteLine("");
+
+        if (professores.Count > 0)
         {
-            TextReader leitor = new StreamReader("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt");
-            string linha = leitor.ReadLine();
             Console.WriteLine("Professores: ");
-            Console.WriteLine("");
-            while (linha != null)
+            int i = 0;
+            foreach (Professor professor in professores)
             {
-                Console.WriteLine(linha);
-                linha = leitor.ReadLine();
+                Console.WriteLine((i + 1) + "-" + professor.Nome);
+                i++;
 
             }
-            Console.WriteLine("");
-
         }
         else
         {
-            Console.WriteLine("Não existe nenhum professor cadastrado ainda!");
+            Console.WriteLine("Nenhum professor cadastrado");
 
         }
-
+        Console.WriteLine("");
 
     }
 

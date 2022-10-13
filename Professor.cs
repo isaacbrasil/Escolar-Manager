@@ -3,7 +3,11 @@
     private double taxaAprovacao;
     private double salarioProfessor;
 
+    public override string ToString()
+    {
 
+        return "Nome: " + Nome;
+    }
     public double TaxaAprovacao
     {
         get { return taxaAprovacao; }

@@ -1,0 +1,9 @@
+Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 2,8
+Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 6
+Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 7,4
+Nome: Enzo | Matrícula: 202201510 | Turma: A | Escola: Colégio Visão | Média: 9,2
+Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 2,8
+Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 6
+Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 7,4
+Nome: Valentina | Matrícula: 202201509 | Turma: A | Escola: Delta | Média: 8,2
+Nome: Lucas | Matrícula: 202201509 | Turma: A | Escola: Colégio Visão | Média: 9,4

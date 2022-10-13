@@ -51,7 +51,7 @@
         Console.WriteLine("Bem-Vindo Aluno, qual operação você deseja realizar ?");
         Console.WriteLine("");
         Console.WriteLine("1 - Calcular média");
-        Console.WriteLine("2 - Solicitar comprovante de matrícula");
+        Console.WriteLine("2 - Emitir comprovante de matrícula");
         Console.WriteLine("3 - Exibir Informações Aluno");
 
         System.Console.WriteLine("0 - Voltar");
@@ -92,7 +92,7 @@
 
     public void MensagemSucesso()
     {
-        Console.WriteLine("Operação Realizada com Sucesso!");
+        Console.WriteLine("Operação Realizada com Sucesso!\r\n");
 
     }
 

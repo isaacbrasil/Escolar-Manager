@@ -4,7 +4,7 @@
     {
 
         int optionMenu = 1;
-        var alunos = new List<Aluno>() {
+        List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
                             {
                                 Nome = "Isaac",
@@ -27,7 +27,34 @@
                                 EscolaNome = "Colégio WR"
                             }
         };
+        List<Professor> professores = new List<Professor>() {
+                            new Professor()
+                            {
+                                Nome = "Lutiano",
+                            },
+                             new Professor()
+                            {
+                                Nome = "Éder",
+                             },
+                              new Professor()
+                            {
+                                Nome = "Christopher",
+                            }
+        };
+        List<Produto> itensCantina = new List<Produto>() {
+                            new Produto()
+                            {
+                                NomeAlimento = "Ruffles",
+                                ValorAlimento = 5.9
 
+                            },
+                             new Produto()
+                            {
+                                NomeAlimento = "Oreo",
+                                ValorAlimento = 3.9
+
+                            }
+        };
         while (optionMenu != 0)
         {
             Sistema sistema = new Sistema();
@@ -77,7 +104,10 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > CADASTRAR PROFESSORES");
                                 System.Console.WriteLine("============================================================");
-                                admin.CadastraProfessor();
+                                admin.MostraProfessores(professores);
+                                List<Professor> listaProfessores = admin.CadastraProfessor(professores)!;
+                                professores = listaProfessores;
+                                admin.MostraProfessores(listaProfessores);
 
 
                             }
@@ -88,6 +118,9 @@
                                 System.Console.WriteLine("============================================================");
                                 admin.MostraAlunos(alunos);
                                 List<Aluno> listaAlunos = admin.CadastraAluno(alunos)!;
+                                alunos = listaAlunos;
+                                admin.MostraAlunos(listaAlunos);
+
 
                             }
                             else if (optionOperation == 3)
@@ -95,14 +128,23 @@
                                 System.Console.WriteLine("===============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO PROFESSORES");
                                 System.Console.WriteLine("===============================================================");
-                                admin.DeletaProfessores();
+                                admin.MostraProfessores(professores);
+                                Console.WriteLine("Insira qual índice do professor a ser deletado: ");
+                                int indexProf = Convert.ToInt32(Console.ReadLine());
+                                professores.RemoveAt((indexProf - 1));
+                                admin.MostraProfessores(professores);
+
                             }
                             else if (optionOperation == 4)
                             {
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO ALUNOS");
                                 System.Console.WriteLine("============================================================");
-                                admin.DeletaAlunos();
+                                admin.MostraAlunos(alunos);
+                                Console.WriteLine("Insira qual índice do aluno a ser deletado: ");
+                                int indexAluno = Convert.ToInt32(Console.ReadLine());
+                                alunos.RemoveAt((indexAluno - 1));
+                                admin.MostraAlunos(alunos);
 
                             }
                             else if (optionOperation == 5)
@@ -110,7 +152,7 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > MOSTRAR PROFESSORES CADASTRADOS");
                                 System.Console.WriteLine("============================================================");
-                                admin.MostraProfessores();
+                                admin.MostraProfessores(professores);
 
                             }
                             else if (optionOperation == 6)
@@ -131,7 +173,6 @@
                         System.Console.WriteLine("============================================================");
 
                         Aluno aluno = new Aluno();
-                        Aluno a = new Aluno("Isaac", new double[] { 0, 2, 3, 4, 5 }, 'A', "Colégio Visão");
 
 
                         int optionOperation;
@@ -153,7 +194,8 @@
                                 Console.WriteLine("Selecione o aluno: ");
                                 aluno.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Média do aluno: " + alunos[(indexAluno - 1)].Notas.Average()); //CLEAN CODE: Reutilizar código já escrito: isso inclui o uso de bibliotecas, ou códigos escritos por mim ou terceiros
+                                Console.WriteLine($"Média de {alunos[(indexAluno - 1)].Nome}: " + aluno.CalculaMedia(alunos, indexAluno)); //CLEAN CODE: Reutilizar código já escrito: isso inclui o uso de bibliotecas, ou códigos escritos por mim ou terceiros
+
 
                             }
                             else if (optionOperation == 2) //emite comprovante de matrícula do aluno
@@ -161,7 +203,10 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ALUNO > EMITIR COMPROVANTE DE MATRÍCULA");
                                 System.Console.WriteLine("============================================================");
-                                aluno.ExibeComprovanteDeMatricula(a);
+                                Console.WriteLine("Selecione o aluno: ");
+                                aluno.MostraAlunos(alunos);
+                                int indexAluno = Convert.ToInt32(Console.ReadLine());
+                                aluno.ExibeComprovanteDeMatricula(alunos[(indexAluno - 1)]);
 
 
                             }
@@ -170,7 +215,10 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ALUNO > EXIBIR INFORMAÇÕES DO ALUNO");
                                 System.Console.WriteLine("============================================================");
-                                aluno.MostraDadosAluno(a);
+                                Console.WriteLine("Selecione o aluno: ");
+                                aluno.MostraAlunos(alunos);
+                                int indexAluno = Convert.ToInt32(Console.ReadLine());
+                                aluno.MostraDadosAluno(alunos[(indexAluno - 1)]);
 
 
                             }
@@ -186,9 +234,9 @@
 
 
                         Professor prof = new Professor();
+                        Administrador admin = new Administrador();
 
                         int optionOperation;
-
                         optionOperation = 1;
 
                         while (optionOperation != 0)
@@ -201,9 +249,23 @@
                             if (optionOperation == 1)
                             {
                                 System.Console.WriteLine("============================================================");
-                                Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > OPÇÃO 1");
+                                Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > CADASTRAR NOTAS ALUNOS");
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("Opção " + optionOperation + " do usuário " + p.TipoUsuario);
+
+                                Console.WriteLine("Lançar notas de qual aluno?");
+                                admin.MostraAlunos(alunos);
+                                int indexAluno = Convert.ToInt32(Console.ReadLine());
+
+
+                                Console.WriteLine($"Insira as 5 notas de {alunos[(indexAluno - 1)].Nome}: ");
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    alunos[(indexAluno - 1)].Notas[j] = Convert.ToDouble(Console.ReadLine()); // ver como cadastrar notas alunos
+                                }
+
+
+
 
                             }
                             else if (optionOperation == 2)
@@ -248,11 +310,21 @@
 
                             if (optionOperation == 1)//cadastra itens na cantina
                             {
-                                func.CadastraItemCantina();
+
+                                func.MostraItensCantina(itensCantina);
+                                List<Produto> listaprodutos = func.CadastraItemCantina(itensCantina)!;
+                                itensCantina = listaprodutos;
+                                func.MostraItensCantina(listaprodutos);
                             }
                             else if (optionOperation == 2)//remove itens da cantina
                             {
-                                func.DeletaItemCantina();
+
+                                func.MostraItensCantina(itensCantina);
+                                Console.WriteLine("Insira qual índice do produto a ser deletado: ");
+                                int indexProduto = Convert.ToInt32(Console.ReadLine());
+                                itensCantina.RemoveAt((indexProduto - 1));
+                                func.MostraItensCantina(itensCantina);
+
 
                             }
                             else if (optionOperation == 3)

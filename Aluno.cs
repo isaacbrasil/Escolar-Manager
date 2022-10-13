@@ -1,9 +1,13 @@
 ﻿class Aluno : Pessoa
 {
+    public override string ToString()
+    {
+
+        return "Nome: "+ Nome + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
+    }
     private double[] notas;
     private char turma;
     private string escolaNome;
-
     public double[] Notas
     {
 
@@ -51,7 +55,7 @@
 
         foreach (var nota in notas)
         {
-            Console.Write(nota.ToString() + " | ");//utiliza o toString para transformar o conteudo notas em uma string
+            Console.Write(nota.ToString() + " | "); //utiliza o toString para transformar o conteudo notas em uma string
         }
         Console.WriteLine("");
         Console.WriteLine("Escola: " + aluno.EscolaNome);
@@ -86,20 +90,11 @@
 
     }
 
-    public virtual double CalculaMedia(Aluno aluno)
+    public virtual double CalculaMedia(List<Aluno> alunos, int i)
     {
-        double soma = 0;
-        double media = 0;
-        Console.WriteLine("Notas: ");
 
-        for (int i = 0; i < aluno.notas.Length; i++)
-        {
-            soma += (double)aluno.notas[i]; //conversão explícita de tipo
-            Console.Write(aluno.notas[i] + " | ");
-        }
-        Console.WriteLine("");
 
-        media = soma / aluno.notas.Length;
+        double media = alunos[(i-1)].Notas.Average();
 
         return media;
     }

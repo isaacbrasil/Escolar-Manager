@@ -1,0 +1,2 @@
+Produto: Oreo | Preço: R$ 3,9
+Produto: banana | Preço: R$ 4,5
