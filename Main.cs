@@ -4,25 +4,26 @@
     {
 
         int optionMenu = 1;
+
         List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
                             {
                                 Nome = "Isaac",
-                                Notas = new double[] { 0, 2, 3, 4, 5 }, //2,8
+                                Notas = new double[] { 0, 0, 0, 0, 0 },
                                 Turma = 'A',
                                 EscolaNome = "Colégio Visão"
                             },
                              new Aluno()
                             {
                                 Nome = "Gabriel",
-                                Notas = new double[] { 1, 10, 7, 6, 6 },//6
+                                Notas = new double[]  { 0, 0, 0, 0, 0 },
                                 Turma = 'B',
                                 EscolaNome = "Colégio Delta"
                              },
                               new Aluno()
                             {
                                 Nome = "Lucas",
-                                Notas = new double[] { 10, 7, 8, 6, 6 },//7,4
+                                Notas = new double[]  { 0, 0, 0, 0, 0 },
                                 Turma = 'C',
                                 EscolaNome = "Colégio WR"
                             }
@@ -149,17 +150,17 @@
                             }
                             else if (optionOperation == 5)
                             {
-                                System.Console.WriteLine("============================================================");
+                                System.Console.WriteLine("==================================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > MOSTRAR PROFESSORES CADASTRADOS");
-                                System.Console.WriteLine("============================================================");
+                                System.Console.WriteLine("==================================================================");
                                 admin.MostraProfessores(professores);
 
                             }
                             else if (optionOperation == 6)
                             {
-                                System.Console.WriteLine("============================================================");
+                                System.Console.WriteLine("==============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > MOSTRAR ALUNOS CADASTRADOS");
-                                System.Console.WriteLine("============================================================");
+                                System.Console.WriteLine("=============================================================");
                                 admin.MostraAlunos(alunos);
 
                             }
@@ -194,8 +195,7 @@
                                 Console.WriteLine("Selecione o aluno: ");
                                 aluno.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine($"Média de {alunos[(indexAluno - 1)].Nome}: " + aluno.CalculaMedia(alunos, indexAluno)); //CLEAN CODE: Reutilizar código já escrito: isso inclui o uso de bibliotecas, ou códigos escritos por mim ou terceiros
-
+                                Console.WriteLine($"Média de {alunos[(indexAluno - 1)].Nome}: " + aluno.CalculaMedia(alunos, indexAluno));
 
                             }
                             else if (optionOperation == 2) //emite comprovante de matrícula do aluno
@@ -251,7 +251,6 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > CADASTRAR NOTAS ALUNOS");
                                 System.Console.WriteLine("============================================================");
-                                Console.WriteLine("Opção " + optionOperation + " do usuário " + p.TipoUsuario);
 
                                 Console.WriteLine("Lançar notas de qual aluno?");
                                 admin.MostraAlunos(alunos);
@@ -262,8 +261,11 @@
                                 for (int j = 0; j < 5; j++)
                                 {
                                     alunos[(indexAluno - 1)].Notas[j] = Convert.ToDouble(Console.ReadLine()); // ver como cadastrar notas alunos
+
+
                                 }
 
+                                Console.WriteLine("");
 
 
 

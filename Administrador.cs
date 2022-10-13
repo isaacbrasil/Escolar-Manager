@@ -14,11 +14,11 @@ class Administrador : Pessoa
             Aluno newAluno = new Aluno();
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
             newAluno.Nome = Console.ReadLine();
-            Console.WriteLine("Insira as 5 notas do aluno: ");
+           /* Console.WriteLine("Insira as 5 notas do aluno: ");
             for (int j = 0; j < 5; j++)
             {
                 newAluno.Notas[j] = Convert.ToDouble(Console.ReadLine());
-            }
+            }*/
             Console.WriteLine("Insira a turma do aluno: ");
             newAluno.Turma = Convert.ToChar(Console.ReadLine());
             Console.WriteLine("Insira a Escola do aluno: ");
@@ -110,7 +110,7 @@ class Administrador : Pessoa
 
         if (alunos.Count > 0)
         {
-            Console.WriteLine("Alunos: ");
+            Console.WriteLine("Alunos: \r\n");
             int i = 0;
             foreach (Aluno aluno in alunos)
             {
@@ -137,7 +137,7 @@ class Administrador : Pessoa
 
         if (professores.Count > 0)
         {
-            Console.WriteLine("Professores: ");
+            Console.WriteLine("Professores: \r\n");
             int i = 0;
             foreach (Professor professor in professores)
             {

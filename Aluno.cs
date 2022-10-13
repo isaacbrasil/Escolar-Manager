@@ -42,7 +42,7 @@
     }
     public Aluno()
     {
-        this.notas = new double[] { 0, 2, 3, 4, 5 };
+        this.notas = new double[] { 0, 0, 0, 0, 0 };
         this.turma = '0';
 
     }
@@ -52,10 +52,11 @@
         Console.WriteLine("Nome: " + aluno.Nome);
         Console.WriteLine("Matrícula: " + aluno.Id);
         Console.Write("Notas: ");
-
+        int indexAluno = 0;
         foreach (var nota in notas)
         {
-            Console.Write(nota.ToString() + " | "); //utiliza o toString para transformar o conteudo notas em uma string
+            Console.Write(aluno.Notas[(indexAluno)].ToString() + " | "); //utiliza o toString para transformar o conteudo notas em uma string
+            indexAluno++;
         }
         Console.WriteLine("");
         Console.WriteLine("Escola: " + aluno.EscolaNome);
@@ -94,7 +95,8 @@
     {
 
 
-        double media = alunos[(i-1)].Notas.Average();
+        double media = alunos[(i-1)].Notas.Average(); //CLEAN CODE: Reutilizar código já escrito: isso inclui o uso de bibliotecas, ou códigos escritos por mim ou terceiros
+
 
         return media;
     }
