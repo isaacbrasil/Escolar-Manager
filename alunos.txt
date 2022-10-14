@@ -1,4 +1,4 @@
-Nome: Isaac Brasil Oliveira | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 8,2
-Nome: Gabriel Luiz Freitas | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 6,5
-Nome: Lucas Neves Pereira | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 7,4
-Nome: RDJ | Matrícula: 202201514 | Turma: A | Escola: Avengers | Média: 0
+Nome: Isaac Brasil Oliveira | Matrícula: 202201502 | Turma: A | Escola: Colégio Visão | Média: 8,2
+Nome: Gabriel Luiz Freitas | Matrícula: 202201503 | Turma: B | Escola: Colégio Delta | Média: 6,5
+Nome: Lucas Neves Pereira | Matrícula: 202201504 | Turma: C | Escola: Colégio WR | Média: 7,4
+Nome: Wilson | Matrícula: 202201511 | Turma: B | Escola: DELTA | Média: 0

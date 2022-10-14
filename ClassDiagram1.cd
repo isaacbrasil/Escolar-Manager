@@ -17,12 +17,19 @@
   <Class Name="Funcionario">
     <Position X="5.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QEAAAAAAAAAAAAAAAAAAQABAAQAAAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAQABAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Funcionario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GerenciamentoEscolar">
     <Position X="11" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="GerenciamentoEscolar.MenuDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Main.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Main.cs</FileName>
@@ -38,7 +45,7 @@
   <Class Name="Professor">
     <Position X="10.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAIAAAAGAAgAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAgAAIAAAAGAAAABAAAACQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Professor.cs</FileName>
     </TypeIdentifier>
   </Class>

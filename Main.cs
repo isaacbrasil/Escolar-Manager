@@ -3,6 +3,17 @@
     public delegate void MenuDelegate();
     static void Main(string[] args)
     {
+        //CLASSE GENERICA
+        ClasseGenerica<Aluno> intObj = new ClasseGenerica<Aluno>();
+        intObj.Adicionar(
+           new Aluno()
+           {
+               Nome = "Isaac Brasil Oliveira 2",
+               Notas = new double[] { 10, 10, 7, 8, 6 },
+               Turma = 'A',
+               EscolaNome = "Colégio Visão"
+           });
+
 
         int optionMenu = 1;
         List<Aluno> alunos = new List<Aluno>() {
@@ -98,7 +109,6 @@
 
                         while (optionOperation != 0)//loop do login do usuario
                         {
-                            //sistema.MenuOperaçãoAdmin();
                             MenuDelegate menuOperacaoDelegate = new MenuDelegate(sistema.MenuOperaçãoAdmin); // utilizando delegates para chamar os menus
                             menuOperacaoDelegate();
 
@@ -187,7 +197,6 @@
 
                         while (optionOperation != 0)
                         {
-                            //sistema.MenuOperaçãoAluno();
                             MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno); // utilizando delegates para chamar os menus
                             menuAlunoDelegate();
 
@@ -203,9 +212,11 @@
                                 Console.WriteLine("Selecione o aluno: ");
                                 aluno.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
+
                                 if (indexAluno > 0 && indexAluno <= alunos.Count)
+
                                 {
-                                    aluno.CalculaMedia(alunos, indexAluno);
+                                    Console.WriteLine($"Média de {alunos[(indexAluno - 1)].Nome}: " + aluno.CalculaMedia(alunos, indexAluno));
                                 }
                                 else
                                 {
@@ -276,7 +287,6 @@
 
                         while (optionOperation != 0)
                         {
-                            //sistema.MenuOperaçãoProf();
                             MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf); // utilizando delegates para chamar os menus
                             menuProfDelegate();
 
@@ -371,7 +381,6 @@
 
                         while (optionOperation != 0)
                         {
-                            //sistema.MenuOperaçãoFunc();
                             MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc); // utilizando delegates para chamar os menus
                             menuFuncDelegate();
 
