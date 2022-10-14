@@ -1,20 +1,13 @@
 ﻿class Funcionario : Pessoa
 {
-    private string nomeFuncao;
     Sistema sistema = new Sistema();
-
-    public string NomeFuncao
-    {
-        get { return this.nomeFuncao; }
-        set { nomeFuncao = value; }
-    }
 
     public List<Produto> CadastraItemCantina(List<Produto> produtos)
     {
         Console.WriteLine("Digite a quantidade de itens que quer cadastrar:");
         int numItens = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
-        TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt", true);
+        TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt");
 
         for (int i = 0; i < numItens; i++) //cadastra mais produtos na lista produtos
         {

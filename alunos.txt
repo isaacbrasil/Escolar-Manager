@@ -1,4 +1,0 @@
-Nome: Isaac | Matrícula: 202201501 | Turma: A | Escola: Colégio Visão | Média: 3
-Nome: Gabriel | Matrícula: 202201502 | Turma: B | Escola: Colégio Delta | Média: 3
-Nome: Lucas | Matrícula: 202201503 | Turma: C | Escola: Colégio WR | Média: 3
-Nome: ezekiel | Matrícula: 202201513 | Turma: a | Escola: delta | Média: 0

@@ -1,41 +1,47 @@
 ﻿class Professor : Pessoa
 {
     private double taxaAprovacao;
-    private double salarioProfessor;
+    private string materia;
 
     public override string ToString()
     {
 
-        return "Nome: " + Nome;
+        return "Nome: " + Nome + " | Matéria: " + Materia;
     }
     public double TaxaAprovacao
     {
         get { return taxaAprovacao; }
         set { taxaAprovacao = value; }
     }
-
-    public double SalarioProfessor
+    public string Materia
     {
-        get { return salarioProfessor; }
-        set { salarioProfessor = value; }
+        get { return materia; }
+        set { materia = value; }
     }
+   
 
-    public Professor(double taxaAprovacao, double salarioProfessor)
+    public Professor(double taxaAprovacao)
     {
         this.taxaAprovacao = taxaAprovacao;
-        this.salarioProfessor = salarioProfessor;
+       
     }
     public Professor()
     {
         this.taxaAprovacao = 0;
-        this.salarioProfessor = 0;
     }
 
     public double CalculaTaxaAprovacao(int numAlunos, int alunosAprovados)
     {
         return Math.Round(((double)alunosAprovados / (double)numAlunos) * 100, 2); //limita o resultado double para duas casas decimais e utiliza conversão explícita
-        //ao deixar esses valores originalmente como int o resultado não sai correto
+       
     }
- 
+
+    public void MostraDadosProfessor(Professor professor)
+    {
+        Console.WriteLine("Nome: " + professor.Nome);
+        Console.WriteLine("Id: " + professor.Id);
+        Console.WriteLine("Matéria: " + professor.Materia);
+
+    }
 
 }

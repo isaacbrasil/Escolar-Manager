@@ -8,22 +8,22 @@
         List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
                             {
-                                Nome = "Isaac",
-                                Notas = new double[] { 1, 2, 3, 4, 5 },
+                                Nome = "Isaac Brasil Oliveira",
+                                Notas = new double[] { 10, 10, 7, 8, 6 },
                                 Turma = 'A',
                                 EscolaNome = "Colégio Visão"
                             },
                              new Aluno()
                             {
-                                Nome = "Gabriel",
-                                Notas = new double[]  { 1, 2, 3, 4, 5 },
+                                Nome = "Gabriel Luiz Freitas",
+                                Notas = new double[]  { 6, 6, 5,3, 10, 9 },
                                 Turma = 'B',
                                 EscolaNome = "Colégio Delta"
                              },
                               new Aluno()
                             {
-                                Nome = "Lucas",
-                                Notas = new double[]  { 1, 2, 3, 4, 5 },
+                                Nome = "Lucas Neves Pereira",
+                                Notas = new double[]  { 10, 9, 9, 6, 3 },
                                 Turma = 'C',
                                 EscolaNome = "Colégio WR"
                             }
@@ -32,14 +32,17 @@
                             new Professor()
                             {
                                 Nome = "Lutiano",
+                                Materia = "Física"
                             },
                              new Professor()
                             {
                                 Nome = "Éder",
+                                Materia = "Biologia"
                              },
                               new Professor()
                             {
                                 Nome = "Christopher",
+                                Materia = "Filosofia"
                             }
         };
         List<Produto> itensCantina = new List<Produto>() {
@@ -132,7 +135,7 @@
                                 admin.MostraProfessores(professores);
                                 Console.WriteLine("Insira qual índice do professor a ser deletado: ");
                                 int indexProf = Convert.ToInt32(Console.ReadLine());
-                                professores.RemoveAt((indexProf - 1));
+                                admin.DeletaProfessores(professores, indexProf);
                                 admin.MostraProfessores(professores);
 
                             }
@@ -144,7 +147,7 @@
                                 admin.MostraAlunos(alunos);
                                 Console.WriteLine("Insira qual índice do aluno a ser deletado: ");
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
-                                alunos.RemoveAt((indexAluno - 1));
+                                admin.DeletaAlunos(alunos, indexAluno);
                                 admin.MostraAlunos(alunos);
 
                             }
@@ -282,9 +285,16 @@
                                 Console.WriteLine("A taxa de aprovação foi de " + prof.CalculaTaxaAprovacao(numAlunos, alunosAprovados) + "%.");
 
                             }
-                            else if (optionOperation == 3)
+                            else if (optionOperation == 3) //exibe informações do professor
                             {
-                                Console.WriteLine("Opção " + optionOperation + " do usuário " + p.TipoUsuario);
+                                System.Console.WriteLine("============================================================");
+                                Console.WriteLine("LOGIN > USUARIOS > ALUNO > EXIBIR INFORMAÇÕES DO ALUNO");
+                                System.Console.WriteLine("============================================================");
+                                Console.WriteLine("Selecione o professor: ");
+                                admin.MostraProfessores(professores);
+                                int indexProf = Convert.ToInt32(Console.ReadLine());
+                                prof.MostraDadosProfessor(professores[(indexProf - 1)]);
+
 
                             }
                         }

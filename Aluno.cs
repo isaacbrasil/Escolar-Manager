@@ -69,7 +69,7 @@
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");
         DateTime dataHoje = DateTime.Now;
-        Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ", de matrícula N° " + aluno.Id + ", está no\r\npresente momento de " + dataHoje.ToString("d") + " matriculado na Instituição\r\nde Ensino " + aluno.EscolaNome + ".");
+        Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ", de matrícula\r\nN° " + aluno.Id + ", está no presente momento de " + dataHoje.ToString("d") + "\r\nmatriculado na Instituição de Ensino " + aluno.EscolaNome + ".");
         Console.WriteLine("");
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");
@@ -98,7 +98,7 @@
         double media = alunos[(i-1)].Notas.Average(); //CLEAN CODE: Reutilizar código já escrito: isso inclui o uso de bibliotecas, ou códigos escritos por mim ou terceiros
 
 
-        return media;
+        return Math.Round(media, 2);
     }
 
 
