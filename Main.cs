@@ -1,10 +1,10 @@
 ﻿class GerenciamentoEscolar
 {
+    public delegate void MenuDelegate();
     static void Main(string[] args)
     {
 
         int optionMenu = 1;
-
         List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
                             {
@@ -62,7 +62,8 @@
         while (optionMenu != 0)
         {
             Sistema sistema = new Sistema();
-            sistema.MenuSistema();
+            MenuDelegate menuDelegate = new MenuDelegate(sistema.MenuSistema); // utilizando delegates para chamar os menus
+            menuDelegate();
             optionMenu = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
@@ -97,8 +98,9 @@
 
                         while (optionOperation != 0)//loop do login do usuario
                         {
-                            sistema.MenuOperaçãoAdmin();
-
+                            //sistema.MenuOperaçãoAdmin();
+                            MenuDelegate menuOperacaoDelegate = new MenuDelegate(sistema.MenuOperaçãoAdmin); // utilizando delegates para chamar os menus
+                            menuOperacaoDelegate();
 
                             optionOperation = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
@@ -185,7 +187,10 @@
 
                         while (optionOperation != 0)
                         {
-                            sistema.MenuOperaçãoAluno();
+                            //sistema.MenuOperaçãoAluno();
+                            MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno); // utilizando delegates para chamar os menus
+                            menuAlunoDelegate();
+
                             optionOperation = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
 
@@ -271,7 +276,10 @@
 
                         while (optionOperation != 0)
                         {
-                            sistema.MenuOperaçãoProf();
+                            //sistema.MenuOperaçãoProf();
+                            MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf); // utilizando delegates para chamar os menus
+                            menuProfDelegate();
+
                             optionOperation = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
 
@@ -363,7 +371,10 @@
 
                         while (optionOperation != 0)
                         {
-                            sistema.MenuOperaçãoFunc();
+                            //sistema.MenuOperaçãoFunc();
+                            MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc); // utilizando delegates para chamar os menus
+                            menuFuncDelegate();
+
                             optionOperation = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
 
@@ -380,11 +391,12 @@
                             {
 
                                 func.MostraItensCantina(itensCantina);
+
                                 Console.WriteLine("Insira qual índice do produto a ser deletado: ");
                                 int indexProduto = Convert.ToInt32(Console.ReadLine());
                                 if (indexProduto > 0 && indexProduto <= itensCantina.Count)
                                 {
-                                    
+
                                     itensCantina.RemoveAt((indexProduto - 1));
 
                                 }
