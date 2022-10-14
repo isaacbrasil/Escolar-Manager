@@ -198,7 +198,16 @@
                                 Console.WriteLine("Selecione o aluno: ");
                                 aluno.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine($"Média de {alunos[(indexAluno - 1)].Nome}: " + aluno.CalculaMedia(alunos, indexAluno));
+                                if (indexAluno > 0 && indexAluno <= alunos.Count)
+                                {
+                                    aluno.CalculaMedia(alunos, indexAluno);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Insira um índice válido");
+
+
+                                }
 
                             }
                             else if (optionOperation == 2) //emite comprovante de matrícula do aluno
@@ -209,7 +218,16 @@
                                 Console.WriteLine("Selecione o aluno: ");
                                 aluno.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
-                                aluno.ExibeComprovanteDeMatricula(alunos[(indexAluno - 1)]);
+                                if (indexAluno > 0 && indexAluno <= alunos.Count)
+                                {
+                                    aluno.ExibeComprovanteDeMatricula(alunos[(indexAluno - 1)]);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Insira um índice válido");
+
+
+                                }
 
 
                             }
@@ -221,7 +239,16 @@
                                 Console.WriteLine("Selecione o aluno: ");
                                 aluno.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
-                                aluno.MostraDadosAluno(alunos[(indexAluno - 1)]);
+                                if (indexAluno > 0 && indexAluno <= alunos.Count)
+                                {
+                                    aluno.MostraDadosAluno(alunos[(indexAluno - 1)]);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Insira um índice válido");
+
+
+                                }
 
 
                             }
@@ -259,14 +286,24 @@
                                 admin.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
 
-
-                                Console.WriteLine($"Insira as 5 notas de {alunos[(indexAluno - 1)].Nome}: ");
-                                for (int j = 0; j < 5; j++)
+                                if (indexAluno > 0 && indexAluno <= alunos.Count)
                                 {
-                                    alunos[(indexAluno - 1)].Notas[j] = Convert.ToDouble(Console.ReadLine()); // ver como cadastrar notas alunos
+                                    Console.WriteLine($"Insira as 5 notas de {alunos[(indexAluno - 1)].Nome}: ");
+                                    for (int j = 0; j < 5; j++)
+                                    {
+                                        alunos[(indexAluno - 1)].Notas[j] = Convert.ToDouble(Console.ReadLine()); // ver como cadastrar notas alunos
+
+
+                                    }
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Insira um índice válido");
 
 
                                 }
+
 
                                 Console.WriteLine("");
 
@@ -288,12 +325,23 @@
                             else if (optionOperation == 3) //exibe informações do professor
                             {
                                 System.Console.WriteLine("============================================================");
-                                Console.WriteLine("LOGIN > USUARIOS > ALUNO > EXIBIR INFORMAÇÕES DO ALUNO");
+                                Console.WriteLine("LOGIN > USUARIOS > ALUNO > EXIBIR INFORMAÇÕES DO PROFESSOR");
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("Selecione o professor: ");
                                 admin.MostraProfessores(professores);
                                 int indexProf = Convert.ToInt32(Console.ReadLine());
-                                prof.MostraDadosProfessor(professores[(indexProf - 1)]);
+
+                                if (indexProf > 0 && indexProf <= professores.Count)
+                                {
+                                    prof.MostraDadosProfessor(professores[(indexProf - 1)]);
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Insira um índice válido");
+
+
+                                }
 
 
                             }
@@ -334,7 +382,18 @@
                                 func.MostraItensCantina(itensCantina);
                                 Console.WriteLine("Insira qual índice do produto a ser deletado: ");
                                 int indexProduto = Convert.ToInt32(Console.ReadLine());
-                                itensCantina.RemoveAt((indexProduto - 1));
+                                if (indexProduto > 0 && indexProduto <= itensCantina.Count)
+                                {
+                                    
+                                    itensCantina.RemoveAt((indexProduto - 1));
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Insira um índice válido");
+
+
+                                }
                                 func.MostraItensCantina(itensCantina);
 
 

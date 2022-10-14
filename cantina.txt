@@ -1,0 +1,3 @@
+Produto: Ruffles | Preço: R$ 5,9
+Produto: Oreo | Preço: R$ 3,9
+Produto: BALA | Preço: R$ 1

@@ -3,7 +3,7 @@
     public override string ToString()
     {
 
-        return "Nome: "+ Nome + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
+        return "Nome: " + Nome + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
     }
     private double[] notas;
     private char turma;
@@ -95,10 +95,10 @@
     {
 
 
-        double media = alunos[(i-1)].Notas.Average(); //CLEAN CODE: Reutilizar código já escrito: isso inclui o uso de bibliotecas, ou códigos escritos por mim ou terceiros
-
-
+        double media = alunos[(i - 1)].Notas.Average(); //CLEAN CODE: Reutilizar código já escrito: isso inclui o uso de bibliotecas, ou códigos escritos por mim ou terceiros
+        Console.WriteLine($"Média de {alunos[(i - 1)].Nome}: " + Math.Round(media, 2));
         return Math.Round(media, 2);
+
     }
 
 
