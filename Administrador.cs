@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 class Administrador : Pessoa
 {
+    
+
     Sistema sistema = new Sistema();
     public List<Aluno> CadastraAluno(List<Aluno> alunos)
     {
@@ -18,7 +20,10 @@ class Administrador : Pessoa
            
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
             p.Nome = Console.ReadLine();// UPCASTING lê o nome do aluno que é pessoa
-            
+
+            Console.WriteLine("Insira o sexo do aluno: ");
+            newAluno.Sexo = Convert.ToChar(Console.ReadLine());
+
             for (int j = 0; j < 5; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
             {
                 newAluno.Notas[j] = 0;
@@ -35,7 +40,9 @@ class Administrador : Pessoa
 
         int indexMedia = 0;
 
-        foreach (Aluno aluno in alunos) 
+        var alunosOrdenados = alunos.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
+
+            foreach (Aluno aluno in alunosOrdenados) 
         {
 
             double media = aluno.CalculaMedia(alunos, (indexMedia+1)); //para calcular a média é necessário passar a lista e o índice do aluno
@@ -70,8 +77,9 @@ class Administrador : Pessoa
 
             professores.Add(newProf); //adiciona o novo professor na lista professores
         }
+        var professoresOrdenados = professores.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
 
-        foreach (Professor professor in professores)
+        foreach (Professor professor in professoresOrdenados)
         {
 
             escritor.WriteLine(professor.ToString() ); //escreve as informações do professor no file.txt sobrescrevendo o método toString()

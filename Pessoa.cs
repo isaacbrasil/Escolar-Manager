@@ -11,7 +11,10 @@
         get { return nome; }
         set { nome = value; }
     }
-
+    public override int GetHashCode()
+    {
+        return this.Nome.GetHashCode() * 17;
+    }
     public int Idade
     {
         get { return idade; }

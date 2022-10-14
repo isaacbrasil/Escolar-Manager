@@ -3,11 +3,12 @@
     public override string ToString()
     {
 
-        return "Nome: " + Nome + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
+        return "Nome: " + Nome + " | Sexo: "+ Sexo +" | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
     }
     private double[] notas;
     private char turma;
     private string escolaNome;
+    private char sexo;
     public double[] Notas
     {
 
@@ -31,7 +32,13 @@
         set { escolaNome = value; }
 
     }
+    public char Sexo
+    {
 
+        get { return sexo; }
+        set { sexo = value; }
+
+    }
     public Aluno(string nome, double[] notas, char turma, string escolaNome)
     {
         Nome = nome;
@@ -51,6 +58,7 @@
     {
         Console.WriteLine("Nome: " + aluno.Nome);
         Console.WriteLine("Matrícula: " + aluno.Id);
+        Console.WriteLine("Sexo: " + aluno.Sexo);
         Console.Write("Notas: ");
         int indexAluno = 0;
         foreach (var nota in notas)
@@ -69,7 +77,7 @@
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");
         DateTime dataHoje = DateTime.Now;
-        Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ", de matrícula\r\nN° " + aluno.Id + ", está no presente momento de " + dataHoje.ToString("d") + "\r\nmatriculado na Instituição de Ensino " + aluno.EscolaNome + ".");
+        Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ",\r\nde matrícula N° " + aluno.Id + ", está no presente momento de " + dataHoje.ToString("d") + "\r\nmatriculado na Instituição de Ensino " + aluno.EscolaNome + ".");
         Console.WriteLine("");
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");

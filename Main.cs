@@ -5,21 +5,42 @@
     {
         //CLASSE GENERICA
         ClasseGenerica<Aluno> intObj = new ClasseGenerica<Aluno>();
-        intObj.Adicionar(
+       /* intObj.Add(
            new Aluno()
            {
                Nome = "Isaac Brasil Oliveira 2",
                Notas = new double[] { 10, 10, 7, 8, 6 },
                Turma = 'A',
                EscolaNome = "Colégio Visão"
-           });
+           });*/
 
 
         int optionMenu = 1;
+
+        //---------------- Instâncias de Objetos-----------------------
+        Aluno aluno = new Aluno();
+        Sistema sistema = new Sistema();
+        Administrador admin = new Administrador();
+        Funcionario func = new Funcionario();
+
+
+        //---------------- Instâncias de Delegates -----------------------
+        MenuDelegate menuDelegate = new MenuDelegate(sistema.MenuSistema); 
+        MenuDelegate menuOperacaoDelegate = new MenuDelegate(sistema.MenuOperaçãoAdmin); 
+        MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno); 
+        MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf); 
+        MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc);
+
+        OrganizadorGenerico<Aluno> listAlunoOrdenada = new OrganizadorGenerico<Aluno>();
+        OrganizadorGenerico<Professor> listProfOrdenada = new OrganizadorGenerico<Professor>();
+        OrganizadorGenerico<Produto> listCantinaOrdenada = new OrganizadorGenerico<Produto>();
+
+       
         List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
                             {
                                 Nome = "Isaac Brasil Oliveira",
+                                Sexo = 'M',
                                 Notas = new double[] { 10, 10, 7, 8, 6 },
                                 Turma = 'A',
                                 EscolaNome = "Colégio Visão"
@@ -27,18 +48,23 @@
                              new Aluno()
                             {
                                 Nome = "Gabriel Luiz Freitas",
+                                Sexo = 'M',
                                 Notas = new double[]  { 6, 6, 5,3, 10, 9 },
                                 Turma = 'B',
                                 EscolaNome = "Colégio Delta"
                              },
                               new Aluno()
                             {
-                                Nome = "Lucas Neves Pereira",
+                                Nome = "Amanda Christinne Sousa dos Santos",
+                                Sexo = 'F',
                                 Notas = new double[]  { 10, 9, 9, 6, 3 },
                                 Turma = 'C',
                                 EscolaNome = "Colégio WR"
                             }
         };
+
+
+       
         List<Professor> professores = new List<Professor>() {
                             new Professor()
                             {
@@ -72,8 +98,6 @@
         };
         while (optionMenu != 0)
         {
-            Sistema sistema = new Sistema();
-            MenuDelegate menuDelegate = new MenuDelegate(sistema.MenuSistema); // utilizando delegates para chamar os menus
             menuDelegate();
             optionMenu = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
@@ -102,14 +126,12 @@
                         Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR");
                         System.Console.WriteLine("============================================================");
 
-                        Administrador admin = new Administrador();
 
                         int optionOperation = 1;
 
 
                         while (optionOperation != 0)//loop do login do usuario
                         {
-                            MenuDelegate menuOperacaoDelegate = new MenuDelegate(sistema.MenuOperaçãoAdmin); // utilizando delegates para chamar os menus
                             menuOperacaoDelegate();
 
                             optionOperation = Convert.ToInt32(Console.ReadLine());
@@ -188,7 +210,6 @@
                         Console.WriteLine("LOGIN > USUARIOS > ALUNO");
                         System.Console.WriteLine("============================================================");
 
-                        Aluno aluno = new Aluno();
 
 
                         int optionOperation;
@@ -197,7 +218,6 @@
 
                         while (optionOperation != 0)
                         {
-                            MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno); // utilizando delegates para chamar os menus
                             menuAlunoDelegate();
 
                             optionOperation = Convert.ToInt32(Console.ReadLine());
@@ -280,7 +300,6 @@
 
 
                         Professor prof = new Professor();
-                        Administrador admin = new Administrador();
 
 
                         int optionOperation;
@@ -288,7 +307,6 @@
 
                         while (optionOperation != 0)
                         {
-                            MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf); // utilizando delegates para chamar os menus
                             menuProfDelegate();
 
                             optionOperation = Convert.ToInt32(Console.ReadLine());
@@ -400,7 +418,6 @@
                         Console.WriteLine("LOGIN > USUARIOS > FUNCIONARIO");
                         System.Console.WriteLine("============================================================");
 
-                        Funcionario func = new Funcionario();
                         
                         int optionOperation;
 
@@ -409,7 +426,6 @@
 
                         while (optionOperation != 0)
                         {
-                            MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc); // utilizando delegates para chamar os menus
                             menuFuncDelegate();
 
                             optionOperation = Convert.ToInt32(Console.ReadLine());

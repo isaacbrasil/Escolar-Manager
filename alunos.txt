@@ -1,4 +1,4 @@
-Nome: Isaac Brasil Oliveira | Matrícula: 202201502 | Turma: A | Escola: Colégio Visão | Média: 8,2
-Nome: Gabriel Luiz Freitas | Matrícula: 202201503 | Turma: B | Escola: Colégio Delta | Média: 6,5
-Nome: Lucas Neves Pereira | Matrícula: 202201504 | Turma: C | Escola: Colégio WR | Média: 7,4
-Nome: Wilson | Matrícula: 202201511 | Turma: B | Escola: DELTA | Média: 0
+Nome: Amanda Christinne Sousa dos Santos | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: Colégio WR | Média: 8,2
+Nome: Gabriel Luiz Freitas | Sexo: M | Matrícula: 202201505 | Turma: B | Escola: Colégio Delta | Média: 6,5
+Nome: Isaac Brasil Oliveira | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: Colégio Visão | Média: 7,4
+Nome: Luciano Veredas | Sexo: M | Matrícula: 202201511 | Turma: A | Escola: Cortex | Média: 0

@@ -1,23 +1,23 @@
-﻿public class ClasseGenerica<T>
+﻿using System;
+
+public class ClasseGenerica<T>
 {
-    // define um Array do tipo Generic com tamanho 5
-    T[] obj = new T[4];
-    int contador = 0;
-    // adiciona itens ao tipo genérico
-    public void Adicionar(T item)
+    // private data members
+    private T data;
+
+    // using properties
+    public T value
     {
-        //verifica o tamanho
-        if (contador + 1 < 5)
+        // using accessors
+        get
         {
-            obj[contador] = item;
+            return this.data;
         }
-        contador++;
-    }
-    //indexador para a iteração da instrução foreach
-    public T this[int index]
-    {
-        get { return obj[index]; }
-        set { obj[index] = value; }
+        set
+        {
+            this.data = value;
+        }
     }
 }
+
 
