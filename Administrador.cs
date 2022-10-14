@@ -13,10 +13,11 @@ class Administrador : Pessoa
         for (int i = 0; i < numAlunos; i++) //cadastra mais alunos na lista alunos
         {
             Aluno newAluno = new Aluno();
-            Pessoa p = newAluno; //UTILIZANDO UPCAST de classe filha Aluno para Pessoa
+            Pessoa p = newAluno; //UTILIZANDO UPCASTING de classe filha Aluno para Pessoa
 
+           
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
-            p.Nome = Console.ReadLine();// lê o nome do aluno que é pessoa
+            p.Nome = Console.ReadLine();// UPCASTING lê o nome do aluno que é pessoa
             
             for (int j = 0; j < 5; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
             {

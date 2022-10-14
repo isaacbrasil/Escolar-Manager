@@ -68,6 +68,7 @@
         Console.WriteLine("1 - Cadastrar notas alunos");
         Console.WriteLine("2 - Calcular taxa de aprovação");
         Console.WriteLine("3 - Exibir Informações Professor");
+        Console.WriteLine("4 - Testar Downcasting de Professor");
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");
