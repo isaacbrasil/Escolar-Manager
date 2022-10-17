@@ -10,10 +10,13 @@
         set { obj[index] = value; }
     }
 
-    public IOrderedEnumerable<T> Ordena(List<T> lista)
+    public List<T> Ordena(List<T> lista)
     {
-        //var listaOrdenada = lista.OrderBy(n => n); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
-        return lista.OrderBy(n => n);
+        foreach (var n in lista)
+        {
+            Console.WriteLine(lista.OrderBy(n => n));
+        }
+        return lista.OrderBy(n => n).ToList();
     }
 
 

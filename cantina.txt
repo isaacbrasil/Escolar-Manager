@@ -1,2 +1,4 @@
+Produto: AMARGO | Preço: R$ 23
 Produto: OREO | Preço: R$ 3,9
 Produto: RUFFLES | Preço: R$ 5,9
+Produto: ZUMA | Preço: R$ 26
