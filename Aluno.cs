@@ -48,7 +48,6 @@
 
     public void MostraDadosAluno(Aluno aluno)
     {
-        Console.WriteLine("Aluno Hashcode: " + aluno.GetHashCode()); // apagar
         Console.WriteLine("Nome: " + aluno.Nome);
         Console.WriteLine("Matrícula: " + aluno.Id);
         Console.WriteLine("Sexo: " + aluno.Sexo);

@@ -153,7 +153,7 @@ class Administrador : Pessoa
             foreach (Aluno aluno in alunos)
             {
 
-                Console.WriteLine((i + 1) + "-" + aluno.Nome.ToUpper() + " | HASH: " + aluno.GetHashCode()); // APAGAR HASH
+                Console.WriteLine((i + 1) + "-" + aluno.Nome.ToUpper()); 
                 i++;
             }
 
