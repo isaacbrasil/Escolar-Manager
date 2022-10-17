@@ -1,18 +1,18 @@
-﻿class GerenciamentoEscolar 
+﻿class GerenciamentoEscolar
 {
     public delegate void MenuDelegate();
     static void Main(string[] args)
     {
         //CLASSE GENERICA
         ClasseGenerica<Aluno> intObj = new ClasseGenerica<Aluno>();
-       /* intObj.Add(
-           new Aluno()
-           {
-               Nome = "Isaac Brasil Oliveira 2",
-               Notas = new double[] { 10, 10, 7, 8, 6 },
-               Turma = 'A',
-               EscolaNome = "Colégio Visão"
-           });*/
+        /* intObj.Add(
+            new Aluno()
+            {
+                Nome = "Isaac Brasil Oliveira 2",
+                Notas = new double[] { 10, 10, 7, 8, 6 },
+                Turma = 'A',
+                EscolaNome = "Colégio Visão"
+            });*/
 
 
         int optionMenu = 1;
@@ -25,17 +25,17 @@
 
 
         //---------------- Instâncias de Delegates -----------------------
-        MenuDelegate menuDelegate = new MenuDelegate(sistema.MenuSistema); 
-        MenuDelegate menuOperacaoDelegate = new MenuDelegate(sistema.MenuOperaçãoAdmin); 
-        MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno); 
-        MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf); 
+        MenuDelegate menuDelegate = new MenuDelegate(sistema.MenuSistema);
+        MenuDelegate menuOperacaoDelegate = new MenuDelegate(sistema.MenuOperaçãoAdmin);
+        MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno);
+        MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf);
         MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc);
 
         OrganizadorGenerico<Aluno> listAlunoOrdenada = new OrganizadorGenerico<Aluno>();
         OrganizadorGenerico<Professor> listProfOrdenada = new OrganizadorGenerico<Professor>();
         OrganizadorGenerico<Produto> listCantinaOrdenada = new OrganizadorGenerico<Produto>();
 
-       
+
         List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
                             {
@@ -145,10 +145,14 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > CADASTRAR PROFESSORES");
                                 System.Console.WriteLine("============================================================");
-                                admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                admin.MostraProfessores(professores);
+
                                 List<Professor> listaProfessores = admin.CadastraProfessor(professores)!;
                                 professores = listaProfessores;
-                                admin.MostraProfessores(listaProfessores.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraProfessores(listaProfessores.OrderBy(n => n.Nome).ToList());
+                                admin.MostraProfessores(listaProfessores);
+
 
 
 
@@ -158,10 +162,14 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > CADASTRAR ALUNOS");
                                 System.Console.WriteLine("============================================================");
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
                                 List<Aluno> listaAlunos = admin.CadastraAluno(alunos)!;
                                 alunos = listaAlunos;
-                                admin.MostraAlunos(listaAlunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(listaAlunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(listaAlunos);
+
 
 
 
@@ -171,11 +179,13 @@
                                 System.Console.WriteLine("===============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO PROFESSORES");
                                 System.Console.WriteLine("===============================================================");
-                                admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                admin.MostraProfessores(professores);
                                 Console.WriteLine("Insira qual índice do professor a ser deletado: ");
                                 int indexProf = Convert.ToInt32(Console.ReadLine());
                                 admin.DeletaProfessores(professores, indexProf);
-                                admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                admin.MostraProfessores(professores);
+                                //admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
 
 
                             }
@@ -184,11 +194,15 @@
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO ALUNOS");
                                 System.Console.WriteLine("============================================================");
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
                                 Console.WriteLine("Insira qual índice do aluno a ser deletado: ");
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
                                 admin.DeletaAlunos(alunos, indexAluno);
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
 
 
                             }
@@ -197,7 +211,9 @@
                                 System.Console.WriteLine("==================================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > MOSTRAR PROFESSORES CADASTRADOS");
                                 System.Console.WriteLine("==================================================================");
-                                admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                admin.MostraProfessores(professores);
+
 
 
                             }
@@ -206,7 +222,9 @@
                                 System.Console.WriteLine("==============================================================");
                                 Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > MOSTRAR ALUNOS CADASTRADOS");
                                 System.Console.WriteLine("=============================================================");
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
 
 
                             }
@@ -239,7 +257,9 @@
                                 Console.WriteLine("LOGIN > USUARIOS > ALUNO > CALCULAR MÉDIA");
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("Selecione o aluno: ");
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
 
                                 if (indexAluno > 0 && indexAluno <= alunos.Count)
@@ -261,7 +281,9 @@
                                 Console.WriteLine("LOGIN > USUARIOS > ALUNO > EMITIR COMPROVANTE DE MATRÍCULA");
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("Selecione o aluno: ");
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
                                 if (indexAluno > 0 && indexAluno <= alunos.Count)
                                 {
@@ -282,7 +304,9 @@
                                 Console.WriteLine("LOGIN > USUARIOS > ALUNO > EXIBIR INFORMAÇÕES DO ALUNO");
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("Selecione o aluno: ");
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
                                 if (indexAluno > 0 && indexAluno <= alunos.Count)
                                 {
@@ -329,7 +353,9 @@
                                 System.Console.WriteLine("============================================================");
 
                                 Console.WriteLine("Lançar notas de qual aluno?");
-                                admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraAlunos(alunos.OrderBy(n => n.Nome).ToList());
+                                admin.MostraAlunos(alunos);
+
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
                                 int numNotas = 5;
                                 if (indexAluno > 0 && indexAluno <= alunos.Count)
@@ -374,7 +400,9 @@
                                 Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > EXIBIR INFORMAÇÕES DO PROFESSOR");
                                 System.Console.WriteLine("============================================================");
                                 Console.WriteLine("Selecione o professor: ");
-                                admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                //admin.MostraProfessores(professores.OrderBy(n => n.Nome).ToList());
+                                admin.MostraProfessores(professores);
+
                                 int indexProf = Convert.ToInt32(Console.ReadLine());
 
                                 if (indexProf > 0 && indexProf <= professores.Count)
@@ -427,7 +455,7 @@
                         Console.WriteLine("LOGIN > USUARIOS > FUNCIONARIO");
                         System.Console.WriteLine("============================================================");
 
-                        
+
                         int optionOperation;
 
 
@@ -444,7 +472,9 @@
                             if (optionOperation == 1)//cadastra itens na cantina
                             {
 
-                                func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
+                                //func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
+                                func.MostraItensCantina(itensCantina);
+
                                 List<Produto> listaprodutos = func.CadastraItemCantina(itensCantina)!;
                                 itensCantina = listaprodutos;
                                 func.MostraItensCantina(listaprodutos.OrderBy(n => n.NomeAlimento).ToList());
@@ -453,7 +483,9 @@
                             else if (optionOperation == 2)//remove itens da cantina
                             {
 
-                                func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
+                                func.MostraItensCantina(itensCantina);
+
+                                //func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
 
 
                                 Console.WriteLine("Insira qual índice do produto a ser deletado: ");
@@ -470,15 +502,18 @@
 
 
                                 }
-                                func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
+                                func.MostraItensCantina(itensCantina);
+
+                                //func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
 
 
 
                             }
                             else if (optionOperation == 3)
                             {
-                                func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
+                                func.MostraItensCantina(itensCantina);
 
+                                //func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());
                             }
                         }
 

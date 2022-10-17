@@ -1,5 +1,3 @@
-Nome: BINO | Matéria: MATEMÁTICA
 Nome: CHRISTOPHER | Matéria: FILOSOFIA
 Nome: ÉDER | Matéria: BIOLOGIA
 Nome: LUTIANO | Matéria: FÍSICA
-Nome: ZAMBRANO | Matéria: CALCULO 2

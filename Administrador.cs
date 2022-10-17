@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using System.IO;
+using System.Text;
 class Administrador : Pessoa
 {
 
@@ -110,6 +112,7 @@ class Administrador : Pessoa
         if (professores.Count > 0 && indexProf <= professores.Count) // se a lista não for vazia, limpa ela no indice indexProf
         {
             professores.RemoveAt((indexProf - 1));
+
         }
         else if (indexProf > professores.Count)
         {
@@ -219,5 +222,15 @@ class Administrador : Pessoa
         }
         return false;
     }
+    public void DeletaRegistroArquivo(int index)
+    {
+        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"))
+        {
+            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"));
+            file.RemoveAt(index-1);
+            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt", file.ToArray());
+        }
 
+
+    }
 }
