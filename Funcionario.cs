@@ -13,7 +13,7 @@
         {
             Produto newProduto = new Produto();
             Console.WriteLine("Insira o nome do produto: " + (i + 1));
-            newProduto.NomeAlimento = Console.ReadLine();
+            newProduto.NomeAlimento = Console.ReadLine().ToUpper();
             Console.WriteLine("Insira o valor do produto: ");
             newProduto.ValorAlimento = Convert.ToDouble(Console.ReadLine());
 

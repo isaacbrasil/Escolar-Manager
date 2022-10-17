@@ -39,27 +39,27 @@
         List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
                             {
-                                Nome = "Isaac Brasil Oliveira",
+                                Nome = "ISAAC BRASIL OLIVEIRA",
                                 Sexo = 'M',
                                 Notas = new double[] { 10, 10, 7, 8, 6 },
                                 Turma = 'A',
-                                EscolaNome = "Colégio Visão"
+                                EscolaNome = "COLÉGIO VISÃO"
                             },
                              new Aluno()
                             {
-                                Nome = "Gabriel Luiz Freitas",
+                                Nome = "GABRIEL LUIZ FREITAS",
                                 Sexo = 'M',
                                 Notas = new double[]  { 6, 6, 5,3, 10, 9 },
                                 Turma = 'B',
-                                EscolaNome = "Colégio Delta"
+                                EscolaNome = "COLÉGIO DELTA"
                              },
                               new Aluno()
                             {
-                                Nome = "Amanda Christinne Sousa dos Santos",
+                                Nome = "AMANDA CHRISTINNE SOUSA DOS SANTOS",
                                 Sexo = 'F',
                                 Notas = new double[]  { 10, 9, 9, 6, 3 },
                                 Turma = 'C',
-                                EscolaNome = "Colégio WR"
+                                EscolaNome = "COLÉGIO WR"
                             }
         };
 
@@ -68,33 +68,33 @@
         List<Professor> professores = new List<Professor>() {
                             new Professor()
                             {
-                                Nome = "Lutiano",
+                                Nome = "LUTIANO",
                                 Sexo = 'M',
-                                Materia = "Física"
+                                Materia = "FÍSICA"
                             },
                              new Professor()
                             {
-                                Nome = "Éder",
+                                Nome = "ÉDER",
                                 Sexo = 'M',
-                                Materia = "Biologia"
+                                Materia = "BIOLOGIA"
                              },
                               new Professor()
                             {
-                                Nome = "Christopher",
+                                Nome = "CHRISTOPHER",
                                 Sexo = 'M',
-                                Materia = "Filosofia"
+                                Materia = "FILOSOFIA"
                             }
         };
         List<Produto> itensCantina = new List<Produto>() {
                             new Produto()
                             {
-                                NomeAlimento = "Ruffles",
+                                NomeAlimento = "RUFFLES",
                                 ValorAlimento = 5.9
 
                             },
                              new Produto()
                             {
-                                NomeAlimento = "Oreo",
+                                NomeAlimento = "OREO",
                                 ValorAlimento = 3.9
 
                             }

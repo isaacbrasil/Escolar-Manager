@@ -3,7 +3,7 @@
     public override string ToString()
     {
 
-        return "Nome: " + Nome + " | Sexo: "+ Sexo +" | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
+        return "Nome: " + Nome.ToUpper() + " | Sexo: "+ Sexo + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome.ToUpper() + " | Média: ";
     }
     private double[] notas;
     private char turma;
@@ -48,6 +48,7 @@
 
     public void MostraDadosAluno(Aluno aluno)
     {
+        Console.WriteLine("Aluno Hashcode: " + aluno.GetHashCode()); // apagar
         Console.WriteLine("Nome: " + aluno.Nome);
         Console.WriteLine("Matrícula: " + aluno.Id);
         Console.WriteLine("Sexo: " + aluno.Sexo);

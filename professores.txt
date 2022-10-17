@@ -1,4 +1,4 @@
-Nome: Christopher | Matéria: Filosofia
-Nome: Éder | Matéria: Biologia
-Nome: Luciano | Matéria: Biologia
-Nome: Lutiano | Matéria: Física
+Nome: ANTÔNIO BRUNO | Matéria: LITERATURA
+Nome: CHRISTOPHER | Matéria: FILOSOFIA
+Nome: ÉDER | Matéria: BIOLOGIA
+Nome: LUTIANO | Matéria: FÍSICA

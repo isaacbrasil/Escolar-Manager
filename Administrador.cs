@@ -19,30 +19,39 @@ class Administrador : Pessoa
 
            
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
-            p.Nome = Console.ReadLine();// UPCASTING lê o nome do aluno que é pessoa
+            p.Nome = Console.ReadLine().ToUpper();// UPCASTING lê o nome do aluno que é pessoa
 
-            Console.WriteLine("Insira o sexo do aluno(F/M): ");
-            newAluno.Sexo = Convert.ToChar(Console.ReadLine());
-
-            for (int j = 0; j < 5; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
-            {
-                newAluno.Notas[j] = 0;
+            int hash = p.Nome.GetHashCode(); 
+            object objHash = hash; //boxing do hash para permissão de utilizar no Contains
+            if (alunos.Contains(objHash)) { 
+                Console.WriteLine("Aluno já cadastrado.");
             }
+            else
+            {
+                Console.WriteLine("Insira o sexo do aluno(F/M): ");
+                newAluno.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
 
-            Console.WriteLine("Insira a Turma do aluno: ");
-            newAluno.Turma = Convert.ToChar(Console.ReadLine());
+                for (int j = 0; j < 5; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
+                {
+                    newAluno.Notas[j] = 0;
+                }
 
-            Console.WriteLine("Insira a Escola do aluno: ");
-            newAluno.EscolaNome = Console.ReadLine();
+                Console.WriteLine("Insira a Turma do aluno: ");
+                newAluno.Turma = Convert.ToChar(Console.ReadLine().ToUpper());
 
-            alunos.Add(newAluno); //adiciona o novo aluno na lista alunos
+                Console.WriteLine("Insira a Escola do aluno: ");
+                newAluno.EscolaNome = Console.ReadLine().ToUpper();
+
+                alunos.Add(newAluno); //adiciona o novo aluno na lista alunos
+            }
         }
 
         int indexMedia = 0;
 
         var alunosOrdenados = alunos.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
 
-            foreach (Aluno aluno in alunosOrdenados) 
+
+        foreach (Aluno aluno in alunosOrdenados) 
         {
 
             double media = aluno.CalculaMedia(alunos, (indexMedia+1)); //para calcular a média é necessário passar a lista e o índice do aluno
@@ -70,10 +79,10 @@ class Administrador : Pessoa
         {
             Professor newProf = new Professor();
             Console.WriteLine("Insira o nome do professor: " + (i + 1));
-            newProf.Nome = Console.ReadLine();
+            newProf.Nome = Console.ReadLine().ToUpper();
 
             Console.WriteLine("Insira a matéria do professor " + newProf.Nome + ": ");
-            newProf.Materia = Console.ReadLine();
+            newProf.Materia = Console.ReadLine().ToUpper();
 
             professores.Add(newProf); //adiciona o novo professor na lista professores
         }
@@ -139,7 +148,6 @@ class Administrador : Pessoa
     public void MostraAlunos(List<Aluno> alunos)
     {
         Console.WriteLine("");
-
         if (alunos.Count > 0)
         {
             Console.WriteLine("Alunos: \r\n");
@@ -147,7 +155,7 @@ class Administrador : Pessoa
             foreach (Aluno aluno in alunos)
             {
 
-                Console.WriteLine((i + 1) + "-" + aluno.Nome);
+                Console.WriteLine((i + 1) + "-" + aluno.Nome.ToUpper() + " | HASH: " + aluno.GetHashCode()); // APAGAR HASH
                 i++;
             }
 
@@ -173,7 +181,7 @@ class Administrador : Pessoa
             int i = 0;
             foreach (Professor professor in professores)
             {
-                Console.WriteLine((i + 1) + "-" + professor.Nome);
+                Console.WriteLine((i + 1) + "-" + professor.Nome.ToUpper());
                 i++;
 
             }

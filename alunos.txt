@@ -1,4 +1,4 @@
-Nome: Amanda Christinne Sousa dos Santos | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: Colégio WR | Média: 8,2
-Nome: Gabriel Luiz Freitas | Sexo: M | Matrícula: 202201505 | Turma: B | Escola: Colégio Delta | Média: 6,5
-Nome: Isaac Brasil Oliveira | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: Colégio Visão | Média: 7,4
-Nome: Maria Eduarda Melo Fontoura | Sexo: F | Matrícula: 202201511 | Turma: A | Escola: Visão | Média: 0
+Nome: AMANDA CHRISTINNE SOUSA DOS SANTOS | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: COLÉGIO WR | Média: 8,2
+Nome: GABRIEL LUIZ FREITAS | Sexo: M | Matrícula: 202201505 | Turma: B | Escola: COLÉGIO DELTA | Média: 6,5
+Nome: ISAAC BRASIL OLIVEIRA | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: COLÉGIO VISÃO | Média: 7,4
+Nome: JOÃO LUIZ CASTELO BRANCO | Sexo: M | Matrícula: 202201511 | Turma: B | Escola: ELO | Média: 0
