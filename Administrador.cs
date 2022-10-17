@@ -1,13 +1,14 @@
 ﻿using System.Linq;
 class Administrador : Pessoa
 {
-    
+
 
     Sistema sistema = new Sistema();
     public List<Aluno> CadastraAluno(List<Aluno> alunos)
     {
         Console.WriteLine("Digite a quantidade de alunos que quer cadastrar:");
         int numAlunos = Convert.ToInt32(Console.ReadLine());
+        int numNotas = 5;
         Console.Clear();
 
         TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt");
@@ -17,33 +18,25 @@ class Administrador : Pessoa
             Aluno newAluno = new Aluno();
             Pessoa p = newAluno; //UTILIZANDO UPCASTING de classe filha Aluno para Pessoa
 
-           
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
             p.Nome = Console.ReadLine().ToUpper();// UPCASTING lê o nome do aluno que é pessoa
 
-            int hash = p.Nome.GetHashCode(); 
-            object objHash = hash; //boxing do hash para permissão de utilizar no Contains
-            if (alunos.Contains(objHash)) { 
-                Console.WriteLine("Aluno já cadastrado.");
-            }
-            else
+            Console.WriteLine("Insira o sexo do aluno(F/M): ");
+            newAluno.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
+
+            for (int j = 0; j < numNotas; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
             {
-                Console.WriteLine("Insira o sexo do aluno(F/M): ");
-                newAluno.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
-
-                for (int j = 0; j < 5; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
-                {
-                    newAluno.Notas[j] = 0;
-                }
-
-                Console.WriteLine("Insira a Turma do aluno: ");
-                newAluno.Turma = Convert.ToChar(Console.ReadLine().ToUpper());
-
-                Console.WriteLine("Insira a Escola do aluno: ");
-                newAluno.EscolaNome = Console.ReadLine().ToUpper();
-
-                alunos.Add(newAluno); //adiciona o novo aluno na lista alunos
+                newAluno.Notas[j] = 0;
             }
+
+            Console.WriteLine("Insira a Turma do aluno: ");
+            newAluno.Turma = Convert.ToChar(Console.ReadLine().ToUpper());
+
+            Console.WriteLine("Insira a Escola do aluno: ");
+            newAluno.EscolaNome = Console.ReadLine().ToUpper();
+
+            alunos.Add(newAluno); //adiciona o novo aluno na lista alunos
+
         }
 
         int indexMedia = 0;
@@ -51,16 +44,16 @@ class Administrador : Pessoa
         var alunosOrdenados = alunos.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
 
 
-        foreach (Aluno aluno in alunosOrdenados) 
+        foreach (Aluno aluno in alunosOrdenados)
         {
 
-            double media = aluno.CalculaMedia(alunos, (indexMedia+1)); //para calcular a média é necessário passar a lista e o índice do aluno
+            double media = aluno.CalculaMedia(alunos, (indexMedia + 1)); //para calcular a média é necessário passar a lista e o índice do aluno
             escritor.WriteLine(aluno.ToString() + media); //escreve as informações do aluno no file.txt sobrescrevendo o método toString()
             indexMedia++;
 
         }
 
-        sistema.MensagemSucesso();
+        //sistema.MensagemSucesso();
         escritor.Close();
 
         return alunos;
@@ -91,7 +84,7 @@ class Administrador : Pessoa
         foreach (Professor professor in professoresOrdenados)
         {
 
-            escritor.WriteLine(professor.ToString() ); //escreve as informações do professor no file.txt sobrescrevendo o método toString()
+            escritor.WriteLine(professor.ToString()); //escreve as informações do professor no file.txt sobrescrevendo o método toString()
 
         }
 

@@ -160,7 +160,7 @@
                                 admin.MostraAlunos(alunos);
                                 List<Aluno> listaAlunos = admin.CadastraAluno(alunos)!;
                                 alunos = listaAlunos;
-                                admin.MostraAlunos(listaAlunos);
+                                admin.MostraAlunos(alunos);
 
 
                             }
@@ -325,11 +325,11 @@
                                 Console.WriteLine("Lançar notas de qual aluno?");
                                 admin.MostraAlunos(alunos);
                                 int indexAluno = Convert.ToInt32(Console.ReadLine());
-
+                                int numNotas = 5;
                                 if (indexAluno > 0 && indexAluno <= alunos.Count)
                                 {
                                     Console.WriteLine($"Insira as 5 notas de {alunos[(indexAluno - 1)].Nome}: ");
-                                    for (int j = 0; j < 5; j++)
+                                    for (int j = 0; j < numNotas; j++)
                                     {
                                         alunos[(indexAluno - 1)].Notas[j] = Convert.ToDouble(Console.ReadLine()); // ver como cadastrar notas alunos
 
