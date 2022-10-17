@@ -85,6 +85,7 @@
         Console.WriteLine("");
         Console.WriteLine("1 - Cadastrar alimento cantina");
         Console.WriteLine("2 - Remover alimento cantina");
+        Console.WriteLine("3 - Mostrar alimentos cantina");
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");

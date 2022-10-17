@@ -3,7 +3,7 @@
     public override string ToString()
     {
 
-        return "Nome: " + Nome.ToUpper() + " | Sexo: "+ Sexo + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome.ToUpper() + " | Média: ";
+        return "Nome: " + Nome + " | Sexo: "+ Sexo + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
     }
     private double[] notas;
     private char turma;

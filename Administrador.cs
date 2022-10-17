@@ -109,7 +109,6 @@ class Administrador : Pessoa
 
         if (professores.Count > 0 && indexProf <= professores.Count) // se a lista não for vazia, limpa ela no indice indexProf
         {
-            Console.WriteLine("Insira qual índice do professor a ser deletado: ");
             professores.RemoveAt((indexProf - 1));
         }
         else if (indexProf > professores.Count)
@@ -130,7 +129,6 @@ class Administrador : Pessoa
 
         if (alunos.Count > 0 && indexAluno <= alunos.Count) // se a lista não for vazia, limpa ela no indice indexAluno
         {
-            Console.WriteLine("Insira qual índice do aluno a ser deletado: ");
             alunos.RemoveAt((indexAluno - 1));
 
         }

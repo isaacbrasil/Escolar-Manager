@@ -468,7 +468,7 @@
                             }
                             else if (optionOperation == 3)
                             {
-                                Console.WriteLine("Opção " + optionOperation + " do usuário " + p.TipoUsuario);
+                                func.MostraItensCantina(itensCantina);
                             }
                         }
 
