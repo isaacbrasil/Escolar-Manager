@@ -21,7 +21,7 @@
         System.Console.WriteLine("1 - Admin");
         System.Console.WriteLine("2 - Aluno");
         System.Console.WriteLine("3 - Professor");
-        System.Console.WriteLine("4 - Funcionario");
+        System.Console.WriteLine("4 - Funcionário");
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
 
