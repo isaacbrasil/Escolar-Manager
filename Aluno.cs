@@ -77,7 +77,15 @@
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");
         DateTime dataHoje = DateTime.Now;
-        Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ",\r\nde matrícula N° " + aluno.Id + ", está no presente momento de " + dataHoje.ToString("d") + "\r\nmatriculado na Instituição de Ensino " + aluno.EscolaNome + ".");
+        if (aluno.Sexo.ToString().Equals("M")) //UTILIZO EQUALS PARA VALIDAR SEXO DO ALUNO
+        {
+            Console.WriteLine("Atestamos que o aluno " + aluno.Nome + ",\r\nde matrícula N° " + aluno.Id + ", está no presente momento de\r\n" + dataHoje.ToString("d") + " matriculado na Instituição de Ensino " + aluno.EscolaNome + ".");
+        }
+        else
+        {
+            Console.WriteLine("Atestamos que a aluna " + aluno.Nome + ",\r\nde matrícula N° " + aluno.Id + ", está no presente momento de\r\n" + dataHoje.ToString("d") + " matriculada na Instituição de Ensino " + aluno.EscolaNome + ".");
+
+        }
         Console.WriteLine("");
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");

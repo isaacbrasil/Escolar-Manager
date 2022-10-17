@@ -20,7 +20,10 @@
             produtos.Add(newProduto);
         }
 
-        foreach (Produto produto in produtos)
+        var itensOrdenados = produtos.OrderBy(n => n.NomeAlimento); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
+
+
+        foreach (Produto produto in itensOrdenados)
         {
 
             escritor.WriteLine(produto.ToString());

@@ -21,7 +21,7 @@ class Administrador : Pessoa
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
             p.Nome = Console.ReadLine();// UPCASTING lê o nome do aluno que é pessoa
 
-            Console.WriteLine("Insira o sexo do aluno: ");
+            Console.WriteLine("Insira o sexo do aluno(F/M): ");
             newAluno.Sexo = Convert.ToChar(Console.ReadLine());
 
             for (int j = 0; j < 5; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
