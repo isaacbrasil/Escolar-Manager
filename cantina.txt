@@ -1,3 +1,2 @@
-Produto: BIS | Preço: R$ 2,5
 Produto: OREO | Preço: R$ 3,9
 Produto: RUFFLES | Preço: R$ 5,9

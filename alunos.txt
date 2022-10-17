@@ -1,6 +1,6 @@
 Nome: AMANDA CHRISTINNE SOUSA DOS SANTOS | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: COLÉGIO WR | Média: 8,2
 Nome: GABRIEL LUIZ FREITAS | Sexo: M | Matrícula: 202201505 | Turma: B | Escola: COLÉGIO DELTA | Média: 6,5
-Nome: ISAAC BRASIL OLIVEIRA | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: COLÉGIO VISÃO | Média: 7,4
-Nome: LUIZ OLIVEIRA | Sexo: M | Matrícula: 202201511 | Turma: A | Escola: DELTA | Média: 0
-Nome: LUIZ OLIVEIRA | Sexo: M | Matrícula: 202201512 | Turma: A | Escola: DELTA | Média: 0
-Nome: LUIZ OLIVEIRA | Sexo: M | Matrícula: 202201513 | Turma: A | Escola: DELTA | Média: 0
+Nome: HERMANOTEU | Sexo: M | Matrícula: 202201515 | Turma: A | Escola: DELTA | Média: 7,4
+Nome: ISAAC BRASIL OLIVEIRA | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: COLÉGIO VISÃO | Média: 0
+Nome: LUCIANO FARIAS | Sexo: M | Matrícula: 202201516 | Turma: A | Escola: BILBO | Média: 0
+Nome: LUCIO MENEZES | Sexo: M | Matrícula: 202201512 | Turma: A | Escola: DELTA | Média: 0

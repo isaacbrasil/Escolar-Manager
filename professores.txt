@@ -1,4 +1,4 @@
-Nome: ANTÔNIO BRUNO | Matéria: LITERATURA
 Nome: CHRISTOPHER | Matéria: FILOSOFIA
+Nome: EDER | Matéria: BIOLOGIA
 Nome: ÉDER | Matéria: BIOLOGIA
 Nome: LUTIANO | Matéria: FÍSICA

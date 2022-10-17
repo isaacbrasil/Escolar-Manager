@@ -2,7 +2,6 @@
 class Administrador : Pessoa
 {
 
-
     Sistema sistema = new Sistema();
     public List<Aluno> CadastraAluno(List<Aluno> alunos)
     {
@@ -21,7 +20,12 @@ class Administrador : Pessoa
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
             p.Nome = Console.ReadLine().ToUpper();// UPCASTING lê o nome do aluno que é pessoa
 
-            Console.WriteLine("Insira o sexo do aluno(F/M): ");
+            if(ChecaExistenciaAluno(alunos, p.Nome.GetHashCode()))
+            {
+                break;
+            }
+
+            Console.WriteLine("Insira o sexo do aluno (F/M): ");
             newAluno.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
 
             for (int j = 0; j < numNotas; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
@@ -53,7 +57,7 @@ class Administrador : Pessoa
 
         }
 
-        //sistema.MensagemSucesso();
+        sistema.MensagemSucesso();
         escritor.Close();
 
         return alunos;
@@ -73,13 +77,16 @@ class Administrador : Pessoa
             Professor newProf = new Professor();
             Console.WriteLine("Insira o nome do professor: " + (i + 1));
             newProf.Nome = Console.ReadLine().ToUpper();
-
+            if (ChecaExistenciaProf(professores, newProf.Nome.GetHashCode()))
+            {
+                break;
+            }
             Console.WriteLine("Insira a matéria do professor " + newProf.Nome + ": ");
             newProf.Materia = Console.ReadLine().ToUpper();
 
             professores.Add(newProf); //adiciona o novo professor na lista professores
         }
-        var professoresOrdenados = professores.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
+        var professoresOrdenados = professores.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de professores
 
         foreach (Professor professor in professoresOrdenados)
         {
@@ -184,6 +191,33 @@ class Administrador : Pessoa
         }
         Console.WriteLine("");
 
+    }
+
+
+    public bool ChecaExistenciaAluno(List<Aluno> alunos, int hashNome) // checa se já existe um hashcode na lista alunos
+    {
+        foreach (Aluno aluno in alunos) {
+            int hash = aluno.Nome.GetHashCode();
+            if(hash == hashNome)
+            {
+                Console.WriteLine("Esse aluno já existe no registro");
+                return true;
+            }
+        }
+        return false;
+    }
+    public bool ChecaExistenciaProf(List<Professor> professores, int hashNome) // checa se já existe um hashcode na lista professores
+    {
+        foreach (Professor prof in professores)
+        {
+            int hash = prof.Nome.GetHashCode();
+            if (hash == hashNome)
+            {
+                Console.WriteLine("Esse professor já existe no registro");
+                return true;
+            }
+        }
+        return false;
     }
 
 }

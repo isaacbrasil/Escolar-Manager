@@ -14,6 +14,10 @@
             Produto newProduto = new Produto();
             Console.WriteLine("Insira o nome do produto: " + (i + 1));
             newProduto.NomeAlimento = Console.ReadLine().ToUpper();
+            if (ChecaExistenciaProduto(produtos, newProduto.NomeAlimento.GetHashCode()))
+            {
+                break;
+            }
             Console.WriteLine("Insira o valor do produto: ");
             newProduto.ValorAlimento = Convert.ToDouble(Console.ReadLine());
 
@@ -79,6 +83,21 @@
         Console.WriteLine("");
 
     }
+
+    public bool ChecaExistenciaProduto(List<Produto> produtos, int hashNome) // checa se já existe um hashcode na lista alunos
+    {
+        foreach (Produto produto in produtos)
+        {
+            int hash = produto.NomeAlimento.GetHashCode();
+            if (hash == hashNome)
+            {
+                Console.WriteLine("Esse produto já existe no registro");
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
 
