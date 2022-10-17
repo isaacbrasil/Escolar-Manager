@@ -8,7 +8,6 @@
     private double[] notas;
     private char turma;
     private string escolaNome;
-    private char sexo;
     public double[] Notas
     {
 
@@ -32,14 +31,7 @@
         set { escolaNome = value; }
 
     }
-    public char Sexo
-    {
-
-        get { return sexo; }
-        set { sexo = value; }
-
-    }
-    public Aluno(string nome, double[] notas, char turma, string escolaNome)
+     public Aluno(string nome, double[] notas, char turma, string escolaNome)
     {
         Nome = nome;
         this.notas = notas;

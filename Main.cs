@@ -69,16 +69,19 @@
                             new Professor()
                             {
                                 Nome = "Lutiano",
+                                Sexo = 'M',
                                 Materia = "Física"
                             },
                              new Professor()
                             {
                                 Nome = "Éder",
+                                Sexo = 'M',
                                 Materia = "Biologia"
                              },
                               new Professor()
                             {
                                 Nome = "Christopher",
+                                Sexo = 'M',
                                 Materia = "Filosofia"
                             }
         };

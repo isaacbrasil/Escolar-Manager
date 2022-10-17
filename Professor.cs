@@ -39,6 +39,7 @@
     public void MostraDadosProfessor(Professor professor)
     {
         Console.WriteLine("Nome: " + professor.Nome);
+        Console.WriteLine("Sexo: " + professor.Sexo);
         Console.WriteLine("Id: " + professor.Id);
         Console.WriteLine("Matéria: " + professor.Materia);
 

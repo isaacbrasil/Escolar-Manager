@@ -2,6 +2,7 @@
 {
     private string nome;
     private int idade;
+    private char sexo;
     private int id;
     private string tipoUsuario;
     private string senha;
@@ -10,6 +11,11 @@
     {
         get { return nome; }
         set { nome = value; }
+    }
+    public char Sexo
+    {
+        get { return sexo; }
+        set { sexo = value; }
     }
     public override int GetHashCode()
     {
