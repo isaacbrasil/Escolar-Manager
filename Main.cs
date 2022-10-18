@@ -123,7 +123,6 @@
 
                 if (optionMenu == 1)
                 {
-                    Pessoa p = new Pessoa();
                     int optionUser = 1;
 
                     while (optionUser != 0)//loop do login do sistema
@@ -138,7 +137,6 @@
 
                         if (optionUser == 1)
                         {
-                            p.TipoUsuario = "Admin";
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR");
                             System.Console.WriteLine("============================================================");
@@ -236,7 +234,6 @@
                         }
                         else if (optionUser == 2)
                         {
-                            p.TipoUsuario = "Aluno";
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > ALUNO");
                             System.Console.WriteLine("============================================================");
@@ -311,7 +308,7 @@
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
                                     if (indexAluno > 0 && indexAluno <= alunos.Count)
                                     {
-                                        aluno.MostraDadosAluno(alunos[(indexAluno - 1)]);
+                                        aluno.MostraDados(alunos[(indexAluno - 1)]);
                                     }
                                     else
                                     {
@@ -327,7 +324,6 @@
                         }
                         else if (optionUser == 3)
                         {
-                            p.TipoUsuario = "Professor";
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > PROFESSOR");
                             System.Console.WriteLine("============================================================");
@@ -406,7 +402,7 @@
 
                                     if (indexProf > 0 && indexProf <= professores.Count)
                                     {
-                                        prof.MostraDadosProfessor(professores[(indexProf - 1)]);
+                                        prof.MostraDados(professores[(indexProf - 1)]);
 
                                     }
                                     else
@@ -425,18 +421,18 @@
                                     System.Console.WriteLine("==============================================================");
 
 
-                                    Pessoa p2 = new Pessoa();
-                                    Professor newProf = p2 as Professor; // UTILIZANDO DOWNCASTING Pessoa para Professor
+                                   /* Pessoa p2 = new Pessoa();
+                                    Professor newProf = p2 as Professor; // UTILIZANDO DOWNCASTING Pessoa para Professor*/
 
                                     Console.WriteLine("Código para teste do Downcasting\r\n");
-                                    Console.WriteLine("Professor prof2 = new Professor();\r\nPessoa p3 = prof2;\r\n\r\nif(p3 is Professor){\r\n((Professor)p3).MostraDadosProfessor(professores[0]);\r\n}\r\nelse{\r\nConsole.WriteLine('Operação de downcast inválida');\r\n}");
+                                    Console.WriteLine("Professor prof2 = new Professor();\r\nPessoa p3 = prof2;\r\n\r\nif(p3 is Professor){\r\n((Professor)p3).MostraDados(professores[0]);\r\n}\r\nelse{\r\nConsole.WriteLine('Operação de downcast inválida');\r\n}");
                                     Console.WriteLine("");
                                     Professor prof2 = new Professor();
                                     Pessoa p3 = prof2;
 
                                     if (p3 is Professor)
                                     {
-                                        ((Professor)p3).MostraDadosProfessor(professores[0]);
+                                        ((Professor)p3).MostraDados(professores[0]);
                                         Console.WriteLine("\r\nDowncasting realizado com sucesso!");
                                     }
                                     else
@@ -453,7 +449,6 @@
                         }
                         else if (optionUser == 4) //opcao de escolher usuario
                         {
-                            p.TipoUsuario = "Funcionario";
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > FUNCIONARIO");
                             System.Console.WriteLine("============================================================");

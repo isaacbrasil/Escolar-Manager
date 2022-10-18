@@ -1,7 +1,6 @@
 ﻿public class Aluno : Pessoa
 {   
-    Pessoa p
-    Aluno aluno = (Aluno)
+    
     public override string ToString()
     {
 

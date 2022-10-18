@@ -46,16 +46,16 @@
         this.id = Pessoa.numero;
     }
 
-    /*public virtual void MostraDados()
+    public virtual void MostraDados(Pessoa pessoa)
     {
         System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Nome: " + nome);
-        Console.WriteLine("Idade: " + idade);
-        Console.WriteLine("Id: " + id);
+        Console.WriteLine("Nome: " + pessoa.Nome);
+        Console.WriteLine("Idade: " + pessoa.Idade) ;
+        Console.WriteLine("Id: " + pessoa.Id);
         System.Console.WriteLine("------------------------------------------------------------");
 
-    }*/
-    public abstract void MostraDados(Pessoa pessoa);
+    }
+
     public virtual void MenuOperação()
     {
         Console.WriteLine("Qual operação você deseja realizar ?");
