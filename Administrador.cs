@@ -116,11 +116,11 @@ class Administrador : Pessoa
         else if (indexProf > professores.Count)
         {
 
-            Console.WriteLine("Insira um índice válido");
+            Console.WriteLine("Insira um índice válido!");
         }
         else
         {
-            Console.WriteLine("Nenhum professor cadastrado");
+            Console.WriteLine("Nenhum professor cadastrado.");
 
         }
 
@@ -139,11 +139,11 @@ class Administrador : Pessoa
         else if (indexAluno > alunos.Count)
         {
 
-            Console.WriteLine("Insira um índice válido");
+            Console.WriteLine("Insira um índice válido!");
         }
         else
         {
-            Console.WriteLine("Nenhum aluno cadastrado");
+            Console.WriteLine("Nenhum aluno cadastrado.");
         }
     }
 
