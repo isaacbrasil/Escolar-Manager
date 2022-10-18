@@ -81,7 +81,8 @@ class Administrador : Pessoa
             }
             Console.WriteLine("Insira a matéria do professor " + newProf.Nome + ": ");
             newProf.Materia = Console.ReadLine().ToUpper();
-
+            Console.WriteLine("Insira o sexo do professor (F/M): ");
+            newProf.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
             professores.Add(newProf); //adiciona o novo professor na lista professores
         }
 

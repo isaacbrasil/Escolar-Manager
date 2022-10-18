@@ -368,8 +368,6 @@
                                     else
                                     {
                                         Console.WriteLine("Insira um índice válido.");
-
-
                                     }
 
 
@@ -414,34 +412,7 @@
 
 
                                 }
-                                else if (optionOperation == 4) //exibe informações do professor
-                                {
-                                    System.Console.WriteLine("==============================================================");
-                                    Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > TESTAR DOWNCASTING DE PROFESSOR");
-                                    System.Console.WriteLine("==============================================================");
-
-
-                                   /* Pessoa p2 = new Pessoa();
-                                    Professor newProf = p2 as Professor; // UTILIZANDO DOWNCASTING Pessoa para Professor*/
-
-                                    Console.WriteLine("Código para teste do Downcasting\r\n");
-                                    Console.WriteLine("Professor prof2 = new Professor();\r\nPessoa p3 = prof2;\r\n\r\nif(p3 is Professor){\r\n((Professor)p3).MostraDados(professores[0]);\r\n}\r\nelse{\r\nConsole.WriteLine('Operação de downcast inválida');\r\n}");
-                                    Console.WriteLine("");
-                                    Professor prof2 = new Professor();
-                                    Pessoa p3 = prof2;
-
-                                    if (p3 is Professor)
-                                    {
-                                        ((Professor)p3).MostraDados(professores[0]);
-                                        Console.WriteLine("\r\nDowncasting realizado com sucesso!");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Operação de downcast inválida");
-                                    }
-                                    Console.WriteLine("");
-                                }
-                                else if(optionOperation == 5)
+                                else if (optionOperation == 4)
                                 {
                                     prof.MostraEstatisticaTurma(alunos);
                                 }
@@ -453,9 +424,7 @@
                             Console.WriteLine("LOGIN > USUARIOS > FUNCIONARIO");
                             System.Console.WriteLine("============================================================");
 
-
                             int optionOperation;
-
 
                             optionOperation = 1;
 
