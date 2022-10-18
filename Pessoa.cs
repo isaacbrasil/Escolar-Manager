@@ -1,4 +1,4 @@
-﻿public class Pessoa
+﻿public abstract class Pessoa
 {
     private string nome;
     private int idade;
@@ -17,7 +17,7 @@
     }
     public override int GetHashCode()
     {
-        return this.Nome.GetHashCode() * 17;
+        return this.Nome.GetHashCode() * 17; //multiplica o hashcode por um número primo para diminuir colisões
     }
     public int Idade
     {
@@ -46,18 +46,16 @@
         this.id = Pessoa.numero;
     }
 
-    public virtual void MostraDados()
+    /*public virtual void MostraDados()
     {
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("Nome: " + nome);
         Console.WriteLine("Idade: " + idade);
         Console.WriteLine("Id: " + id);
-        Console.WriteLine("Usuário: " + tipoUsuario);
         System.Console.WriteLine("------------------------------------------------------------");
 
-    }
-
-
+    }*/
+    public abstract void MostraDados(Pessoa pessoa);
     public virtual void MenuOperação()
     {
         Console.WriteLine("Qual operação você deseja realizar ?");
