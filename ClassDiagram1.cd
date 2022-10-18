@@ -3,12 +3,12 @@
   <Class Name="Administrador">
     <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAgAAAAIQAAAAAAAAQAAAAAAIAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAgAAAAIQACAAAAAAQBAAAAAIAEAYAAAAAA=</HashCode>
       <FileName>Administrador.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Aluno">
-    <Position X="8" Y="5.75" Width="1.5" />
+    <Position X="8" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAgAAAAAAgAIEQAACAAACIAAAIAAAAAAAAAAAAAI=</HashCode>
       <FileName>Aluno.cs</FileName>
@@ -17,14 +17,14 @@
   <Class Name="Funcionario">
     <Position X="5.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAAAAQABAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAQABABQAAAAAAAACACAAAAAA=</HashCode>
       <FileName>Funcionario.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GerenciamentoEscolar">
+  <Class Name="CSharp_ExtensionsMethods.GerenciamentoEscolar">
     <Position X="11" Y="1.75" Width="1.5" />
     <NestedTypes>
-      <Delegate Name="GerenciamentoEscolar.MenuDelegate" Collapsed="true">
+      <Delegate Name="CSharp_ExtensionsMethods.GerenciamentoEscolar.MenuDelegate" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Main.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -38,7 +38,7 @@
   <Class Name="Pessoa">
     <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQACEAAIABAAAAAAAAIgIAAAICAAAAAAAAEAAAEAAgA=</HashCode>
+      <HashCode>AQACEAAIABCAAAAAgAIgIAAAICAAAIAAAAEAAAEAAgA=</HashCode>
       <FileName>Pessoa.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +59,7 @@
   <Class Name="Produto">
     <Position X="13.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAgAAAAAkAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAgAAAAAkAAAAIAABAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Produto.cs</FileName>
     </TypeIdentifier>
   </Class>

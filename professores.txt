@@ -1,4 +1,2 @@
-Nome: CHRISTOPHER | Matéria: FILOSOFIA
-Nome: EDER | Matéria: BIOLOGIA
-Nome: ÉDER | Matéria: BIOLOGIA
 Nome: LUTIANO | Matéria: FÍSICA
+Nome: CHRISTOPHER | Matéria: FILOSOFIA

@@ -1,6 +1,6 @@
-﻿class Sistema
+﻿public class Sistema
 {
-    //CLASSE SISTEMA CRIADA PARA UTILIZAÇÃO DA NOÇÃO DRY(HERANÇA) - DON'T REPEAT YOURSELF
+    //CLASSE SISTEMA CRIADA PARA UTILIZAÇÃO DA NOÇÃO DRY - DON'T REPEAT YOURSELF
     public void MenuSistema()
     {
         System.Console.WriteLine("------------------------------------------------------------");
@@ -86,6 +86,7 @@
         Console.WriteLine("1 - Cadastrar alimento cantina");
         Console.WriteLine("2 - Remover alimento cantina");
         Console.WriteLine("3 - Mostrar alimentos da cantina");
+        Console.WriteLine("4 - Calcular caixa da cantina");
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
         Console.WriteLine("");

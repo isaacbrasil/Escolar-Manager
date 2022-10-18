@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using System.IO;
+using System.Text;
 class Administrador : Pessoa
 {
 
@@ -45,10 +47,10 @@ class Administrador : Pessoa
 
         int indexMedia = 0;
 
-        var alunosOrdenados = alunos.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
+        //var alunosOrdenados = alunos.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
 
 
-        foreach (Aluno aluno in alunosOrdenados)
+        foreach (Aluno aluno in alunos)
         {
 
             double media = aluno.CalculaMedia(alunos, (indexMedia + 1)); //para calcular a média é necessário passar a lista e o índice do aluno
@@ -57,7 +59,6 @@ class Administrador : Pessoa
 
         }
 
-        sistema.MensagemSucesso();
         escritor.Close();
 
         return alunos;
@@ -86,9 +87,9 @@ class Administrador : Pessoa
 
             professores.Add(newProf); //adiciona o novo professor na lista professores
         }
-        var professoresOrdenados = professores.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de professores
+        //var professoresOrdenados = professores.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de professores
 
-        foreach (Professor professor in professoresOrdenados)
+        foreach (Professor professor in professores)
         {
 
             escritor.WriteLine(professor.ToString()); //escreve as informações do professor no file.txt sobrescrevendo o método toString()
@@ -97,7 +98,6 @@ class Administrador : Pessoa
 
         Console.WriteLine("");
 
-        sistema.MensagemSucesso();
         escritor.Close();
 
         return professores;
@@ -110,15 +110,17 @@ class Administrador : Pessoa
         if (professores.Count > 0 && indexProf <= professores.Count) // se a lista não for vazia, limpa ela no indice indexProf
         {
             professores.RemoveAt((indexProf - 1));
+            DeletaRegistroArquivoProf((indexProf));
+
         }
         else if (indexProf > professores.Count)
         {
 
-            Console.WriteLine("Insira um índice válido");
+            Console.WriteLine("Insira um índice válido!");
         }
         else
         {
-            Console.WriteLine("Nenhum professor cadastrado");
+            Console.WriteLine("Nenhum professor cadastrado.");
 
         }
 
@@ -130,16 +132,18 @@ class Administrador : Pessoa
         if (alunos.Count > 0 && indexAluno <= alunos.Count) // se a lista não for vazia, limpa ela no indice indexAluno
         {
             alunos.RemoveAt((indexAluno - 1));
+            DeletaRegistroArquivoAluno(indexAluno);
 
         }
+
         else if (indexAluno > alunos.Count)
         {
 
-            Console.WriteLine("Insira um índice válido");
+            Console.WriteLine("Insira um índice válido!");
         }
         else
         {
-            Console.WriteLine("Nenhum aluno cadastrado");
+            Console.WriteLine("Nenhum aluno cadastrado.");
         }
     }
 
@@ -198,12 +202,15 @@ class Administrador : Pessoa
     {
         foreach (Aluno aluno in alunos) {
             int hash = aluno.Nome.GetHashCode();
-            if(hash == hashNome)
+            Console.WriteLine("");
+            if(hash.Equals(hashNome))
             {
-                Console.WriteLine("Esse aluno já existe no registro");
+                Console.WriteLine("Esse aluno já existe no registro.");
                 return true;
             }
         }
+        Console.WriteLine("");
+
         return false;
     }
     public bool ChecaExistenciaProf(List<Professor> professores, int hashNome) // checa se já existe um hashcode na lista professores
@@ -211,13 +218,37 @@ class Administrador : Pessoa
         foreach (Professor prof in professores)
         {
             int hash = prof.Nome.GetHashCode();
-            if (hash == hashNome)
+            Console.WriteLine("");
+            if (hash.Equals(hashNome))
             {
-                Console.WriteLine("Esse professor já existe no registro");
+                Console.WriteLine("Esse professor já existe no registro.");
                 return true;
             }
         }
+        Console.WriteLine("");
+
         return false;
     }
+    public void DeletaRegistroArquivoProf(int index)
+    {
+        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"))
+        {
+            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"));
+            file.RemoveAt(index-1);
+            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt", file.ToArray());
+        }
 
+
+    }
+    public void DeletaRegistroArquivoAluno(int index)
+    {
+        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt"))
+        {
+            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt"));
+            file.RemoveAt(index - 1);
+            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt", file.ToArray());
+        }
+
+
+    }
 }
