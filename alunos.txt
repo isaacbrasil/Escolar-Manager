@@ -1,5 +1,2 @@
-Nome: ALONSO | Sexo: M | Matrícula: 202201512 | Turma: A | Escola: DELOS | Média: 8,2
-Nome: AMANDA CHRISTINNE SOUSA DOS SANTOS | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: COLÉGIO WR | Média: 6,5
-Nome: BEATRIZ FERNANDES | Sexo: F | Matrícula: 202201511 | Turma: C | Escola: DELTA | Média: 7,4
-Nome: GABRIEL LUIZ FREITAS | Sexo: M | Matrícula: 202201505 | Turma: B | Escola: COLÉGIO DELTA | Média: 0
-Nome: ISAAC BRASIL OLIVEIRA | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: COLÉGIO VISÃO | Média: 0
+Nome: ISAAC BRASIL OLIVEIRA | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: COLÉGIO VISÃO | Média: 8,2
+Nome: AMANDA CHRISTINNE SOUSA DOS SANTOS | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: COLÉGIO WR | Média: 7,4

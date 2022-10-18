@@ -490,18 +490,9 @@
 
                                 Console.WriteLine("Insira qual índice do produto a ser deletado: ");
                                 int indexProduto = Convert.ToInt32(Console.ReadLine());
-                                if (indexProduto > 0 && indexProduto <= itensCantina.Count)
-                                {
-
-                                    itensCantina.RemoveAt((indexProduto - 1));
-
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Insira um índice válido");
 
 
-                                }
+                                func.DeletaItemCantina(itensCantina, indexProduto);
                                 func.MostraItensCantina(itensCantina);
 
                                 //func.MostraItensCantina(itensCantina.OrderBy(n => n.NomeAlimento).ToList());

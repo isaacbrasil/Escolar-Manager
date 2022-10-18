@@ -27,7 +27,7 @@
         var itensOrdenados = produtos.OrderBy(n => n.NomeAlimento); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
 
 
-        foreach (Produto produto in itensOrdenados)
+        foreach (Produto produto in produtos)
         {
 
             escritor.WriteLine(produto.ToString());
@@ -36,25 +36,29 @@
 
 
         Console.WriteLine("");
-        sistema.MensagemSucesso();
 
         escritor.Close();
         return produtos;
 
     }
 
-    public void DeletaItemCantina(List<Produto> produtos)
+    public void DeletaItemCantina(List<Produto> produtos, int indexProduto)
     {
-        if (produtos.Count > 0)
+        if (produtos.Count > 0 && indexProduto <= produtos.Count)
         {
-            produtos.Clear();
+            produtos.RemoveAt((indexProduto - 1));
+            DeletaRegistroArquivoProduto(indexProduto);
+        }
 
+        else if (indexProduto > produtos.Count)
+        {
+
+            Console.WriteLine("Insira um índice válido");
         }
         else
         {
             Console.WriteLine("Nenhum produto cadastrado");
         }
-
     }
 
 
@@ -89,15 +93,29 @@
         foreach (Produto produto in produtos)
         {
             int hash = produto.NomeAlimento.GetHashCode();
-            if (hash == hashNome)
+            Console.WriteLine("");
+
+            if (hash.Equals(hashNome))
             {
-                Console.WriteLine("Esse produto já existe no registro");
+                Console.WriteLine("Esse produto já existe no registro.");
                 return true;
             }
         }
+        Console.WriteLine("");
+
         return false;
     }
+    public void DeletaRegistroArquivoProduto(int index)
+    {
+        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt"))
+        {
+            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt"));
+            file.RemoveAt(index - 1);
+            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt", file.ToArray());
+        }
 
+
+    }
 
 }
 
