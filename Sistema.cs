@@ -1,4 +1,4 @@
-﻿class Sistema
+﻿public class Sistema
 {
     //CLASSE SISTEMA CRIADA PARA UTILIZAÇÃO DA NOÇÃO DRY - DON'T REPEAT YOURSELF
     public void MenuSistema()

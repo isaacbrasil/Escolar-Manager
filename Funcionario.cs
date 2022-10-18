@@ -1,4 +1,4 @@
-﻿class Funcionario : Pessoa
+﻿public class Funcionario : Pessoa
 {
     Sistema sistema = new Sistema();
 
@@ -96,6 +96,7 @@
         Console.WriteLine("");
 
         double somaCaixa = 0;
+        int quantidadeMensal = 30;
 
         foreach (var produto in produtos)
         {
@@ -103,7 +104,7 @@
             somaCaixa += produto.ValorAlimento * produto.QuantidadeItens;
         }
 
-        return somaCaixa;
+        return Math.Round((somaCaixa * quantidadeMensal),2);
 
     }
 

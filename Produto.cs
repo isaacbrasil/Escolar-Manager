@@ -1,4 +1,4 @@
-﻿class Produto
+﻿public class Produto
 {
 
     private string nomeAlimento;

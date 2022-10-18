@@ -1,6 +1,6 @@
 ﻿namespace CSharp_ExtensionsMethods
 {
-    class GerenciamentoEscolar
+    public class GerenciamentoEscolar
     {
 
         public delegate void MenuDelegate();
@@ -33,6 +33,7 @@
             MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno);
             MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf);
             MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc);
+
 
             OrganizadorGenerico<Aluno> listAlunoOrdenada = new OrganizadorGenerico<Aluno>();
             OrganizadorGenerico<Professor> listProfOrdenada = new OrganizadorGenerico<Professor>();
@@ -500,10 +501,13 @@
                                     func.MostraItensCantina(itensCantina);
 
                                 }
-                                else if (optionOperation == 4) // calcula despesas cantina
+                                else if (optionOperation == 4) // calcula caixa cantina
                                 {
-                                    Console.WriteLine("");
-                                    Console.WriteLine("===== Caixa Cantina: R$ "+ func.CalculaCaixaCantina(itensCantina) + " =====");
+                                    Console.WriteLine("==== Caixa Cantina Mensal: R$ " + func.CalculaCaixaCantina(itensCantina) + " ======================");
+                                    Console.WriteLine("Insira quanto a Cantina tem de despesa mensal: ");
+                                    double valorDespesa = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("==== Caixa Cantina com Despesas: R$ " + func.CalculaCaixaCantinaComDespesa(itensCantina, valorDespesa) + " =============="); //utilização de método de extensão para calcular desconto obedecendo o O/C principle da 
+
                                     Console.WriteLine("");
                                 }
                             }
