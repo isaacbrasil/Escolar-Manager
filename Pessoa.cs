@@ -1,11 +1,9 @@
-﻿public class Pessoa
+﻿public abstract class Pessoa
 {
     private string nome;
     private int idade;
     private char sexo;
     private int id;
-    private string tipoUsuario;
-    private string senha;
     private static int numero = 202201500;
     public string Nome
     {
@@ -19,7 +17,7 @@
     }
     public override int GetHashCode()
     {
-        return this.Nome.GetHashCode() * 17;
+        return this.Nome.GetHashCode() * 17; //multiplica o hashcode por um número primo para diminuir colisões
     }
     public int Idade
     {
@@ -33,18 +31,6 @@
         set { id = value; }
     }
 
-    public string TipoUsuario
-    {
-        get { return tipoUsuario; }
-        set { tipoUsuario = value; }
-    }
-
-    public string Senha
-    {
-        get { return senha; }
-        set { senha = value; }
-    }
-
     public Pessoa(string nome, int idade, int id)
     {
         this.nome = nome;
@@ -56,21 +42,19 @@
     {
         this.nome = "";
         this.idade = 0;
-        Pessoa.numero++;
+        Pessoa.numero++; // cria um id unico para cada construtor novo criado
         this.id = Pessoa.numero;
     }
 
-    public virtual void MostraDados()
+    public virtual void MostraDados(Pessoa pessoa)
     {
         System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Nome: " + nome);
-        Console.WriteLine("Idade: " + idade);
-        Console.WriteLine("Id: " + id);
-        Console.WriteLine("Usuário: " + tipoUsuario);
+        Console.WriteLine("Nome: " + pessoa.Nome);
+        Console.WriteLine("Idade: " + pessoa.Idade) ;
+        Console.WriteLine("Id: " + pessoa.Id);
         System.Console.WriteLine("------------------------------------------------------------");
 
     }
-
 
     public virtual void MenuOperação()
     {

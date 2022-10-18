@@ -1,5 +1,6 @@
-﻿class Aluno : Pessoa
-{
+﻿public class Aluno : Pessoa
+{   
+    
     public override string ToString()
     {
 
@@ -46,7 +47,7 @@
 
     }
 
-    public void MostraDadosAluno(Aluno aluno)
+    public override void MostraDados(Pessoa aluno)
     {
         Console.WriteLine("Nome: " + aluno.Nome);
         Console.WriteLine("Matrícula: " + aluno.Id);
@@ -55,12 +56,12 @@
         int indexAluno = 0;
         foreach (var nota in notas)
         {
-            Console.Write(aluno.Notas[(indexAluno)].ToString() + " | "); //utiliza o toString para transformar o conteudo notas em uma string
+            Console.Write(((Aluno)aluno).Notas[(indexAluno)].ToString() + " | "); //utiliza o toString para transformar o conteudo notas em uma string
             indexAluno++;
         }
         Console.WriteLine("");
-        Console.WriteLine("Escola: " + aluno.EscolaNome);
-        Console.WriteLine("Turma: " + aluno.Turma);
+        Console.WriteLine("Escola: " +  ((Aluno)aluno).EscolaNome); //downcasting
+        Console.WriteLine("Turma: " + ((Aluno)aluno).Turma); //downcasting
 
     }
 

@@ -123,7 +123,6 @@
 
                 if (optionMenu == 1)
                 {
-                    Pessoa p = new Pessoa();
                     int optionUser = 1;
 
                     while (optionUser != 0)//loop do login do sistema
@@ -138,7 +137,6 @@
 
                         if (optionUser == 1)
                         {
-                            p.TipoUsuario = "Admin";
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR");
                             System.Console.WriteLine("============================================================");
@@ -236,7 +234,6 @@
                         }
                         else if (optionUser == 2)
                         {
-                            p.TipoUsuario = "Aluno";
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > ALUNO");
                             System.Console.WriteLine("============================================================");
@@ -311,7 +308,7 @@
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
                                     if (indexAluno > 0 && indexAluno <= alunos.Count)
                                     {
-                                        aluno.MostraDadosAluno(alunos[(indexAluno - 1)]);
+                                        aluno.MostraDados(alunos[(indexAluno - 1)]);
                                     }
                                     else
                                     {
@@ -327,7 +324,6 @@
                         }
                         else if (optionUser == 3)
                         {
-                            p.TipoUsuario = "Professor";
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > PROFESSOR");
                             System.Console.WriteLine("============================================================");
@@ -372,8 +368,6 @@
                                     else
                                     {
                                         Console.WriteLine("Insira um índice válido.");
-
-
                                     }
 
 
@@ -406,7 +400,7 @@
 
                                     if (indexProf > 0 && indexProf <= professores.Count)
                                     {
-                                        prof.MostraDadosProfessor(professores[(indexProf - 1)]);
+                                        prof.MostraDados(professores[(indexProf - 1)]);
 
                                     }
                                     else
@@ -418,45 +412,19 @@
 
 
                                 }
-                                else if (optionOperation == 4) //exibe informações do professor
+                                else if (optionOperation == 4)
                                 {
-                                    System.Console.WriteLine("==============================================================");
-                                    Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > TESTAR DOWNCASTING DE PROFESSOR");
-                                    System.Console.WriteLine("==============================================================");
-
-
-                                    Pessoa p2 = new Pessoa();
-                                    Professor newProf = p2 as Professor; // UTILIZANDO DOWNCASTING Pessoa para Professor
-
-                                    Console.WriteLine("Código para teste do Downcasting\r\n");
-                                    Console.WriteLine("Professor prof2 = new Professor();\r\nPessoa p3 = prof2;\r\n\r\nif(p3 is Professor){\r\n((Professor)p3).MostraDadosProfessor(professores[0]);\r\n}\r\nelse{\r\nConsole.WriteLine('Operação de downcast inválida');\r\n}");
-                                    Console.WriteLine("");
-                                    Professor prof2 = new Professor();
-                                    Pessoa p3 = prof2;
-
-                                    if (p3 is Professor)
-                                    {
-                                        ((Professor)p3).MostraDadosProfessor(professores[0]);
-                                        Console.WriteLine("\r\nDowncasting realizado com sucesso!");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Operação de downcast inválida");
-                                    }
-                                    Console.WriteLine("");
+                                    prof.MostraEstatisticaTurma(alunos);
                                 }
                             }
                         }
                         else if (optionUser == 4) //opcao de escolher usuario
                         {
-                            p.TipoUsuario = "Funcionario";
                             System.Console.WriteLine("============================================================");
-                            Console.WriteLine("LOGIN > USUARIOS > FUNCIONARIO");
+                            Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO");
                             System.Console.WriteLine("============================================================");
-
 
                             int optionOperation;
-
 
                             optionOperation = 1;
 
@@ -470,7 +438,9 @@
 
                                 if (optionOperation == 1)//cadastra itens na cantina
                                 {
-
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > CADASTRAR ITENS CANTINA");
+                                    System.Console.WriteLine("============================================================");
                                     func.MostraItensCantina(itensCantina);
 
                                     List<Produto> listaprodutos = func.CadastraItemCantina(itensCantina)!;
@@ -480,14 +450,13 @@
                                 }
                                 else if (optionOperation == 2)//remove itens da cantina
                                 {
-
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > REMOVER ITENS CANTINA");
+                                    System.Console.WriteLine("============================================================");
                                     func.MostraItensCantina(itensCantina);
-
-
 
                                     Console.WriteLine("Insira qual índice do produto a ser deletado: ");
                                     int indexProduto = Convert.ToInt32(Console.ReadLine());
-
 
                                     func.DeletaItemCantina(itensCantina, indexProduto);
                                     func.MostraItensCantina(itensCantina);
@@ -498,15 +467,22 @@
                                 }
                                 else if (optionOperation == 3) // mostra os itens da cantina
                                 {
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > MOSTRAR ITENS CANTINA");
+                                    System.Console.WriteLine("============================================================");
                                     func.MostraItensCantina(itensCantina);
 
                                 }
                                 else if (optionOperation == 4) // calcula caixa cantina
                                 {
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > CALCULAR CAIXA CANTINA");
+                                    System.Console.WriteLine("============================================================");
+
                                     Console.WriteLine("==== Caixa Cantina Mensal: R$ " + func.CalculaCaixaCantina(itensCantina) + " ======================");
                                     Console.WriteLine("Insira quanto a Cantina tem de despesa mensal: ");
                                     double valorDespesa = Convert.ToDouble(Console.ReadLine());
-                                    Console.WriteLine("==== Caixa Cantina com Despesas: R$ " + func.CalculaCaixaCantinaComDespesa(itensCantina, valorDespesa) + " =============="); //utilização de método de extensão para calcular desconto obedecendo o O/C principle da 
+                                    Console.WriteLine("==== Caixa Cantina com Despesas: R$ " + func.CalculaCaixaCantinaComDespesa(itensCantina, valorDespesa) + " =============="); //utilização de método de extensão para calcular desconto obedecendo o O/C principle da SOLID
 
                                     Console.WriteLine("");
                                 }
