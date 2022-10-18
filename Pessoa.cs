@@ -56,7 +56,7 @@
     {
         this.nome = "";
         this.idade = 0;
-        Pessoa.numero++;
+        Pessoa.numero++; // cria um id unico para cada construtor novo criado
         this.id = Pessoa.numero;
     }
 

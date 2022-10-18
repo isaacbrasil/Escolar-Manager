@@ -445,6 +445,10 @@
                                     }
                                     Console.WriteLine("");
                                 }
+                                else if(optionOperation == 5)
+                                {
+                                    prof.MostraEstatisticaTurma(alunos);
+                                }
                             }
                         }
                         else if (optionUser == 4) //opcao de escolher usuario
@@ -506,7 +510,7 @@
                                     Console.WriteLine("==== Caixa Cantina Mensal: R$ " + func.CalculaCaixaCantina(itensCantina) + " ======================");
                                     Console.WriteLine("Insira quanto a Cantina tem de despesa mensal: ");
                                     double valorDespesa = Convert.ToDouble(Console.ReadLine());
-                                    Console.WriteLine("==== Caixa Cantina com Despesas: R$ " + func.CalculaCaixaCantinaComDespesa(itensCantina, valorDespesa) + " =============="); //utilização de método de extensão para calcular desconto obedecendo o O/C principle da 
+                                    Console.WriteLine("==== Caixa Cantina com Despesas: R$ " + func.CalculaCaixaCantinaComDespesa(itensCantina, valorDespesa) + " =============="); //utilização de método de extensão para calcular desconto obedecendo o O/C principle da SOLID
 
                                     Console.WriteLine("");
                                 }

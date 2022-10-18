@@ -22,7 +22,7 @@ class Administrador : Pessoa
             Console.WriteLine("Insira o nome do aluno: " + (i + 1));
             p.Nome = Console.ReadLine().ToUpper();// UPCASTING lê o nome do aluno que é pessoa
 
-            if(ChecaExistenciaAluno(alunos, p.Nome.GetHashCode()))
+            if (ChecaExistenciaAluno(alunos, p.Nome.GetHashCode()))
             {
                 break;
             }
@@ -157,7 +157,7 @@ class Administrador : Pessoa
             foreach (Aluno aluno in alunos)
             {
 
-                Console.WriteLine((i + 1) + "-" + aluno.Nome.ToUpper()); 
+                Console.WriteLine((i + 1) + "-" + aluno.Nome.ToUpper());
                 i++;
             }
 
@@ -200,16 +200,17 @@ class Administrador : Pessoa
 
     public bool ChecaExistenciaAluno(List<Aluno> alunos, int hashNome) // checa se já existe um hashcode na lista alunos
     {
-        foreach (Aluno aluno in alunos) {
+        foreach (Aluno aluno in alunos)
+        {
             int hash = aluno.Nome.GetHashCode();
-            Console.WriteLine("");
-            if(hash.Equals(hashNome))
+            if (hash.Equals(hashNome))
             {
+                Console.WriteLine("");
                 Console.WriteLine("Esse aluno já existe no registro.");
+                Console.WriteLine("");
                 return true;
             }
         }
-        Console.WriteLine("");
 
         return false;
     }
@@ -234,7 +235,7 @@ class Administrador : Pessoa
         if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"))
         {
             var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"));
-            file.RemoveAt(index-1);
+            file.RemoveAt(index - 1);
             File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt", file.ToArray());
         }
 
@@ -251,4 +252,7 @@ class Administrador : Pessoa
 
 
     }
+
+
+
 }
