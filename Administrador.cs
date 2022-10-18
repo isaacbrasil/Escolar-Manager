@@ -47,7 +47,7 @@ class Administrador : Pessoa
 
         int indexMedia = 0;
 
-        var alunosOrdenados = alunos.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
+        //var alunosOrdenados = alunos.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
 
 
         foreach (Aluno aluno in alunos)
@@ -87,7 +87,7 @@ class Administrador : Pessoa
 
             professores.Add(newProf); //adiciona o novo professor na lista professores
         }
-        var professoresOrdenados = professores.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de professores
+        //var professoresOrdenados = professores.OrderBy(n => n.Nome); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de professores
 
         foreach (Professor professor in professores)
         {

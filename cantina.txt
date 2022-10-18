@@ -1,1 +1,4 @@
-Produto: RUFFLES | Preço: R$ 5,9
+Produto: RUFFLES | Preço: R$ 5,9 | Quantidade: 10X
+Produto: OREO | Preço: R$ 3,9 | Quantidade: 10X
+Produto: ÁGUA | Preço: R$ 2,5 | Quantidade: 10X
+Produto: BALINHA | Preço: R$ 120 | Quantidade: 37X

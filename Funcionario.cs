@@ -20,11 +20,13 @@
             }
             Console.WriteLine("Insira o valor do produto: ");
             newProduto.ValorAlimento = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Insira quantas unidades desse produto: ");
+            newProduto.QuantidadeItens = Convert.ToInt32(Console.ReadLine());
 
             produtos.Add(newProduto);
         }
 
-        var itensOrdenados = produtos.OrderBy(n => n.NomeAlimento); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
+        //var itensOrdenados = produtos.OrderBy(n => n.NomeAlimento); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
 
 
         foreach (Produto produto in produtos)
@@ -74,7 +76,7 @@
 
             foreach (var alimento in produtos)
             {
-                Console.WriteLine((i + 1) + "- " + alimento.NomeAlimento + " | Preço: R$ " + alimento.ValorAlimento);
+                Console.WriteLine((i + 1) + "- " + alimento.NomeAlimento + " | Preço: R$ " + alimento.ValorAlimento + " | Unidades: " + alimento.QuantidadeItens + "x");
                 i++;
             }
         }
@@ -88,20 +90,37 @@
 
     }
 
+    public double CalculaCaixaCantina(List<Produto> produtos)
+    {
+        MostraItensCantina(produtos);
+        Console.WriteLine("");
+
+        double somaCaixa = 0;
+
+        foreach (var produto in produtos)
+        {
+
+            somaCaixa += produto.ValorAlimento * produto.QuantidadeItens;
+        }
+
+        return somaCaixa;
+
+    }
+
     public bool ChecaExistenciaProduto(List<Produto> produtos, int hashNome) // checa se já existe um hashcode na lista alunos
     {
         foreach (Produto produto in produtos)
         {
             int hash = produto.NomeAlimento.GetHashCode();
-            Console.WriteLine("");
 
             if (hash.Equals(hashNome))
             {
+                Console.WriteLine("");
                 Console.WriteLine("Esse produto já existe no registro.");
+                Console.WriteLine("");
                 return true;
             }
         }
-        Console.WriteLine("");
 
         return false;
     }
