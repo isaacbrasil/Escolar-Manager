@@ -1,7 +1,8 @@
-﻿class Pessoa
+﻿public class Pessoa
 {
     private string nome;
     private int idade;
+    private char sexo;
     private int id;
     private string tipoUsuario;
     private string senha;
@@ -11,7 +12,15 @@
         get { return nome; }
         set { nome = value; }
     }
-
+    public char Sexo
+    {
+        get { return sexo; }
+        set { sexo = value; }
+    }
+    public override int GetHashCode()
+    {
+        return this.Nome.GetHashCode() * 17;
+    }
     public int Idade
     {
         get { return idade; }
@@ -47,7 +56,7 @@
     {
         this.nome = "";
         this.idade = 0;
-        Pessoa.numero++;
+        Pessoa.numero++; // cria um id unico para cada construtor novo criado
         this.id = Pessoa.numero;
     }
 

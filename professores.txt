@@ -1,16 +1,2 @@
-Nome: Lutiano
-Nome: Éder
-Nome: Christopher
-Nome: Lucas
-Nome: Lutiano
-Nome: Éder
-Nome: Christopher
-Nome: Luciano
-Nome: Lutiano
-Nome: Éder
-Nome: Christopher
-Nome: wilson
-Nome: Lutiano
-Nome: Éder
-Nome: Christopher
-Nome: Lucio
+Nome: LUTIANO | Matéria: FÍSICA
+Nome: CHRISTOPHER | Matéria: FILOSOFIA
