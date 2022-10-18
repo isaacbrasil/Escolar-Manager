@@ -421,7 +421,7 @@
                         else if (optionUser == 4) //opcao de escolher usuario
                         {
                             System.Console.WriteLine("============================================================");
-                            Console.WriteLine("LOGIN > USUARIOS > FUNCIONARIO");
+                            Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO");
                             System.Console.WriteLine("============================================================");
 
                             int optionOperation;
@@ -438,7 +438,9 @@
 
                                 if (optionOperation == 1)//cadastra itens na cantina
                                 {
-
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > CADASTRAR ITENS CANTINA");
+                                    System.Console.WriteLine("============================================================");
                                     func.MostraItensCantina(itensCantina);
 
                                     List<Produto> listaprodutos = func.CadastraItemCantina(itensCantina)!;
@@ -448,14 +450,13 @@
                                 }
                                 else if (optionOperation == 2)//remove itens da cantina
                                 {
-
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > REMOVER ITENS CANTINA");
+                                    System.Console.WriteLine("============================================================");
                                     func.MostraItensCantina(itensCantina);
-
-
 
                                     Console.WriteLine("Insira qual índice do produto a ser deletado: ");
                                     int indexProduto = Convert.ToInt32(Console.ReadLine());
-
 
                                     func.DeletaItemCantina(itensCantina, indexProduto);
                                     func.MostraItensCantina(itensCantina);
@@ -466,11 +467,18 @@
                                 }
                                 else if (optionOperation == 3) // mostra os itens da cantina
                                 {
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > MOSTRAR ITENS CANTINA");
+                                    System.Console.WriteLine("============================================================");
                                     func.MostraItensCantina(itensCantina);
 
                                 }
                                 else if (optionOperation == 4) // calcula caixa cantina
                                 {
+                                    System.Console.WriteLine("============================================================");
+                                    Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > CALCULAR CAIXA CANTINA");
+                                    System.Console.WriteLine("============================================================");
+
                                     Console.WriteLine("==== Caixa Cantina Mensal: R$ " + func.CalculaCaixaCantina(itensCantina) + " ======================");
                                     Console.WriteLine("Insira quanto a Cantina tem de despesa mensal: ");
                                     double valorDespesa = Convert.ToDouble(Console.ReadLine());
