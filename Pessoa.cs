@@ -4,8 +4,6 @@
     private int idade;
     private char sexo;
     private int id;
-    private string tipoUsuario;
-    private string senha;
     private static int numero = 202201500;
     public string Nome
     {
@@ -31,18 +29,6 @@
     {
         get { return id; }
         set { id = value; }
-    }
-
-    public string TipoUsuario
-    {
-        get { return tipoUsuario; }
-        set { tipoUsuario = value; }
-    }
-
-    public string Senha
-    {
-        get { return senha; }
-        set { senha = value; }
     }
 
     public Pessoa(string nome, int idade, int id)

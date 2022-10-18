@@ -12,7 +12,7 @@
     public override string ToString()
     {
 
-        return "Produto: " + NomeAlimento + " | Preço: R$ " + ValorAlimento + " | Quantidade: " + QuantidadeItens + "X";
+        return "Produto: " + NomeAlimento + " | Preço: R$ " + ValorAlimento + " | Quantidade: " + QuantidadeItens + "x";
 
     }
 
