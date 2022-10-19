@@ -72,7 +72,7 @@
         int i = 0;
         if (produtos.Count > 0)
         {
-            Console.WriteLine("========== CANTINA ========== ");
+            Console.WriteLine("========== CANTINA ==========");
 
             foreach (var alimento in produtos)
             {
@@ -82,7 +82,7 @@
         }
         else
         {
-            Console.WriteLine("Nenhum produto cadastrado");
+            Console.WriteLine("Nenhum produto cadastrado.");
 
 
         }

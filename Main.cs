@@ -7,7 +7,7 @@
         static void Main(string[] args)
         {
             //CLASSE GENERICA
-            ClasseGenerica<Aluno> intObj = new ClasseGenerica<Aluno>();
+            //ClasseGenerica<Aluno> intObj = new ClasseGenerica<Aluno>();
             /* intObj.Add(
                 new Aluno()
                 {
