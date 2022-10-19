@@ -55,6 +55,7 @@ class Administrador : Pessoa
             indexMedia++;
 
         }
+        Console.WriteLine("");
 
         escritor.Close();
 
@@ -158,7 +159,6 @@ class Administrador : Pessoa
 
     public void MostraAlunos(List<Aluno> alunos)
     {
-        Console.WriteLine("");
         if (alunos.Count > 0)
         {
             Console.WriteLine("Alunos: \r\n");
@@ -185,7 +185,6 @@ class Administrador : Pessoa
 
     public void MostraProfessores(List<Professor> professores)
     {
-        Console.WriteLine("");
 
         if (professores.Count > 0)
         {
@@ -222,7 +221,6 @@ class Administrador : Pessoa
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Esse aluno já existe no registro.");
                 Console.ResetColor();
-                Console.WriteLine("");
                 return true;
             }
         }
@@ -241,7 +239,6 @@ class Administrador : Pessoa
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Esse professor já existe no registro.");
                 Console.ResetColor();
-                Console.WriteLine("");
                 return true;
             }
         }
