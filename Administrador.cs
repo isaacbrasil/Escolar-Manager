@@ -112,7 +112,9 @@ class Administrador : Pessoa
         }
         else if (indexProf <= 0 || indexProf > professores.Count)
         {
+            
             Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Insira um índice válido!");
             Console.ResetColor();
 
@@ -140,6 +142,7 @@ class Administrador : Pessoa
         else if (indexAluno <= 0 || indexAluno > alunos.Count)
         {
             Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Insira um índice válido!");
             Console.ResetColor();
 
@@ -216,6 +219,7 @@ class Administrador : Pessoa
             {
                 Console.WriteLine("");
                 Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Esse aluno já existe no registro.");
                 Console.ResetColor();
                 Console.WriteLine("");
@@ -234,6 +238,7 @@ class Administrador : Pessoa
             {
                 Console.WriteLine("");
                 Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Esse professor já existe no registro.");
                 Console.ResetColor();
                 Console.WriteLine("");

@@ -54,8 +54,11 @@
 
         else if (indexProduto > produtos.Count)
         {
-
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Insira um índice válido!");
+            Console.ResetColor();
+
         }
         else
         {

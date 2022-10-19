@@ -82,6 +82,7 @@
             {
                 Console.WriteLine("");
                 Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Essa pessoa já existe no registro.");
                 Console.ResetColor();
                 Console.WriteLine("");

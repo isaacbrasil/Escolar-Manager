@@ -271,8 +271,10 @@
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Insira um índice válido.");
-
+                                        Console.BackgroundColor = ConsoleColor.Yellow;
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("Insira um índice válido!");
+                                        Console.ResetColor();
 
                                     }
 
@@ -292,7 +294,10 @@
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Insira um índice válido.");
+                                        Console.BackgroundColor = ConsoleColor.Yellow;
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("Insira um índice válido!");
+                                        Console.ResetColor();
 
 
                                     }
@@ -314,7 +319,10 @@
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Insira um índice válido.");
+                                        Console.BackgroundColor = ConsoleColor.Yellow;
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("Insira um índice válido!");
+                                        Console.ResetColor();
 
 
                                     }
@@ -369,7 +377,11 @@
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Insira um índice válido.");
+                                        Console.BackgroundColor = ConsoleColor.Yellow;
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("Insira um índice válido!");
+                                        Console.ResetColor();
+
                                     }
 
 
@@ -407,7 +419,10 @@
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Insira um índice válido.");
+                                        Console.BackgroundColor = ConsoleColor.Yellow;
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("Insira um índice válido!");
+                                        Console.ResetColor();
 
 
                                     }
