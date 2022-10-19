@@ -112,12 +112,16 @@ class Administrador : Pessoa
         }
         else if (indexProf <= 0 || indexProf > professores.Count)
         {
-
+            Console.BackgroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Insira um índice válido!");
+            Console.ResetColor();
+
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum professor cadastrado.");
+            Console.ResetColor();
 
         }
 
@@ -135,12 +139,17 @@ class Administrador : Pessoa
 
         else if (indexAluno <= 0 || indexAluno > alunos.Count)
         {
-
+            Console.BackgroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Insira um índice válido!");
+            Console.ResetColor();
+
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum aluno cadastrado.");
+            Console.ResetColor();
+
         }
     }
 
@@ -162,8 +171,9 @@ class Administrador : Pessoa
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum aluno cadastrado");
-
+            Console.ResetColor();
 
         }
         Console.WriteLine("");
@@ -187,7 +197,9 @@ class Administrador : Pessoa
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum professor cadastrado");
+            Console.ResetColor();
 
         }
         Console.WriteLine("");
@@ -203,7 +215,9 @@ class Administrador : Pessoa
             if (hash.Equals(hashNome))
             {
                 Console.WriteLine("");
+                Console.BackgroundColor = ConsoleColor.Green;
                 Console.WriteLine("Esse aluno já existe no registro.");
+                Console.ResetColor();
                 Console.WriteLine("");
                 return true;
             }
@@ -219,7 +233,9 @@ class Administrador : Pessoa
             if (hash.Equals(hashNome))
             {
                 Console.WriteLine("");
+                Console.BackgroundColor = ConsoleColor.Green;
                 Console.WriteLine("Esse professor já existe no registro.");
+                Console.ResetColor();
                 Console.WriteLine("");
                 return true;
             }
@@ -229,22 +245,26 @@ class Administrador : Pessoa
     }
     public void DeletaRegistroArquivoProf(int index)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"))
+        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt";
+
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
-            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"));
+            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
-            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt", file.ToArray());
+            File.WriteAllLines(filePath, file.ToArray());
         }
 
 
     }
     public void DeletaRegistroArquivoAluno(int index)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt"))
+        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt";
+
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
-            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt"));
+            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
-            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt", file.ToArray());
+            File.WriteAllLines(filePath, file.ToArray());
         }
 
 

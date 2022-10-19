@@ -116,6 +116,7 @@
             while (optionMenu != 0)
             {
                 menuDelegate();
+
                 optionMenu = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
 
@@ -188,6 +189,7 @@
                                     Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO PROFESSORES");
                                     System.Console.WriteLine("===============================================================");
                                     admin.MostraProfessores(professores);
+
                                     Console.WriteLine("Insira qual índice do professor a ser deletado: ");
                                     int indexProf = Convert.ToInt32(Console.ReadLine());
                                     admin.DeletaProfessores(professores, indexProf);
