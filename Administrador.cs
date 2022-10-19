@@ -104,13 +104,13 @@ class Administrador : Pessoa
     public void DeletaProfessores(List<Professor> professores, int indexProf)
     {
 
-        if (professores.Count > 0 && indexProf <= professores.Count) // se a lista não for vazia, limpa ela no indice indexProf
+        if (indexProf > 0 && professores.Count > 0 && indexProf <= professores.Count) // se a lista não for vazia, limpa ela no indice indexProf
         {
             professores.RemoveAt((indexProf - 1));
             DeletaRegistroArquivoProf((indexProf));
 
         }
-        else if (indexProf > professores.Count)
+        else if (indexProf <= 0 || indexProf > professores.Count)
         {
 
             Console.WriteLine("Insira um índice válido!");
@@ -126,14 +126,14 @@ class Administrador : Pessoa
     public void DeletaAlunos(List<Aluno> alunos, int indexAluno)
     {
 
-        if (alunos.Count > 0 && indexAluno <= alunos.Count) // se a lista não for vazia, limpa ela no indice indexAluno
+        if (indexAluno > 0 && alunos.Count > 0 && indexAluno <= alunos.Count) // se a lista não for vazia, limpa ela no indice indexAluno
         {
             alunos.RemoveAt((indexAluno - 1));
             DeletaRegistroArquivoAluno(indexAluno);
 
         }
 
-        else if (indexAluno > alunos.Count)
+        else if (indexAluno <= 0 || indexAluno > alunos.Count)
         {
 
             Console.WriteLine("Insira um índice válido!");

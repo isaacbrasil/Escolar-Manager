@@ -1,4 +1,3 @@
 Nome: LUTIANO | Matéria: FÍSICA
 Nome: ÉDER | Matéria: BIOLOGIA
 Nome: CHRISTOPHER | Matéria: FILOSOFIA
-Nome: LUCIAN HALFOOT | Matéria: FISICA 2
