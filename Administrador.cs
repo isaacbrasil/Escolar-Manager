@@ -122,62 +122,6 @@ class Administrador : Pessoa
         return professores;
 
     }
-
-    public void DeletaProfessores(List<Professor> professores, int indexProf)
-    {
-
-        if (indexProf > 0 && professores.Count > 0 && indexProf <= professores.Count) // se a lista não for vazia, limpa ela no indice indexProf
-        {
-            professores.RemoveAt((indexProf - 1));
-            DeletaRegistroArquivoProf((indexProf));
-
-        }
-        else if (indexProf <= 0 || indexProf > professores.Count)
-        {
-
-            Console.BackgroundColor = ConsoleColor.Yellow;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("Insira um índice válido!");
-            Console.ResetColor();
-
-        }
-        else
-        {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Nenhum professor cadastrado.");
-            Console.ResetColor();
-
-        }
-
-
-    }
-    public void DeletaAlunos(List<Aluno> alunos, int indexAluno)
-    {
-
-        if (indexAluno > 0 && alunos.Count > 0 && indexAluno <= alunos.Count) // se a lista não for vazia, limpa ela no indice indexAluno
-        {
-            alunos.RemoveAt((indexAluno - 1));
-            DeletaRegistroArquivoAluno(indexAluno);
-
-        }
-
-        else if (indexAluno <= 0 || indexAluno > alunos.Count)
-        {
-            Console.BackgroundColor = ConsoleColor.Yellow;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("Insira um índice válido!");
-            Console.ResetColor();
-
-        }
-        else
-        {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Nenhum aluno cadastrado.");
-            Console.ResetColor();
-
-        }
-    }
-
       
     public bool ChecaExistenciaAluno(List<Aluno> alunos, int hashNome) // checa se já existe um hashcode na lista alunos
     {

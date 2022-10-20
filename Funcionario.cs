@@ -26,8 +26,6 @@
             produtos.Add(newProduto);
         }
 
-        //var itensOrdenados = produtos.OrderBy(n => n.NomeAlimento); //LINQ QUERY + expressao lambda que ordena alfabeticamente a lista de alunos
-
 
         foreach (Produto produto in produtos)
         {
