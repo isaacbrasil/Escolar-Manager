@@ -4,8 +4,6 @@
     {
 
         public delegate void MenuDelegate();
-
-       
         static void Main(string[] args)
         {
 
@@ -25,12 +23,11 @@
 
             //---------------- Instâncias de Delegates -----------------------
             MenuDelegate menuDelegate = new MenuDelegate(sistema.MenuSistema);
+            MenuDelegate menuUsuarioDelegate = new MenuDelegate(sistema.MenuUsuário);
             MenuDelegate menuOperacaoDelegate = new MenuDelegate(sistema.MenuOperaçãoAdmin);
             MenuDelegate menuAlunoDelegate = new MenuDelegate(sistema.MenuOperaçãoAluno);
             MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf);
             MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc);
-
-            
 
             int optionMenu = 1;
 
@@ -125,7 +122,7 @@
                         System.Console.WriteLine("============================================================");
                         Console.WriteLine("LOGIN > USUARIOS ");
                         System.Console.WriteLine("============================================================");
-                        sistema.MenuUsuário();
+                        menuUsuarioDelegate();
 
                         optionUser = Convert.ToInt32(Console.ReadLine());
                         Console.Clear();
@@ -495,7 +492,7 @@
                                     Console.WriteLine("LOGIN > USUARIOS > FUNCIONÁRIO > CALCULAR CAIXA CANTINA");
                                     System.Console.WriteLine("============================================================");
 
-                                    Console.WriteLine("==== Caixa Cantina Mensal: R$ "+ func.CalculaCaixaCantina(itensCantina) + " =====================================\n\r");
+                                    Console.WriteLine("==== Caixa Cantina Mensal: R$ " + func.CalculaCaixaCantina(itensCantina) + " =====================================\n\r");
                                     Console.WriteLine("Insira quanto a Cantina tem de despesa mensal: ");
                                     double valorDespesa = Convert.ToDouble(Console.ReadLine());
                                     Console.WriteLine("\n\r==== Caixa Cantina Mensal com Despesas aplicadas: R$ " + func.CalculaCaixaCantinaComDespesa(itensCantina, valorDespesa) + " =============="); //utilização de método de extensão para calcular desconto obedecendo o O/C principle da SOLID
