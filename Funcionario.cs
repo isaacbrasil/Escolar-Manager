@@ -46,16 +46,19 @@
 
     public void DeletaItemCantina(List<Produto> produtos, int indexProduto)
     {
-        if (produtos.Count > 0 && indexProduto <= produtos.Count)
+        if (indexProduto > 0 && produtos.Count > 0 && indexProduto <= produtos.Count)
         {
             produtos.RemoveAt((indexProduto - 1));
             DeletaRegistroArquivoProduto(indexProduto);
         }
 
-        else if (indexProduto > produtos.Count)
+        else if (indexProduto <= 0 || indexProduto > produtos.Count)
         {
-
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Insira um índice válido!");
+            Console.ResetColor();
+
         }
         else
         {
@@ -127,11 +130,12 @@
     }
     public void DeletaRegistroArquivoProduto(int index)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt"))
+        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt";
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
-            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt"));
+            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
-            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt", file.ToArray());
+            File.WriteAllLines(filePath, file.ToArray());
         }
 
 

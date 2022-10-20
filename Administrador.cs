@@ -10,53 +10,65 @@ class Administrador : Pessoa
         Console.WriteLine("Digite a quantidade de alunos que quer cadastrar:");
         int numAlunos = Convert.ToInt32(Console.ReadLine());
         int numNotas = 5;
-        Console.Clear();
-
-        TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt");
-
-        for (int i = 0; i < numAlunos; i++) //cadastra mais alunos na lista alunos
+        if (numAlunos == 0)
         {
-            Aluno newAluno = new Aluno();
-            Pessoa p = newAluno; //UTILIZANDO UPCASTING de classe filha Aluno para Pessoa
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("\r\nInsira um índice maior que zero.\r\n");
+            Console.ResetColor();
+        }
+        else
+        {
+            Console.Clear();
 
-            Console.WriteLine("Insira o nome do aluno: " + (i + 1));
-            p.Nome = Console.ReadLine().ToUpper();// UPCASTING lê o nome do aluno que é pessoa
+            TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt");
 
-            if (ChecaExistenciaAluno(alunos, p.Nome.GetHashCode()))
+            for (int i = 0; i < numAlunos; i++) //cadastra mais alunos na lista alunos
             {
-                break;
+                Aluno newAluno = new Aluno();
+                Pessoa p = newAluno; //UTILIZANDO UPCASTING de classe filha Aluno para Pessoa
+
+                Console.WriteLine("Insira o nome do aluno: " + (i + 1));
+                p.Nome = Console.ReadLine().ToUpper();// UPCASTING lê o nome do aluno que é pessoa
+
+                if (ChecaExistenciaAluno(alunos, p.Nome.GetHashCode()))
+                {
+                    break;
+                }
+
+                Console.WriteLine("Insira o sexo do aluno (F/M): ");
+                newAluno.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
+
+                for (int j = 0; j < numNotas; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
+                {
+                    newAluno.Notas[j] = 0;
+                }
+
+                Console.WriteLine("Insira a Turma do aluno: ");
+                newAluno.Turma = Convert.ToChar(Console.ReadLine().ToUpper());
+
+                Console.WriteLine("Insira a Escola do aluno: ");
+                newAluno.EscolaNome = Console.ReadLine().ToUpper();
+
+                alunos.Add(newAluno); //adiciona o novo aluno na lista alunos
+
             }
 
-            Console.WriteLine("Insira o sexo do aluno (F/M): ");
-            newAluno.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
+            int indexMedia = 0;
 
-            for (int j = 0; j < numNotas; j++) // atribuo notas nulas para o novo aluno pois quem lançará as notas é o professor
+            foreach (Aluno aluno in alunos)
             {
-                newAluno.Notas[j] = 0;
+
+                double media = aluno.CalculaMedia(alunos, (indexMedia + 1)); //para calcular a média é necessário passar a lista e o índice do aluno
+                escritor.WriteLine(aluno.ToString() + media); //escreve as informações do aluno no file.txt sobrescrevendo o método toString()
+                indexMedia++;
+
             }
+            Console.WriteLine("");
 
-            Console.WriteLine("Insira a Turma do aluno: ");
-            newAluno.Turma = Convert.ToChar(Console.ReadLine().ToUpper());
-
-            Console.WriteLine("Insira a Escola do aluno: ");
-            newAluno.EscolaNome = Console.ReadLine().ToUpper();
-
-            alunos.Add(newAluno); //adiciona o novo aluno na lista alunos
-
+            escritor.Close();
         }
-
-        int indexMedia = 0;
-
-        foreach (Aluno aluno in alunos)
-        {
-
-            double media = aluno.CalculaMedia(alunos, (indexMedia + 1)); //para calcular a média é necessário passar a lista e o índice do aluno
-            escritor.WriteLine(aluno.ToString() + media); //escreve as informações do aluno no file.txt sobrescrevendo o método toString()
-            indexMedia++;
-
-        }
-
-        escritor.Close();
 
         return alunos;
     }
@@ -66,37 +78,47 @@ class Administrador : Pessoa
 
         Console.WriteLine("Digite a quantidade de professores que quer cadastrar:");
         int numProfs = Convert.ToInt32(Console.ReadLine());
-        Console.Clear();
-
-        TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt");
-
-        for (int i = 0; i < numProfs; i++) //cadastra mais professores na lista professores
+        if (numProfs == 0)
         {
-            Professor newProf = new Professor();
-            Console.WriteLine("Insira o nome do professor: " + (i + 1));
-            newProf.Nome = Console.ReadLine().ToUpper();
-            if (ChecaExistenciaProf(professores, newProf.Nome.GetHashCode()))
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("\r\nInsira um índice maior que zero.\r\n");
+            Console.ResetColor();
+        }
+        else
+        {
+            Console.Clear();
+
+            TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt");
+
+            for (int i = 0; i < numProfs; i++) //cadastra mais professores na lista professores
             {
-                break;
+                Professor newProf = new Professor();
+                Console.WriteLine("Insira o nome do professor: " + (i + 1));
+                newProf.Nome = Console.ReadLine().ToUpper();
+                if (ChecaExistenciaProf(professores, newProf.Nome.GetHashCode()))
+                {
+                    break;
+                }
+                Console.WriteLine("Insira a matéria do professor " + newProf.Nome + ": ");
+                newProf.Materia = Console.ReadLine().ToUpper();
+                Console.WriteLine("Insira o sexo do professor (F/M): ");
+                newProf.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
+                professores.Add(newProf); //adiciona o novo professor na lista professores
             }
-            Console.WriteLine("Insira a matéria do professor " + newProf.Nome + ": ");
-            newProf.Materia = Console.ReadLine().ToUpper();
-            Console.WriteLine("Insira o sexo do professor (F/M): ");
-            newProf.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
-            professores.Add(newProf); //adiciona o novo professor na lista professores
+
+            foreach (Professor professor in professores)
+            {
+
+                escritor.WriteLine(professor.ToString()); //escreve as informações do professor no file.txt sobrescrevendo o método toString()
+
+            }
+
+            Console.WriteLine("");
+
+            escritor.Close();
         }
-
-        foreach (Professor professor in professores)
-        {
-
-            escritor.WriteLine(professor.ToString()); //escreve as informações do professor no file.txt sobrescrevendo o método toString()
-
-        }
-
-        Console.WriteLine("");
-
-        escritor.Close();
-
         return professores;
 
     }
@@ -113,11 +135,17 @@ class Administrador : Pessoa
         else if (indexProf <= 0 || indexProf > professores.Count)
         {
 
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Insira um índice válido!");
+            Console.ResetColor();
+
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum professor cadastrado.");
+            Console.ResetColor();
 
         }
 
@@ -135,66 +163,22 @@ class Administrador : Pessoa
 
         else if (indexAluno <= 0 || indexAluno > alunos.Count)
         {
-
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Insira um índice válido!");
+            Console.ResetColor();
+
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum aluno cadastrado.");
+            Console.ResetColor();
+
         }
     }
 
-    public void MostraAlunos(List<Aluno> alunos)
-    {
-        Console.WriteLine("");
-        if (alunos.Count > 0)
-        {
-            Console.WriteLine("Alunos: \r\n");
-            int i = 0;
-            foreach (Aluno aluno in alunos)
-            {
-
-                Console.WriteLine((i + 1) + "-" + aluno.Nome.ToUpper());
-                i++;
-            }
-
-
-        }
-        else
-        {
-            Console.WriteLine("Nenhum aluno cadastrado");
-
-
-        }
-        Console.WriteLine("");
-
-    }
-
-    public void MostraProfessores(List<Professor> professores)
-    {
-        Console.WriteLine("");
-
-        if (professores.Count > 0)
-        {
-            Console.WriteLine("Professores: \r\n");
-            int i = 0;
-            foreach (Professor professor in professores)
-            {
-                Console.WriteLine((i + 1) + "-" + professor.Nome.ToUpper());
-                i++;
-
-            }
-        }
-        else
-        {
-            Console.WriteLine("Nenhum professor cadastrado");
-
-        }
-        Console.WriteLine("");
-
-    }
-
-
+      
     public bool ChecaExistenciaAluno(List<Aluno> alunos, int hashNome) // checa se já existe um hashcode na lista alunos
     {
         foreach (Aluno aluno in alunos)
@@ -203,8 +187,10 @@ class Administrador : Pessoa
             if (hash.Equals(hashNome))
             {
                 Console.WriteLine("");
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Esse aluno já existe no registro.");
-                Console.WriteLine("");
+                Console.ResetColor();
                 return true;
             }
         }
@@ -219,8 +205,10 @@ class Administrador : Pessoa
             if (hash.Equals(hashNome))
             {
                 Console.WriteLine("");
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Esse professor já existe no registro.");
-                Console.WriteLine("");
+                Console.ResetColor();
                 return true;
             }
         }
@@ -229,27 +217,31 @@ class Administrador : Pessoa
     }
     public void DeletaRegistroArquivoProf(int index)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"))
+        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt";
+
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
-            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt"));
+            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
-            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt", file.ToArray());
+            File.WriteAllLines(filePath, file.ToArray());
         }
 
 
     }
     public void DeletaRegistroArquivoAluno(int index)
     {
-        if (File.Exists("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt"))
+        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt";
+
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
         {
-            var file = new List<string>(System.IO.File.ReadAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt"));
+            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
-            File.WriteAllLines("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt", file.ToArray());
+            File.WriteAllLines(filePath, file.ToArray());
         }
 
 
     }
 
-    
+
 
 }

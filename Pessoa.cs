@@ -61,5 +61,36 @@
         Console.WriteLine("Qual operação você deseja realizar ?");
 
     }
+    public virtual void DeletaRegistro(string filePath, int index)
+    {
+        if (File.Exists(filePath))
+        {
+            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
+            file.RemoveAt(index - 1);
+            File.WriteAllLines(filePath, file.ToArray());
+        }
+
+
+    }
+
+    public virtual bool ChecaExistencia(List<Pessoa> pessoas, int hashNome) // checa se já existe um hashcode na lista professores
+    {
+        foreach (Pessoa pessoa in pessoas)
+        {
+            int hash = pessoa.Nome.GetHashCode();
+            if (hash.Equals(hashNome))
+            {
+                Console.WriteLine("");
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("Essa pessoa já existe no registro.");
+                Console.ResetColor();
+                Console.WriteLine("");
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 }
