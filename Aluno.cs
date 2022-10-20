@@ -3,14 +3,8 @@
 
     public override string ToString()
     {
-
         return "Nome: " + Nome + " | Sexo: " + Sexo + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome;
     }
-    /*public override string ToString()
-    {
-
-        return "Nome: " + Nome;
-    }*/
     private double[] notas;
     private char turma;
     private string escolaNome;
