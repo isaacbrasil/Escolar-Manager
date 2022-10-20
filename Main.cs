@@ -28,11 +28,6 @@
             MenuDelegate menuProfDelegate = new MenuDelegate(sistema.MenuOperaçãoProf);
             MenuDelegate menuFuncDelegate = new MenuDelegate(sistema.MenuOperaçãoFunc);
 
-
-            OrganizadorGenerico<Aluno> listAlunoOrdenada = new OrganizadorGenerico<Aluno>();
-            OrganizadorGenerico<Professor> listProfOrdenada = new OrganizadorGenerico<Professor>();
-            OrganizadorGenerico<Produto> listCantinaOrdenada = new OrganizadorGenerico<Produto>();
-
             int optionMenu = 1;
 
             List<Aluno> alunos = new List<Aluno>() {
@@ -183,32 +178,32 @@
                                 else if (optionOperation == 3)
                                 {
                                     System.Console.WriteLine("===============================================================");
-                                    Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO PROFESSORES");
+                                    Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > REMOVER REGISTRO PROFESSORES");
                                     System.Console.WriteLine("===============================================================");
 
                                     profObj.MostraLista(professores);
 
-
-                                    Console.WriteLine("Insira qual índice do professor a ser deletado: ");
+                                    Console.WriteLine("Insira qual índice do professor a ser removido: ");
                                     int indexProf = Convert.ToInt32(Console.ReadLine());
-                                    admin.DeletaProfessores(professores, indexProf);
 
+                                    profObj.DeletaPessoa(professores, indexProf);
+                                    admin.DeletaRegistroArquivoProf(indexProf);
+                                    profObj.MostraLista(professores);
 
                                 }
                                 else if (optionOperation == 4)
                                 {
                                     System.Console.WriteLine("============================================================");
-                                    Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO ALUNOS");
+                                    Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > REMOVER REGISTRO ALUNOS");
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("\r\nAlunos: \r\n");
                                     alunoObj.MostraLista(alunos);
 
-                                    Console.WriteLine("Insira qual índice do aluno a ser deletado: ");
+                                    Console.WriteLine("Insira qual índice do aluno a ser removido: ");
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
-                                    admin.DeletaAlunos(alunos, indexAluno);
-
-
-
+                                    alunoObj.DeletaPessoa(alunos, indexAluno);
+                                    admin.DeletaRegistroArquivoAluno(indexAluno);
+                                    alunoObj.MostraLista(alunos);
 
                                 }
                                 else if (optionOperation == 5)
