@@ -25,7 +25,7 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 ## 🤝 Colaboradores
 
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+Agradecemos às seguintes pessoas que Ajudaram neste projeto:
 
 <table>
   <tr>
@@ -34,6 +34,38 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         <img src="https://avatars.githubusercontent.com/u/114941431?v=4" width="100px;" alt="Foto do Isaac Brasil no GitHub"/><br>
         <sub>
           <b>Isaac Brasil</b>
+        </sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/54810655?v=4" width="100px;" alt="Foto do Diego Aleixo no GitHub"/><br>
+        <sub>
+          <b>Diego Aleixo</b>
+        </sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/88397690?v=4" width="100px;" alt="Foto do João Vitor no GitHub"/><br>
+        <sub>
+          <b>João Vitor</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/90426365?v=4" width="100px;" alt="Foto do Armando José no GitHub"/><br>
+        <sub>
+          <b>Armando José</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/114941466?v=4" width="100px;" alt="Foto da Manoella Matias no GitHub"/><br>
+        <sub>
+          <b>Manoella Matias</b>
         </sub>
       </a>
     </td>
