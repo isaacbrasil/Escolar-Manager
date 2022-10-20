@@ -1,11 +1,16 @@
 ﻿public class Aluno : Pessoa
-{   
-    
+{
+
     public override string ToString()
     {
 
-        return "Nome: " + Nome + " | Sexo: "+ Sexo + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome + " | Média: ";
+        return "Nome: " + Nome + " | Sexo: " + Sexo + " | Matrícula: " + Id + " | Turma: " + Turma + " | Escola: " + EscolaNome;
     }
+    /*public override string ToString()
+    {
+
+        return "Nome: " + Nome;
+    }*/
     private double[] notas;
     private char turma;
     private string escolaNome;
@@ -32,7 +37,7 @@
         set { escolaNome = value; }
 
     }
-     public Aluno(string nome, double[] notas, char turma, string escolaNome)
+    public Aluno(string nome, double[] notas, char turma, string escolaNome)
     {
         Nome = nome;
         this.notas = notas;
@@ -60,9 +65,8 @@
             indexAluno++;
         }
         Console.WriteLine("");
-        Console.WriteLine("Escola: " +  ((Aluno)aluno).EscolaNome); //downcasting
+        Console.WriteLine("Escola: " + ((Aluno)aluno).EscolaNome); //downcasting
         Console.WriteLine("Turma: " + ((Aluno)aluno).Turma); //downcasting
-
     }
 
     public void ExibeComprovanteDeMatricula(Aluno aluno)
@@ -86,20 +90,7 @@
 
     }
 
-    public void MostraAlunos(List<Aluno> alunos)
-    {
-
-
-        int i = 0;
-        foreach (var aluno in alunos)
-        {
-            Console.WriteLine((i + 1) + "- " + aluno.Nome);
-            i++;
-        }
-        Console.WriteLine("");
-
-    }
-
+   
     public virtual double CalculaMedia(List<Aluno> alunos, int i)
     {
 

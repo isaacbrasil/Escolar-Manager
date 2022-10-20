@@ -6,19 +6,13 @@
         public delegate void MenuDelegate();
         static void Main(string[] args)
         {
-            //CLASSE GENERICA
-            //ClasseGenerica<Aluno> intObj = new ClasseGenerica<Aluno>();
-            /* intObj.Add(
-                new Aluno()
-                {
-                    Nome = "Isaac Brasil Oliveira 2",
-                    Notas = new double[] { 10, 10, 7, 8, 6 },
-                    Turma = 'A',
-                    EscolaNome = "Colégio Visão"
-                });*/
+
+            //---------------- Instâncias de Generics -----------------------
+
+            ClasseGenerica<Aluno> alunoObj = new ClasseGenerica<Aluno>(); //objeto genérico que imprime todos os dados do tipo 'Aluno'
+            ClasseGenerica<Professor> profObj = new ClasseGenerica<Professor>(); //objeto genérico que imprime todos os dados do tipo 'Professor'
 
 
-            int optionMenu = 1;
 
             //---------------- Instâncias de Objetos-----------------------
             Aluno aluno = new Aluno();
@@ -39,6 +33,7 @@
             OrganizadorGenerico<Professor> listProfOrdenada = new OrganizadorGenerico<Professor>();
             OrganizadorGenerico<Produto> listCantinaOrdenada = new OrganizadorGenerico<Produto>();
 
+            int optionMenu = 1;
 
             List<Aluno> alunos = new List<Aluno>() {
                             new Aluno()
@@ -158,12 +153,15 @@
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > CADASTRAR PROFESSORES");
                                     System.Console.WriteLine("============================================================");
-                                    admin.MostraProfessores(professores);
+
+                                    Console.WriteLine("\r\nProfessores: \r\n");
+                                    profObj.MostraLista(professores);
+
 
                                     List<Professor> listaProfessores = admin.CadastraProfessor(professores)!;
                                     professores = listaProfessores;
-                                    admin.MostraProfessores(listaProfessores);
-
+                                    Console.WriteLine("Professores: \r\n");
+                                    profObj.MostraLista(listaProfessores);
 
 
 
@@ -173,14 +171,13 @@
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > CADASTRAR ALUNOS");
                                     System.Console.WriteLine("============================================================");
-                                    admin.MostraAlunos(alunos);
 
+                                    Console.WriteLine("\r\nAlunos: \r\n");
+                                    alunoObj.MostraLista(alunos);
                                     List<Aluno> listaAlunos = admin.CadastraAluno(alunos)!;
                                     alunos = listaAlunos;
-                                    admin.MostraAlunos(listaAlunos);
-
-
-
+                                    Console.WriteLine("Alunos: \r\n");
+                                    alunoObj.MostraLista(listaAlunos);
 
                                 }
                                 else if (optionOperation == 3)
@@ -188,12 +185,13 @@
                                     System.Console.WriteLine("===============================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO PROFESSORES");
                                     System.Console.WriteLine("===============================================================");
-                                    admin.MostraProfessores(professores);
+
+                                    profObj.MostraLista(professores);
+
 
                                     Console.WriteLine("Insira qual índice do professor a ser deletado: ");
                                     int indexProf = Convert.ToInt32(Console.ReadLine());
                                     admin.DeletaProfessores(professores, indexProf);
-                                    admin.MostraProfessores(professores);
 
 
                                 }
@@ -202,12 +200,13 @@
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > DELETAR REGISTRO ALUNOS");
                                     System.Console.WriteLine("============================================================");
-                                    admin.MostraAlunos(alunos);
+                                    Console.WriteLine("\r\nAlunos: \r\n");
+                                    alunoObj.MostraLista(alunos);
 
                                     Console.WriteLine("Insira qual índice do aluno a ser deletado: ");
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
                                     admin.DeletaAlunos(alunos, indexAluno);
-                                    admin.MostraAlunos(alunos);
+
 
 
 
@@ -217,7 +216,9 @@
                                     System.Console.WriteLine("==================================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > MOSTRAR PROFESSORES CADASTRADOS");
                                     System.Console.WriteLine("==================================================================");
-                                    admin.MostraProfessores(professores);
+                                    Console.WriteLine("\r\nProfessores: \r\n");
+                                    profObj.MostraLista(professores);
+
 
 
 
@@ -227,7 +228,8 @@
                                     System.Console.WriteLine("==============================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR > MOSTRAR ALUNOS CADASTRADOS");
                                     System.Console.WriteLine("=============================================================");
-                                    admin.MostraAlunos(alunos);
+                                    Console.WriteLine("\r\nAlunos: \r\n");
+                                    alunoObj.MostraLista(alunos);
 
 
 
@@ -259,8 +261,8 @@
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ALUNO > CALCULAR MÉDIA");
                                     System.Console.WriteLine("============================================================");
-                                    Console.WriteLine("Selecione o aluno: ");
-                                    admin.MostraAlunos(alunos);
+                                    Console.WriteLine("Selecione o aluno:\n\r");
+                                    alunoObj.MostraLista(alunos);
 
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
 
@@ -284,8 +286,8 @@
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("LOGIN > USUARIOS > ALUNO > EMITIR COMPROVANTE DE MATRÍCULA");
                                     System.Console.WriteLine("============================================================");
-                                    Console.WriteLine("Selecione o aluno: ");
-                                    admin.MostraAlunos(alunos);
+                                    Console.WriteLine("Selecione o aluno:\r\n");
+                                    alunoObj.MostraLista(alunos);
 
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
                                     if (indexAluno > 0 && indexAluno <= alunos.Count)
@@ -310,12 +312,15 @@
                                     Console.WriteLine("LOGIN > USUARIOS > ALUNO > EXIBIR INFORMAÇÕES DO ALUNO");
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("Selecione o aluno: ");
-                                    admin.MostraAlunos(alunos);
+                                    alunoObj.MostraLista(alunos);
+
 
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
                                     if (indexAluno > 0 && indexAluno <= alunos.Count)
                                     {
                                         aluno.MostraDados(alunos[(indexAluno - 1)]);
+                                        Console.WriteLine("Média: "+ aluno.CalculaMedia(alunos, indexAluno));
+
                                     }
                                     else
                                     {
@@ -327,7 +332,6 @@
 
                                     }
 
-
                                 }
                             }
 
@@ -338,9 +342,7 @@
                             Console.WriteLine("LOGIN > USUARIOS > PROFESSOR");
                             System.Console.WriteLine("============================================================");
 
-
                             Professor prof = new Professor();
-
 
                             int optionOperation;
                             optionOperation = 1;
@@ -359,8 +361,8 @@
                                     Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > CADASTRAR NOTAS ALUNOS");
                                     System.Console.WriteLine("============================================================");
 
-                                    Console.WriteLine("Lançar notas de qual aluno?");
-                                    admin.MostraAlunos(alunos);
+                                    Console.WriteLine("Lançar notas de qual aluno?\r\n");
+                                    alunoObj.MostraLista(alunos);
 
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
                                     int numNotas = 5;
@@ -384,10 +386,7 @@
 
                                     }
 
-
                                     Console.WriteLine("");
-
-
 
                                 }
                                 else if (optionOperation == 2)
@@ -408,7 +407,8 @@
                                     Console.WriteLine("LOGIN > USUARIOS > PROFESSOR > EXIBIR INFORMAÇÕES DO PROFESSOR");
                                     System.Console.WriteLine("============================================================");
                                     Console.WriteLine("Selecione o professor: ");
-                                    admin.MostraProfessores(professores);
+                                    profObj.MostraLista(professores);
+
 
                                     int indexProf = Convert.ToInt32(Console.ReadLine());
 

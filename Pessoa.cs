@@ -93,32 +93,4 @@
         return false;
     }
 
-    public virtual void MostraLista(List<Pessoa> pessoas)
-    {
-        Console.WriteLine("");
-        if (pessoas.Count > 0)
-        {
-            Console.WriteLine("Alunos: \r\n");
-            int i = 0;
-            foreach (Aluno pessoa in pessoas)
-            {
-
-                Console.WriteLine((i + 1) + "-" + pessoa.Nome.ToUpper());
-                i++;
-            }
-
-
-        }
-        else
-        {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Nenhuma pessoa cadastrada");
-            Console.ResetColor();
-
-        }
-        Console.WriteLine("");
-
-    }
-
-
 }

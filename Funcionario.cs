@@ -46,13 +46,13 @@
 
     public void DeletaItemCantina(List<Produto> produtos, int indexProduto)
     {
-        if (produtos.Count > 0 && indexProduto <= produtos.Count)
+        if (indexProduto > 0 && produtos.Count > 0 && indexProduto <= produtos.Count)
         {
             produtos.RemoveAt((indexProduto - 1));
             DeletaRegistroArquivoProduto(indexProduto);
         }
 
-        else if (indexProduto > produtos.Count)
+        else if (indexProduto <= 0 || indexProduto > produtos.Count)
         {
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Black;
