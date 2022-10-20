@@ -1,5 +1,3 @@
-Nome: ISAAC BRASIL OLIVEIRA | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: COLÉGIO VISÃO | Média: 8,2
-Nome: GABRIEL LUIZ FREITAS | Sexo: M | Matrícula: 202201505 | Turma: B | Escola: COLÉGIO DELTA | Média: 7,26
-Nome: AMANDA CHRISTINNE SOUSA DOS SANTOS | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: COLÉGIO WR | Média: 7,4
-Nome: HEITOR FRAZÃO | Sexo: M | Matrícula: 202201512 | Turma: B | Escola: VISÃO | Média: 0
-Nome: MATHEUS LAUREANO | Sexo: M | Matrícula: 202201513 | Turma: A | Escola: VISÃO | Média: 0
+Nome: ISAAC BRASIL OLIVEIRA | Sexo: M | Matrícula: 202201504 | Turma: A | Escola: COLÉGIO VISÃO8,2
+Nome: GABRIEL LUIZ FREITAS | Sexo: M | Matrícula: 202201505 | Turma: B | Escola: COLÉGIO DELTA7,26
+Nome: AMANDA CHRISTINNE SOUSA DOS SANTOS | Sexo: F | Matrícula: 202201506 | Turma: C | Escola: COLÉGIO WR7,4

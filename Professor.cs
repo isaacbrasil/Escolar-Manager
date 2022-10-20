@@ -37,13 +37,13 @@ class Professor : Pessoa
 
     }
 
-    public void MostraDadosProfessor(Professor professor)
+    public override void MostraDados(Pessoa professor)
     {
+       
         Console.WriteLine("Nome: " + professor.Nome);
         Console.WriteLine("Sexo: " + professor.Sexo);
         Console.WriteLine("Id: " + professor.Id);
-        Console.WriteLine("Matéria: " + professor.Materia);
-
+        Console.WriteLine("Matéria: " + ((Professor)professor).Materia);
     }
     public void MostraEstatisticaTurma(List<Aluno> alunos)
     {
