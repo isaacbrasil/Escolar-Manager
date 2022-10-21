@@ -4,10 +4,14 @@
 
     public List<Produto> CadastraItemCantina(List<Produto> produtos)
     {
+        Console.BackgroundColor = ConsoleColor.DarkGray;
+        Console.WriteLine("Dados serão gravados em: " + AppDomain.CurrentDomain.BaseDirectory + "cantina.txt\r\n");
+        Console.ResetColor();
+
         Console.WriteLine("Digite a quantidade de itens que quer cadastrar:");
         int numItens = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
-        TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt");
+        TextWriter escritor = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "cantina.txt");
 
         for (int i = 0; i < numItens; i++) //cadastra mais produtos na lista produtos
         {
@@ -65,7 +69,7 @@
     }
     public void DeletaRegistroArquivoProduto(List<Produto> produtos, int index)
     {
-        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt";
+        string filePath = AppDomain.CurrentDomain.BaseDirectory + "cantina.txt";
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && (index - 1) <= produtos.Count && index > 0)
         {
             var file = new List<string>(System.IO.File.ReadAllLines(filePath));
