@@ -2,7 +2,6 @@
 {
     public class GerenciamentoEscolar
     {
-
         public delegate void MenuDelegate();
         static void Main(string[] args)
         {
@@ -58,8 +57,6 @@
                             }
         };
 
-
-
             List<Professor> professores = new List<Professor>() {
                             new Professor()
                             {
@@ -101,7 +98,6 @@
                                 ValorAlimento = 2.5,
                                 QuantidadeItens = 10
 
-
                             }
         };
             while (optionMenu != 0)
@@ -110,8 +106,6 @@
 
                 optionMenu = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
-
-
 
                 if (optionMenu == 1)
                 {
@@ -133,9 +127,7 @@
                             Console.WriteLine("LOGIN > USUARIOS > ADMINISTRADOR");
                             System.Console.WriteLine("============================================================");
 
-
                             int optionOperation = 1;
-
 
                             while (optionOperation != 0)//loop do login do usuario
                             {
@@ -153,13 +145,10 @@
                                     Console.WriteLine("\r\nProfessores: \r\n");
                                     profObj.MostraLista(professores);
 
-
                                     List<Professor> listaProfessores = admin.CadastraProfessor(professores)!;
                                     professores = listaProfessores;
                                     Console.WriteLine("Professores: \r\n");
                                     profObj.MostraLista(listaProfessores);
-
-
 
                                 }
                                 else if (optionOperation == 2)
@@ -188,7 +177,7 @@
                                     int indexProf = Convert.ToInt32(Console.ReadLine());
 
                                     profObj.DeletaPessoa(professores, indexProf);
-                                    admin.DeletaRegistroArquivoProf(indexProf);
+                                    admin.DeletaRegistroArquivoProf(professores, indexProf);
                                     profObj.MostraLista(professores);
 
                                 }
@@ -203,7 +192,7 @@
                                     Console.WriteLine("Insira qual índice do aluno a ser removido: ");
                                     int indexAluno = Convert.ToInt32(Console.ReadLine());
                                     alunoObj.DeletaPessoa(alunos, indexAluno);
-                                    admin.DeletaRegistroArquivoAluno(indexAluno);
+                                    admin.DeletaRegistroArquivoAluno(alunos, indexAluno);
                                     alunoObj.MostraLista(alunos);
 
                                 }
@@ -215,9 +204,6 @@
                                     Console.WriteLine("\r\nProfessores: \r\n");
                                     profObj.MostraLista(professores);
 
-
-
-
                                 }
                                 else if (optionOperation == 6)
                                 {
@@ -227,8 +213,6 @@
                                     Console.WriteLine("\r\nAlunos: \r\n");
                                     alunoObj.MostraLista(alunos);
 
-
-
                                 }
                             }
                         }
@@ -237,8 +221,6 @@
                             System.Console.WriteLine("============================================================");
                             Console.WriteLine("LOGIN > USUARIOS > ALUNO");
                             System.Console.WriteLine("============================================================");
-
-
 
                             int optionOperation;
 
@@ -250,7 +232,6 @@
 
                                 optionOperation = Convert.ToInt32(Console.ReadLine());
                                 Console.Clear();
-
 
                                 if (optionOperation == 1) //calcula a média do aluno
                                 {
@@ -273,9 +254,7 @@
                                         Console.ForegroundColor = ConsoleColor.Black;
                                         Console.WriteLine("Insira um índice válido!");
                                         Console.ResetColor();
-
                                     }
-
                                 }
                                 else if (optionOperation == 2) //emite comprovante de matrícula do aluno
                                 {
@@ -299,8 +278,6 @@
 
 
                                     }
-
-
                                 }
                                 else if (optionOperation == 3) //exibe informações do aluno
                                 {
@@ -325,12 +302,9 @@
                                         Console.WriteLine("Insira um índice válido!");
                                         Console.ResetColor();
 
-
                                     }
-
                                 }
                             }
-
                         }
                         else if (optionUser == 3)
                         {
@@ -422,8 +396,6 @@
 
 
                                     }
-
-
                                 }
                                 else if (optionOperation == 4)
                                 {
@@ -500,13 +472,10 @@
                                     Console.WriteLine("");
                                 }
                             }
-
-
                         }
                     }
                 }
             }
-
         }
     }
 }

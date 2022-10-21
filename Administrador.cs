@@ -159,11 +159,11 @@ class Administrador : Pessoa
 
         return false;
     }
-    public void DeletaRegistroArquivoProf(int index)
+    public void DeletaRegistroArquivoProf(List<Professor> professores, int index)
     {
         string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt";
 
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && index < professores.Count)
         {
             var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
@@ -172,11 +172,11 @@ class Administrador : Pessoa
 
 
     }
-    public void DeletaRegistroArquivoAluno(int index)
+    public void DeletaRegistroArquivoAluno(List<Aluno>alunos, int index)
     {
         string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt";
 
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && index < alunos.Count)
         {
             var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
