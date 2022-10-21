@@ -72,7 +72,6 @@ class Administrador : Pessoa
 
         return alunos;
     }
-
     public List<Professor> CadastraProfessor(List<Professor> professores)
     {
 
@@ -163,7 +162,7 @@ class Administrador : Pessoa
     {
         string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt";
 
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && index < professores.Count)
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && (index - 1) <= professores.Count && index > 0)
         {
             var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
@@ -176,7 +175,7 @@ class Administrador : Pessoa
     {
         string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt";
 
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && index < alunos.Count)
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && (index-1) <= alunos.Count && index > 0)
         {
             var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);

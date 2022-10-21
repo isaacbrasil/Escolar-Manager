@@ -47,7 +47,7 @@
         if (indexProduto > 0 && produtos.Count > 0 && indexProduto <= produtos.Count)
         {
             produtos.RemoveAt((indexProduto - 1));
-            DeletaRegistroArquivoProduto(indexProduto);
+            DeletaRegistroArquivoProduto(produtos, indexProduto);
         }
 
         else if (indexProduto <= 0 || indexProduto > produtos.Count)
@@ -63,7 +63,18 @@
             Console.WriteLine("Nenhum produto cadastrado.");
         }
     }
+    public void DeletaRegistroArquivoProduto(List<Produto> produtos, int index)
+    {
+        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt";
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && (index - 1) <= produtos.Count && index > 0)
+        {
+            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
+            file.RemoveAt(index - 1);
+            File.WriteAllLines(filePath, file.ToArray());
+        }
 
+
+    }
 
     public void MostraItensCantina(List<Produto> produtos)
     {
@@ -126,18 +137,7 @@
 
         return false;
     }
-    public void DeletaRegistroArquivoProduto(int index)
-    {
-        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/cantina.txt";
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
-        {
-            var file = new List<string>(System.IO.File.ReadAllLines(filePath));
-            file.RemoveAt(index - 1);
-            File.WriteAllLines(filePath, file.ToArray());
-        }
-
-
-    }
+   
   
 }
 
