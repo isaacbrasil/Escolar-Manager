@@ -7,6 +7,10 @@ class Administrador : Pessoa
     Sistema sistema = new Sistema();
     public List<Aluno> CadastraAluno(List<Aluno> alunos)
     {
+        Console.BackgroundColor = ConsoleColor.DarkGray;
+        Console.WriteLine("Dados serão gravados em: " + AppDomain.CurrentDomain.BaseDirectory + "alunos.txt\r\n");
+        Console.ResetColor();
+
         Console.WriteLine("Digite a quantidade de alunos que quer cadastrar:");
         int numAlunos = Convert.ToInt32(Console.ReadLine());
         int numNotas = 5;
@@ -22,7 +26,7 @@ class Administrador : Pessoa
         {
             Console.Clear();
 
-            TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt");
+            TextWriter escritor = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "alunos.txt");
 
             for (int i = 0; i < numAlunos; i++) //cadastra mais alunos na lista alunos
             {
@@ -72,10 +76,11 @@ class Administrador : Pessoa
 
         return alunos;
     }
-
     public List<Professor> CadastraProfessor(List<Professor> professores)
     {
-
+        Console.BackgroundColor = ConsoleColor.DarkGray;
+        Console.WriteLine("Dados serão gravados em: " + AppDomain.CurrentDomain.BaseDirectory +"professores.txt\r\n");
+        Console.ResetColor();
         Console.WriteLine("Digite a quantidade de professores que quer cadastrar:");
         int numProfs = Convert.ToInt32(Console.ReadLine());
         if (numProfs == 0)
@@ -90,7 +95,8 @@ class Administrador : Pessoa
         {
             Console.Clear();
 
-            TextWriter escritor = new StreamWriter("C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt");
+            TextWriter escritor = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "professores.txt");
+
 
             for (int i = 0; i < numProfs; i++) //cadastra mais professores na lista professores
             {
@@ -159,11 +165,11 @@ class Administrador : Pessoa
 
         return false;
     }
-    public void DeletaRegistroArquivoProf(int index)
+    public void DeletaRegistroArquivoProf(List<Professor> professores, int index)
     {
-        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/professores.txt";
+        string filePath = AppDomain.CurrentDomain.BaseDirectory + "professores.txt";
 
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && (index - 1) <= professores.Count && index > 0)
         {
             var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);
@@ -172,11 +178,12 @@ class Administrador : Pessoa
 
 
     }
-    public void DeletaRegistroArquivoAluno(int index)
+    public void DeletaRegistroArquivoAluno(List<Aluno>alunos, int index)
     {
-        string filePath = "C:/Users/Escolar Manager/source/repos/isaacEstudos/GerenciamentoEscolar/alunos.txt";
+        string filePath = AppDomain.CurrentDomain.BaseDirectory + "alunos.txt";
 
-        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
+
+        if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && (index-1) <= alunos.Count && index > 0)
         {
             var file = new List<string>(System.IO.File.ReadAllLines(filePath));
             file.RemoveAt(index - 1);

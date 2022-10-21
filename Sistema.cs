@@ -40,8 +40,6 @@
 
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("");
-
 
     }
 
@@ -56,8 +54,6 @@
 
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("");
-
 
     }
     public void MenuOperaçãoProf()
@@ -71,9 +67,6 @@
         Console.WriteLine("4 - Mostra Estatísticas da Turma");
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("");
-
-
 
     }
 
@@ -89,14 +82,11 @@
         Console.WriteLine("4 - Calcular caixa da cantina");
         System.Console.WriteLine("0 - Voltar");
         System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("");
-
 
     }
     public void MensagemSucesso()
     {
         Console.WriteLine("Operação Realizada com Sucesso!\r\n");
-
     }
   
 }

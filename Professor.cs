@@ -63,8 +63,11 @@ class Professor : Pessoa
             }
             indexMedia++;
         }
+        Console.WriteLine("");
+        Console.WriteLine("");
         Console.WriteLine("===================================");
-
+        Console.WriteLine("Nº Total de alunos: " + alunos.Count());
+        Console.WriteLine("===================================");
         Console.WriteLine("Nº de alunos do sexo masculino: " + numAlunosSexoMasc);
         Console.WriteLine("===================================");
         Console.WriteLine("HOMENS: \r\n");

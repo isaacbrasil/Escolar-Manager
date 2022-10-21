@@ -36,7 +36,7 @@ public class ClasseGenerica<T>
         else
         {
             Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Nenhuma pessoa cadastrada");
+            Console.WriteLine("Nenhuma pessoa cadastrada.");
             Console.ResetColor();
             return "";
         }
@@ -49,8 +49,6 @@ public class ClasseGenerica<T>
         if (indexPessoa > 0 && pessoas.Count > 0 && indexPessoa <= pessoas.Count) // se a lista não for vazia, limpa ela no indice indexProf
         {
             pessoas.RemoveAt((indexPessoa - 1));
-            //DeletaRegistroArquivoProf((indexProf));
-
         }
         else if (indexPessoa <= 0 || indexPessoa > pessoas.Count)
         {
@@ -64,7 +62,7 @@ public class ClasseGenerica<T>
         else
         {
             Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Nenhum professor cadastrado.");
+            Console.WriteLine("Nenhuma pessoa cadastrada.");
             Console.ResetColor();
 
         }

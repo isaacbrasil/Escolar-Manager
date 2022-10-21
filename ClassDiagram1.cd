@@ -3,7 +3,7 @@
   <Class Name="Administrador">
     <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAgAAAAAAACAAAAAAQBAAAAAIAEAYAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAgAAAAAAACAAAAAAQBAAAAAIAEAIAAAAAA=</HashCode>
       <FileName>Administrador.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -23,6 +23,9 @@
   </Class>
   <Class Name="CSharp_ExtensionsMethods.GerenciamentoEscolar">
     <Position X="11" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
       <Delegate Name="CSharp_ExtensionsMethods.GerenciamentoEscolar.MenuDelegate" Collapsed="true">
         <TypeIdentifier>
