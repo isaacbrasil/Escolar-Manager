@@ -1,4 +1,4 @@
 Nome: LUTIANO | Matéria: FÍSICA
 Nome: ÉDER | Matéria: BIOLOGIA
 Nome: CHRISTOPHER | Matéria: FILOSOFIA
-Nome: LUCIANO | Matéria: FÍSICA
+Nome: LUCAS | Matéria: BIOLOGIA
