@@ -5,7 +5,7 @@
     public List<Produto> CadastraItemCantina(List<Produto> produtos)
     {
         Console.BackgroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine("Dados serão gravados em: " + AppDomain.CurrentDomain.BaseDirectory + "cantina.txt\r\n");
+        Console.WriteLine("Dados serão gravados em:\n\r" + AppDomain.CurrentDomain.BaseDirectory + "cantina.txt\r\n");
         Console.ResetColor();
 
         Console.WriteLine("Digite a quantidade de itens que quer cadastrar:");
@@ -33,11 +33,8 @@
 
         foreach (Produto produto in produtos)
         {
-
             escritor.WriteLine(produto.ToString());
-
         }
-
 
         Console.WriteLine("");
 

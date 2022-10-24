@@ -12,7 +12,6 @@
             ClasseGenerica<Professor> profObj = new ClasseGenerica<Professor>(); //objeto genérico que imprime todos os dados do tipo 'Professor'
 
 
-
             //---------------- Instâncias de Objetos-----------------------
             Aluno aluno = new Aluno();
             Sistema sistema = new Sistema();

@@ -8,7 +8,7 @@ class Administrador : Pessoa
     public List<Aluno> CadastraAluno(List<Aluno> alunos)
     {
         Console.BackgroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine("Dados serão gravados em: " + AppDomain.CurrentDomain.BaseDirectory + "alunos.txt\r\n");
+        Console.WriteLine("Dados serão gravados em:\n\r" + AppDomain.CurrentDomain.BaseDirectory + "alunos.txt\r\n");
         Console.ResetColor();
 
         Console.WriteLine("Digite a quantidade de alunos que quer cadastrar:");
@@ -79,7 +79,7 @@ class Administrador : Pessoa
     public List<Professor> CadastraProfessor(List<Professor> professores)
     {
         Console.BackgroundColor = ConsoleColor.DarkGray;
-        Console.WriteLine("Dados serão gravados em: " + AppDomain.CurrentDomain.BaseDirectory +"professores.txt\r\n");
+        Console.WriteLine("Dados serão gravados em:\n\r" + AppDomain.CurrentDomain.BaseDirectory +"professores.txt\r\n");
         Console.ResetColor();
         Console.WriteLine("Digite a quantidade de professores que quer cadastrar:");
         int numProfs = Convert.ToInt32(Console.ReadLine());
