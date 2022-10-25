@@ -1,4 +1,3 @@
 Produto: RUFFLES | Preço: R$ 5,9 | Quantidade: 10x
 Produto: OREO | Preço: R$ 3,9 | Quantidade: 10x
 Produto: ÁGUA | Preço: R$ 2,5 | Quantidade: 10x
-Produto: COCA-COLA | Preço: R$ 2,5 | Quantidade: 32x
