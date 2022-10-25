@@ -60,7 +60,10 @@
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum produto cadastrado.");
+            Console.ResetColor();
+
         }
     }
     public void DeletaRegistroArquivoProduto(List<Produto> produtos, int index)
@@ -94,7 +97,9 @@
         }
         else
         {
+            Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum produto cadastrado.");
+            Console.ResetColor();
 
 
         }
