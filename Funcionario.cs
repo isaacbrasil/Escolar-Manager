@@ -129,8 +129,11 @@
             if (hash.Equals(hashNome))
             {
                 Console.WriteLine("");
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Esse produto já existe no registro.");
-                Console.WriteLine("");
+                Console.ResetColor();
+
                 return true;
             }
         }
