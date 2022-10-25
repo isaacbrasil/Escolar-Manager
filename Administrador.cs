@@ -4,7 +4,6 @@ using System.Text;
 class Administrador : Pessoa
 {
 
-    Sistema sistema = new Sistema();
     public List<Aluno> CadastraAluno(List<Aluno> alunos)
     {
         Console.BackgroundColor = ConsoleColor.DarkGray;

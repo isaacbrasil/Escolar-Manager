@@ -3,7 +3,7 @@
   <Class Name="Administrador">
     <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAACAAAAAAQBAAAAAIAEAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAgAAAAAAACAAAAAAABAAAAAIAEAIAAAAAA=</HashCode>
       <FileName>Administrador.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,7 +17,7 @@
   <Class Name="Funcionario">
     <Position X="5.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAAAAQABABQAAAAAAAACACAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAQABABAAAAAAAAACACAAAAAA=</HashCode>
       <FileName>Funcionario.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -41,7 +41,7 @@
   <Class Name="Pessoa">
     <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQACEAAIABCAAAAAgAIAAAAAAAAAAIQAAAEAAAEAAgA=</HashCode>
+      <HashCode>AQACAAAIAACAAAAAgAIAAAAAAAAAAIQAAAEAAAEAAgA=</HashCode>
       <FileName>Pessoa.cs</FileName>
     </TypeIdentifier>
   </Class>

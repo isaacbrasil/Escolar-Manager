@@ -1,6 +1,5 @@
 ﻿public class Funcionario : Pessoa
 {
-    Sistema sistema = new Sistema();
 
     public List<Produto> CadastraItemCantina(List<Produto> produtos)
     {
