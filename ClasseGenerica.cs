@@ -40,7 +40,6 @@ public class ClasseGenerica<T>
             Console.ResetColor();
             return "";
         }
-        Console.WriteLine("");
 
     }
     public void DeletaPessoa(List<T> pessoas, int indexPessoa)
