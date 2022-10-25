@@ -99,6 +99,19 @@
 
                             }
         };
+            
+            string nomeAlimento2 = "COCA-COLA";
+            double valorAlimento2 = 2.5;
+            int quantidadeItens2 = 32;
+
+            object itemNomeObj = nomeAlimento2; // boxing
+            object itemValObj = valorAlimento2; // boxing
+            object itemQtdeObj = quantidadeItens2; // boxing
+
+            Produto produtoBoxUnboxing = new Produto((string)itemNomeObj, (double)itemValObj, (int)itemQtdeObj); //unboxing
+            itensCantina.Add(produtoBoxUnboxing); //adiciono o novo produto na lista da cantina
+
+
             while (optionMenu != 0)
             {
                 menuDelegate();
