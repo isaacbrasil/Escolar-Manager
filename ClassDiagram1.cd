@@ -76,7 +76,7 @@
   <Class Name="ClasseGenerica&lt;T&gt;">
     <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAQAAgAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAgAAAA=</HashCode>
       <FileName>ClasseGenerica.cs</FileName>
     </TypeIdentifier>
   </Class>
