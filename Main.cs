@@ -100,13 +100,13 @@
                             }
         };
             
-            string nomeAlimento2 = "COCA-COLA";
-            double valorAlimento2 = 2.5;
-            int quantidadeItens2 = 32;
+            string nomeAlimento = "COCA-COLA";
+            double valorAlimento = 2.5;
+            int quantidadeItens = 32;
 
-            object itemNomeObj = nomeAlimento2; // boxing
-            object itemValObj = valorAlimento2; // boxing
-            object itemQtdeObj = quantidadeItens2; // boxing
+            object itemNomeObj = nomeAlimento; // boxing
+            object itemValObj = valorAlimento; // boxing
+            object itemQtdeObj = quantidadeItens; // boxing
 
             Produto produtoBoxUnboxing = new Produto((string)itemNomeObj, (double)itemValObj, (int)itemQtdeObj); //unboxing
             itensCantina.Add(produtoBoxUnboxing); //adiciono o novo produto na lista da cantina
