@@ -111,6 +111,7 @@
         int quantidadeMensal = 30;
 
         foreach (var produto in produtos)
+
         {
 
             somaCaixa += produto.ValorAlimento * produto.QuantidadeItens;

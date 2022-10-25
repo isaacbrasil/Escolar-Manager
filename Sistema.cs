@@ -3,14 +3,23 @@
     //CLASSE SISTEMA CRIADA PARA UTILIZAÇÃO DA NOÇÃO DRY - DON'T REPEAT YOURSELF
     public void MenuSistema()
     {
-        System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Bem-Vindo ao Software Escolar Manager!");
+        System.Console.WriteLine("--------------------------------------------------------------------------------");
+        string title = @" 
+ ______               _              __  __                                   
+|  ____|             | |            |  \/  |                                  
+| |__   ___  ___ ___ | | __ _ _ __  | \  / | __ _ _ __   __ _  __ _  ___ _ __ 
+|  __| / __|/ __/ _ \| |/ _` | '__| | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__|
+| |____\__ \ (_| (_) | | (_| | |    | |  | | (_| | | | | (_| | (_| |  __/ |   
+|______|___/\___\___/|_|\__,_|_|    |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_|   
+                                                               __/ |          
+                                                              |___/           ";
+        Console.WriteLine(title);
         Console.WriteLine("");
         System.Console.WriteLine("Digite a operação que deseja realizar: ");
         Console.WriteLine("");
         System.Console.WriteLine("1 - Logar no Sistema ");
         System.Console.WriteLine("0 - Sair");
-        System.Console.WriteLine("------------------------------------------------------------");
+        System.Console.WriteLine("-------------------------------------------------------------------------------");
 
     }
     public void MenuUsuário()
@@ -88,5 +97,5 @@
     {
         Console.WriteLine("Operação Realizada com Sucesso!\r\n");
     }
-  
+
 }
