@@ -3,7 +3,7 @@
     private string nome;
     private char sexo;
     private int id;
-    private static int numero = 202201500;
+    private static int numero = 202201500; //crio um número de matrícula padrão, deixando cada objeto com um id único a partir do incremento desse
     public string Nome
     {
         get { return nome; }
