@@ -100,11 +100,12 @@
                             }
         };
             
-            string nomeAlimento = "COCA-COLA";
+            string nomeAlimento = "coca-cola";
+            string nomeAlimentoFormatted = nomeAlimento.ToUpper();
             double valorAlimento = 2.5;
             int quantidadeItens = 32;
 
-            object itemNomeObj = nomeAlimento; // boxing
+            object itemNomeObj = nomeAlimentoFormatted; // boxing
             object itemValObj = valorAlimento; // boxing
             object itemQtdeObj = quantidadeItens; // boxing
 
