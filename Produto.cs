@@ -1,13 +1,9 @@
 ﻿public class Produto
 {
 
-    private string nomeAlimento;
-    private double valorAlimento;
-    private int quantidadeItens;
-    public string NomeAlimento { get { return nomeAlimento; } set { this.nomeAlimento = value; } }
-    public double ValorAlimento { get { return valorAlimento; } set { this.valorAlimento = value; } }
-    public int QuantidadeItens { get { return quantidadeItens; } set { this.quantidadeItens = value; } }
-
+    public string NomeAlimento { get; set; }
+    public double ValorAlimento { get; set; }
+    public int QuantidadeItens { get; set; }
 
     public override string ToString()
     {
@@ -18,15 +14,15 @@
 
     public Produto(string nomeAlimento, double valorAlimento, int quantidadeItens)
     {
-        this.nomeAlimento = nomeAlimento;
-        this.valorAlimento = valorAlimento;
-        this.quantidadeItens = quantidadeItens;
+        NomeAlimento = nomeAlimento;
+        ValorAlimento = valorAlimento;
+        QuantidadeItens = quantidadeItens;
 
     }
     public Produto()
     {
-        this.nomeAlimento = "";
-        this.valorAlimento = 0;
-        this.quantidadeItens = 0;
+        NomeAlimento = "";
+        ValorAlimento = 0;
+        QuantidadeItens = 0;
     }
 }

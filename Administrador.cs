@@ -38,7 +38,7 @@
                 Console.WriteLine("Insira o sexo do aluno (F/M): ");
                 newAluno.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
 
-                if (newAluno.Sexo != 'M' && newAluno.Sexo != 'F')
+                if (newAluno.Sexo != (char)SexoPessoa.masc && newAluno.Sexo != (char)SexoPessoa.fem)
                 {
                     Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.ForegroundColor = ConsoleColor.Black;
@@ -118,7 +118,7 @@
                 newProf.Materia = Console.ReadLine().ToUpper();
                 Console.WriteLine("Insira o sexo do professor (F/M): ");
                 newProf.Sexo = Convert.ToChar(Console.ReadLine().ToUpper());
-                if (newProf.Sexo != 'M' && newProf.Sexo != 'F')
+                if (newProf.Sexo != (char)SexoPessoa.masc && newProf.Sexo != (char)SexoPessoa.fem)
                 {
                     Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.ForegroundColor = ConsoleColor.Black;

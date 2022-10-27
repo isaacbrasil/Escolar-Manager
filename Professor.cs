@@ -1,5 +1,4 @@
-﻿using System.Linq;
-class Professor : Pessoa
+﻿class Professor : Pessoa
 {
     public override string ToString()
     {
@@ -7,24 +6,7 @@ class Professor : Pessoa
         return "Nome: " + Nome + " | Matéria: " + Materia;
     }
     public double TaxaAprovacao { get; set; }
-
     public string Materia { get; set; }
-    /*public string Materia
-    {
-        get { return materia; }
-        set { materia = value; }
-    }*/
-
-
-    /* public Professor(double taxaAprovacao)
-     {
-         TaxaAprovacao = taxaAprovacao;
-
-     }
-     public Professor()
-     {
-         this.taxaAprovacao = 0;
-     }*/
 
     public static double CalculaTaxaAprovacao(int numAlunos, int alunosAprovados)
     {
