@@ -4,6 +4,11 @@
     private char sexo;
     private int id;
     private static int numero = 202201500; //crio um número de matrícula padrão, deixando cada objeto com um id único a partir do incremento desse
+    protected enum SexoPessoa
+    {
+        masc = 'M',
+        fem = 'F'
+    }
     public string Nome
     {
         get { return nome; }
@@ -16,7 +21,7 @@
     }
     public override int GetHashCode()
     {
-        return this.Nome.GetHashCode() * 17; //multiplica o hashcode por um número primo para diminuir colisões
+        return Nome.GetHashCode() * 17; //multiplica o hashcode por um número primo para diminuir colisões
     }
    
     public int Id
@@ -33,16 +38,16 @@
 
     public Pessoa()
     {
-        this.nome = "";
-        Pessoa.numero++; // cria um id unico para cada construtor novo criado
-        this.id = Pessoa.numero;
+        nome = "";
+        numero++; // cria um id unico para cada construtor novo criado
+        id = numero;
     }
 
     public virtual void MostraDados(Pessoa pessoa)
     {
         System.Console.WriteLine("------------------------------------------------------------");
-        Console.WriteLine("Nome: " + pessoa.Nome);
-        Console.WriteLine("Id: " + pessoa.Id);
+        Console.WriteLine("Nome: " + Nome);
+        Console.WriteLine("Id: " + Id);
         System.Console.WriteLine("------------------------------------------------------------");
 
     }
@@ -68,7 +73,7 @@
     {
         foreach (Pessoa pessoa in pessoas)
         {
-            int hash = pessoa.Nome.GetHashCode();
+            int hash = Nome.GetHashCode();
             if (hash.Equals(hashNome))
             {
                 Console.WriteLine("");

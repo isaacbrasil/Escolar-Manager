@@ -1,50 +1,62 @@
 ﻿public class Funcionario : Pessoa
 {
 
-    public List<Produto> CadastraItemCantina(List<Produto> produtos)
+    public static List<Produto> CadastraItemCantina(List<Produto> produtos)
     {
         Console.BackgroundColor = ConsoleColor.DarkGray;
         Console.WriteLine("Dados serão gravados em:\n\r" + AppDomain.CurrentDomain.BaseDirectory + "cantina.txt\r\n");
         Console.ResetColor();
-
         Console.WriteLine("Digite a quantidade de itens que quer cadastrar:");
-        int numItens = Convert.ToInt32(Console.ReadLine());
-        Console.Clear();
-        TextWriter escritor = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "cantina.txt");
 
-        for (int i = 0; i < numItens; i++) //cadastra mais produtos na lista produtos
-        {
-            Produto newProduto = new Produto();
-            Console.WriteLine("Insira o nome do produto: " + (i + 1));
-            newProduto.NomeAlimento = Console.ReadLine().ToUpper();
-            if (ChecaExistenciaProduto(produtos, newProduto.NomeAlimento.GetHashCode()))
+        if (int.TryParse(Console.ReadLine(), out int numItens) && numItens > 0) {
+            Console.Clear();
+            TextWriter escritor = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "cantina.txt");
+
+            for (int i = 0; i < numItens; i++) //cadastra mais produtos na lista produtos
             {
-                break;
+                Produto newProduto = new ();
+                Console.WriteLine("Insira o nome do produto: " + (i + 1));
+                newProduto.NomeAlimento = Console.ReadLine().ToUpper();
+                if (ChecaExistenciaProduto(produtos, newProduto.NomeAlimento.GetHashCode()))
+                {
+                    break;
+                }
+                Console.WriteLine("Insira o valor do produto: ");
+                newProduto.ValorAlimento = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Insira quantas unidades desse produto: ");
+                newProduto.QuantidadeItens = Convert.ToInt32(Console.ReadLine());
+
+                produtos.Add(newProduto);
             }
-            Console.WriteLine("Insira o valor do produto: ");
-            newProduto.ValorAlimento = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Insira quantas unidades desse produto: ");
-            newProduto.QuantidadeItens = Convert.ToInt32(Console.ReadLine());
 
-            produtos.Add(newProduto);
+
+            foreach (Produto produto in produtos)
+            {
+                escritor.WriteLine(produto.ToString());
+            }
+
+            Console.WriteLine("");
+
+            escritor.Close();
+
+
         }
-
-
-        foreach (Produto produto in produtos)
+        else
         {
-            escritor.WriteLine(produto.ToString());
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Insira apenas valores numéricos.");
+            Console.ResetColor();
         }
-
-        Console.WriteLine("");
-
-        escritor.Close();
-        return produtos;
+            return produtos;
 
     }
 
-    public void DeletaItemCantina(List<Produto> produtos, int indexProduto)
+    public static void DeletaItemCantina(List<Produto> produtos)
     {
-        if (indexProduto > 0 && produtos.Count > 0 && indexProduto <= produtos.Count)
+        Console.WriteLine("Insira qual índice do produto a ser deletado: ");
+
+        if (int.TryParse(Console.ReadLine(), out int indexProduto) && indexProduto > 0 && produtos.Count > 0 && indexProduto <= produtos.Count)
         {
             produtos.RemoveAt((indexProduto - 1));
             DeletaRegistroArquivoProduto(produtos, indexProduto);
@@ -66,7 +78,7 @@
 
         }
     }
-    public void DeletaRegistroArquivoProduto(List<Produto> produtos, int index)
+    public static void DeletaRegistroArquivoProduto(List<Produto> produtos, int index)
     {
         string filePath = AppDomain.CurrentDomain.BaseDirectory + "cantina.txt";
         if (File.Exists(filePath) && new FileInfo(filePath).Length > 0 && (index - 1) <= produtos.Count && index > 0)
@@ -79,7 +91,7 @@
 
     }
 
-    public void MostraItensCantina(List<Produto> produtos)
+    public static void MostraItensCantina(List<Produto> produtos)
     {
 
         Console.WriteLine("");
@@ -107,7 +119,7 @@
 
     }
 
-    public double CalculaCaixaCantina(List<Produto> produtos)
+    public static double CalculaCaixaCantina(List<Produto> produtos)
     {
         MostraItensCantina(produtos);
         Console.WriteLine("");
@@ -126,7 +138,7 @@
 
     }
 
-    public bool ChecaExistenciaProduto(List<Produto> produtos, int hashNome) // checa se já existe um hashcode na lista alunos
+    public static bool ChecaExistenciaProduto(List<Produto> produtos, int hashNome) // checa se já existe um hashcode na lista alunos
     {
         foreach (Produto produto in produtos)
         {

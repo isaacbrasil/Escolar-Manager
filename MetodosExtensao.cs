@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CSharp_ExtensionsMethods
+﻿namespace CSharp_ExtensionsMethods
 {
     public static class MetodosExtensao
     {
@@ -12,7 +10,6 @@ namespace CSharp_ExtensionsMethods
             {
                 soma += produto.ValorAlimento * produto.QuantidadeItens;
             }
-
             return Math.Round(((soma* quantidadeMensal) - despesa), 2);
         }
     }

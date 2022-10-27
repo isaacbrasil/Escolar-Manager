@@ -1,51 +1,46 @@
 ﻿using System.Linq;
 class Professor : Pessoa
 {
-    private double taxaAprovacao;
-    private string materia;
-
     public override string ToString()
     {
 
         return "Nome: " + Nome + " | Matéria: " + Materia;
     }
-    public double TaxaAprovacao
-    {
-        get { return taxaAprovacao; }
-        set { taxaAprovacao = value; }
-    }
-    public string Materia
+    public double TaxaAprovacao { get; set; }
+
+    public string Materia { get; set; }
+    /*public string Materia
     {
         get { return materia; }
         set { materia = value; }
-    }
+    }*/
 
 
-    public Professor(double taxaAprovacao)
+    /* public Professor(double taxaAprovacao)
+     {
+         TaxaAprovacao = taxaAprovacao;
+
+     }
+     public Professor()
+     {
+         this.taxaAprovacao = 0;
+     }*/
+
+    public static double CalculaTaxaAprovacao(int numAlunos, int alunosAprovados)
     {
-        this.taxaAprovacao = taxaAprovacao;
-
-    }
-    public Professor()
-    {
-        this.taxaAprovacao = 0;
-    }
-
-    public double CalculaTaxaAprovacao(int numAlunos, int alunosAprovados)
-    {
-        return Math.Round(((double)alunosAprovados / (double)numAlunos) * 100, 2); //limita o resultado double para duas casas decimais e utiliza conversão explícita
+        return Math.Round(alunosAprovados / (double)numAlunos * 100, 2); //limita o resultado double para duas casas decimais e utiliza conversão explícita
 
     }
 
     public override void MostraDados(Pessoa professor)
     {
-       
+
         Console.WriteLine("Nome: " + professor.Nome);
         Console.WriteLine("Sexo: " + professor.Sexo);
         Console.WriteLine("Id: " + professor.Id);
         Console.WriteLine("Matéria: " + ((Professor)professor).Materia);
     }
-    public void MostraEstatisticaTurma(List<Aluno> alunos)
+    public static void MostraEstatisticaTurma(List<Aluno> alunos)
     {
         var numAlunosSexoMasc = alunos.Where(al => al.Sexo == 'M').Count(); //LINQ QUERY + expressao lambda que conta número de alunos homens
         var numAlunosSexoFem = alunos.Where(al => al.Sexo == 'F').Count(); //LINQ QUERY + expressao lambda que conta número de alunos mulheres
@@ -57,7 +52,7 @@ class Professor : Pessoa
         int numAlunosAcimaMedia = 0;
         foreach (var aluno in alunos)
         {
-            if((aluno.CalculaMedia(alunos, indexMedia))>=6)
+            if ((aluno.CalculaMedia(alunos, indexMedia)) >= 6)
             {
                 numAlunosAcimaMedia++;
             }
@@ -66,7 +61,7 @@ class Professor : Pessoa
         Console.WriteLine("");
         Console.WriteLine("");
         Console.WriteLine("===================================");
-        Console.WriteLine("Nº Total de alunos: " + alunos.Count());
+        Console.WriteLine("Nº Total de alunos: " + alunos.Count);
         Console.WriteLine("===================================");
         Console.WriteLine("Nº de alunos do sexo masculino: " + numAlunosSexoMasc);
         Console.WriteLine("===================================");
@@ -90,8 +85,8 @@ class Professor : Pessoa
         Console.WriteLine("");
 
 
-        Console.WriteLine("Qtde de alunos acima da média: "+ numAlunosAcimaMedia);
-        Console.WriteLine("Qtde de alunos abaixo da média: " + (alunos.Count() - numAlunosAcimaMedia));
+        Console.WriteLine("Qtde de alunos acima da média: " + numAlunosAcimaMedia);
+        Console.WriteLine("Qtde de alunos abaixo da média: " + (alunos.Count - numAlunosAcimaMedia));
 
 
     }
